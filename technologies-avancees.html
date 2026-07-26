@@ -1,0 +1,2941 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technologies Avancées | SMS - Sécurité Multi Services</title>
+    <meta name="description" content="Découvrez le savoir-faire de Sécurité Multi Services (SMS) en télésurveillance IA, détection d'intrusion et sécurité biométrique : matériel de pointe, plateforme technologique et équipes certifiées.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* ===== RESET & BASE ===== */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --red-primary: #c41e2a;
+            --red-dark: #8b0000;
+            --red-light: #e63946;
+            --black-deep: #0a0a0a;
+            --black-card: #111111;
+            --black-lighter: #1a1a1a;
+            --gray-dark: #2a2a2a;
+            --gray-mid: #3a3a3a;
+            --gray-light: #888888;
+            --silver: #c0c0c0;
+            --white: #ffffff;
+            --gradient-red: linear-gradient(135deg, #c41e2a, #8b0000);
+            --gradient-dark: linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 100%);
+            --shadow-red: 0 0 30px rgba(196, 30, 42, 0.3);
+            --shadow-card: 0 10px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--black-deep);
+            color: var(--white);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* ===== ANIMATED BACKGROUND PARTICLES ===== */
+        #particles-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* ===== TOP HEADER BAR ===== */
+        .top-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1001;
+            background: #000000;
+            border-bottom: 2px solid var(--red-primary);
+            padding: 10px 0;
+            transition: transform 0.4s ease;
+        }
+
+        .top-header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .top-header-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .top-header-logo {
+            height: 40px;
+            width: auto;
+        }
+
+        .top-header-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .top-header-company {
+            font-family: 'Oswald', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--white);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .top-header-tagline {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--red-primary);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .top-header-right {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .top-header-phones {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .top-header-phone {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--white);
+            font-family: 'Oswald', sans-serif;
+            font-size: 15px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+        }
+
+        .top-header-phone:hover {
+            color: var(--red-primary);
+        }
+
+        .top-header-phone i {
+            color: var(--red-primary);
+            font-size: 16px;
+        }
+
+        .top-header-cta {
+            background: var(--gradient-red);
+            color: var(--white);
+            padding: 8px 20px;
+            font-family: 'Oswald', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(196, 30, 42, 0.4);
+        }
+
+        .top-header-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(196, 30, 42, 0.6);
+        }
+
+        /* ===== NAVIGATION ===== */
+        .navbar {
+            position: fixed;
+            top: 62px;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 15px 0;
+            transition: all 0.4s ease;
+            background: transparent;
+        }
+
+        .navbar.scrolled {
+            top: 0;
+            background: rgba(10, 10, 10, 0.97);
+            backdrop-filter: blur(20px);
+            padding: 10px 0;
+            box-shadow: 0 2px 30px rgba(196, 30, 42, 0.2);
+        }
+
+        .top-header.hidden {
+            transform: translateY(-100%);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 40px;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .nav-logo img {
+            height: 55px;
+            width: auto;
+            transition: all 0.3s ease;
+        }
+
+        .navbar.scrolled .nav-logo img {
+            height: 45px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 35px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-family: 'Oswald', sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--silver);
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 5px 0;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--red-primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--white);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            background: var(--gradient-red) !important;
+            color: var(--white) !important;
+            padding: 10px 25px !important;
+            border-radius: 4px;
+            font-weight: 600 !important;
+            transition: all 0.3s ease !important;
+            box-shadow: 0 4px 15px rgba(196, 30, 42, 0.4);
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(196, 30, 42, 0.6) !important;
+        }
+
+        .nav-cta::after {
+            display: none !important;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .mobile-menu-btn span {
+            width: 28px;
+            height: 2px;
+            background: var(--white);
+            transition: all 0.3s ease;
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('images/telesurveillance-3.png') center/cover no-repeat;
+            z-index: 1;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, 
+                rgba(10, 10, 10, 0.7) 0%, 
+                rgba(10, 10, 10, 0.4) 40%, 
+                rgba(10, 10, 10, 0.8) 100%);
+            z-index: 2;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            text-align: center;
+            max-width: 900px;
+            padding: 0 40px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero-logo {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 30px;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 0 60px rgba(196, 30, 42, 0.5), 0 0 120px rgba(196, 30, 42, 0.2);
+            animation: pulse-glow 3s ease-in-out infinite;
+            border: 3px solid rgba(196, 30, 42, 0.6);
+        }
+
+        .hero-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-title {
+            font-size: 62px;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, var(--white) 0%, var(--silver) 50%, var(--red-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 20px;
+            font-weight: 300;
+            color: var(--silver);
+            margin-bottom: 15px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+        }
+
+        .hero-tagline {
+            font-size: 16px;
+            color: var(--gray-light);
+            margin-bottom: 40px;
+            font-weight: 400;
+        }
+
+        .hero-cta-group {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--gradient-red);
+            color: var(--white);
+            padding: 16px 35px;
+            font-family: 'Oswald', sans-serif;
+            font-size: 15px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(196, 30, 42, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(196, 30, 42, 0.6);
+        }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: transparent;
+            color: var(--white);
+            padding: 16px 35px;
+            font-family: 'Oswald', sans-serif;
+            font-size: 15px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--red-primary);
+            background: rgba(196, 30, 42, 0.1);
+            transform: translateY(-3px);
+        }
+
+        .hero-scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 3;
+            animation: bounce 2s infinite;
+        }
+
+        .hero-scroll-indicator i {
+            font-size: 24px;
+            color: var(--red-primary);
+        }
+
+        /* ===== STATS BAR ===== */
+        .stats-bar {
+            position: relative;
+            z-index: 5;
+            background: var(--black-card);
+            border-top: 3px solid var(--red-primary);
+            border-bottom: 1px solid var(--gray-dark);
+            padding: 40px 0;
+        }
+
+        .stats-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            padding: 0 40px;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+            position: relative;
+        }
+
+        .stat-item::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 20%;
+            height: 60%;
+            width: 1px;
+            background: var(--gray-dark);
+        }
+
+        .stat-item:last-child::after {
+            display: none;
+        }
+
+        .stat-number {
+            font-family: 'Oswald', sans-serif;
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--red-primary);
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--silver);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* ===== SECTION COMMON ===== */
+        .section {
+            position: relative;
+            z-index: 5;
+            padding: 100px 0;
+        }
+
+        .section-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        .section-label {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--red-primary);
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .section-title {
+            font-size: 44px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+
+        .section-title span {
+            color: var(--red-primary);
+        }
+
+        .section-divider {
+            width: 80px;
+            height: 3px;
+            background: var(--gradient-red);
+            margin: 0 auto;
+        }
+
+        .section-description {
+            max-width: 700px;
+            margin: 20px auto 0;
+            font-size: 16px;
+            color: var(--gray-light);
+            line-height: 1.8;
+        }
+
+        /* ===== SERVICES SECTION ===== */
+        .services-section {
+            background: var(--gradient-dark);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+
+        .service-card {
+            position: relative;
+            background: var(--black-card);
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--gray-dark);
+            transition: all 0.5s ease;
+            cursor: pointer;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--red-primary);
+            box-shadow: var(--shadow-red);
+        }
+
+        .service-card-image {
+            width: 100%;
+            height: 280px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .service-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .service-card:hover .service-card-image img {
+            transform: scale(1.08);
+        }
+
+        .service-card-image::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 50%;
+            background: linear-gradient(to top, var(--black-card), transparent);
+        }
+
+        .service-card-icon {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 55px;
+            height: 55px;
+            background: var(--gradient-red);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2;
+            box-shadow: 0 4px 15px rgba(196, 30, 42, 0.5);
+        }
+
+        .service-card-icon i {
+            font-size: 22px;
+            color: var(--white);
+        }
+
+        .service-card-content {
+            padding: 30px;
+        }
+
+        .service-card-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--white);
+        }
+
+        .service-card-text {
+            font-size: 14px;
+            color: var(--gray-light);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .service-card-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .service-feature-tag {
+            font-size: 11px;
+            font-weight: 600;
+            padding: 5px 12px;
+            background: rgba(196, 30, 42, 0.15);
+            color: var(--red-light);
+            border: 1px solid rgba(196, 30, 42, 0.3);
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* ===== FULL WIDTH SERVICE SECTION ===== */
+        .full-service {
+            padding: 100px 0;
+            position: relative;
+            z-index: 5;
+        }
+
+        .full-service-bg {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .full-service-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 500px;
+        }
+
+        .full-service-row:nth-child(even) .full-service-image {
+            order: -1;
+        }
+
+        .full-service-image {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .full-service-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+
+        .full-service-row:hover .full-service-image img {
+            transform: scale(1.05);
+        }
+
+        .full-service-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(10,10,10,0.8), rgba(196,30,42,0.1));
+        }
+
+        .full-service-text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 60px;
+            background: var(--black-card);
+        }
+
+        .full-service-number {
+            font-family: 'Oswald', sans-serif;
+            font-size: 80px;
+            font-weight: 900;
+            color: rgba(196, 30, 42, 0.15);
+            line-height: 1;
+            margin-bottom: 20px;
+        }
+
+        .full-service-label {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            color: var(--red-primary);
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .full-service-title {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .full-service-desc {
+            font-size: 15px;
+            color: var(--gray-light);
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .full-service-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .full-service-list li {
+            font-size: 13px;
+            color: var(--silver);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .full-service-list li i {
+            color: var(--red-primary);
+            font-size: 12px;
+        }
+
+        /* ===== VIDEO SECTION ===== */
+        .video-section {
+            padding: 80px 0;
+            background: var(--black-card);
+            position: relative;
+            z-index: 5;
+        }
+
+        .video-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+            border: 2px solid var(--gray-dark);
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .video-placeholder {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('img-surveillance.jpg') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .video-placeholder::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 10, 10, 0.5);
+        }
+
+        .video-placeholder:hover::after {
+            background: rgba(10, 10, 10, 0.3);
+        }
+
+        .play-button {
+            position: relative;
+            z-index: 2;
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-red);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 40px rgba(196, 30, 42, 0.6);
+            transition: all 0.3s ease;
+            animation: pulse-play 2s infinite;
+        }
+
+        .play-button i {
+            font-size: 30px;
+            color: var(--white);
+            margin-left: 5px;
+        }
+
+        .video-placeholder:hover .play-button {
+            transform: scale(1.1);
+        }
+
+        /* ===== WHY CHOOSE US ===== */
+        .why-section {
+            background: var(--gradient-dark);
+            padding: 100px 0;
+            position: relative;
+            z-index: 5;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .why-card {
+            text-align: center;
+            padding: 40px 30px;
+            background: var(--black-card);
+            border: 1px solid var(--gray-dark);
+            border-radius: 8px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .why-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--gradient-red);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .why-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .why-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(196, 30, 42, 0.3);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .why-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(196, 30, 42, 0.1);
+            border: 2px solid rgba(196, 30, 42, 0.3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            transition: all 0.3s ease;
+        }
+
+        .why-card:hover .why-icon {
+            background: var(--gradient-red);
+            border-color: var(--red-primary);
+        }
+
+        .why-icon i {
+            font-size: 28px;
+            color: var(--red-primary);
+            transition: all 0.3s ease;
+        }
+
+        .why-card:hover .why-icon i {
+            color: var(--white);
+        }
+
+        .why-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--white);
+        }
+
+        .why-text {
+            font-size: 14px;
+            color: var(--gray-light);
+            line-height: 1.7;
+        }
+
+        /* ===== TECHNOLOGY SECTION ===== */
+        .tech-section {
+            padding: 100px 0;
+            position: relative;
+            z-index: 5;
+            background: var(--black-deep);
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            align-items: stretch;
+        }
+
+        .tech-image-container {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--gray-dark);
+            min-height: 450px;
+        }
+
+        .tech-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .tech-image-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(196, 30, 42, 0.1), rgba(10, 10, 10, 0.7));
+            display: flex;
+            align-items: flex-end;
+            padding: 30px;
+        }
+
+        .tech-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tech-badge {
+            background: rgba(10, 10, 10, 0.8);
+            border: 1px solid var(--red-primary);
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--white);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            backdrop-filter: blur(10px);
+        }
+
+        .tech-info {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .tech-item {
+            background: var(--black-card);
+            border: 1px solid var(--gray-dark);
+            border-radius: 8px;
+            padding: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .tech-item:hover {
+            border-color: var(--red-primary);
+            transform: translateX(5px);
+        }
+
+        .tech-item-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 12px;
+        }
+
+        .tech-item-icon {
+            width: 45px;
+            height: 45px;
+            background: rgba(196, 30, 42, 0.1);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .tech-item-icon i {
+            font-size: 20px;
+            color: var(--red-primary);
+        }
+
+        .tech-item-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--white);
+            text-transform: none;
+            letter-spacing: 0;
+        }
+
+        .tech-item-desc {
+            font-size: 13px;
+            color: var(--gray-light);
+            line-height: 1.7;
+        }
+
+        /* ===== CLIENTS / TRUST ===== */
+        .trust-section {
+            padding: 60px 0;
+            background: var(--black-card);
+            border-top: 1px solid var(--gray-dark);
+            border-bottom: 1px solid var(--gray-dark);
+            position: relative;
+            z-index: 5;
+        }
+
+        .trust-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            text-align: center;
+        }
+
+        .trust-label {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            color: var(--gray-light);
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
+
+        .trust-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+            flex-wrap: wrap;
+            opacity: 0.4;
+            transition: opacity 0.3s ease;
+        }
+
+        .trust-logos:hover {
+            opacity: 0.7;
+        }
+
+        .trust-logo-item {
+            font-family: 'Oswald', sans-serif;
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--silver);
+            letter-spacing: 2px;
+        }
+
+        /* ===== CTA SECTION ===== */
+        .cta-section {
+            padding: 100px 0;
+            position: relative;
+            z-index: 5;
+            background: linear-gradient(135deg, var(--black-deep) 0%, #1a0000 100%);
+        }
+
+        .cta-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 40px;
+            text-align: center;
+        }
+
+        .cta-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-red);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            box-shadow: 0 0 40px rgba(196, 30, 42, 0.4);
+        }
+
+        .cta-icon i {
+            font-size: 35px;
+            color: var(--white);
+        }
+
+        .cta-title {
+            font-size: 42px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+
+        .cta-title span {
+            color: var(--red-primary);
+        }
+
+        .cta-text {
+            font-size: 16px;
+            color: var(--gray-light);
+            margin-bottom: 40px;
+            line-height: 1.8;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-phone {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background: var(--black-card);
+            border: 1px solid var(--gray-dark);
+            padding: 18px 30px;
+            border-radius: 8px;
+            margin-top: 40px;
+            justify-content: center;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-phone i {
+            font-size: 24px;
+            color: var(--red-primary);
+        }
+
+        .cta-phone-info {
+            text-align: left;
+        }
+
+        .cta-phone-label {
+            font-size: 11px;
+            color: var(--gray-light);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .cta-phone-number {
+            font-family: 'Oswald', sans-serif;
+            font-size: 22px;
+            font-weight: 600;
+            color: var(--white);
+        }
+
+        /* ---------- TECH SHOWCASE ---------- */
+        .tech{background:var(--panel);}
+        .tech-inner{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center;}
+        @media (max-width:900px){ .tech-inner{grid-template-columns:1fr;gap:48px;} }
+        .network-illust{
+            margin-bottom:64px;padding:34px 20px 22px;
+            background:var(--void);border:1px solid var(--line);position:relative;overflow:hidden;
+        }
+        .network-illust svg{width:100%;height:auto;display:block;}
+        .network-illust .netlabel{font-family:'JetBrains Mono',monospace;font-size:10px;fill:var(--silver-dim);letter-spacing:0.04em;}
+        .pulse-node{animation:pulse 1.8s infinite;}
+        .tech-feats{display:flex;flex-direction:column;gap:26px;margin-top:34px;}
+        .tech-feat{display:flex;gap:16px;}
+        .tech-feat .ico{width:20px;height:20px;flex:none;color:var(--green);margin-top:3px;}
+        .tech-feat h4{font-size:14.5px;color:var(--white);margin-bottom:4px;font-weight:600;}
+        .tech-feat p{font-size:13px;color:var(--silver-dim);line-height:1.6;}
+
+        .console{
+            background:var(--void);border:1px solid var(--line);
+            padding:20px;font-family:'JetBrains Mono',monospace;
+            position:relative;overflow:hidden;
+        }
+        .console-bar{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding-bottom:12px;margin-bottom:16px;font-size:10.5px;color:var(--silver-dim);}
+        .console-bar .rec{color:var(--red-bright);display:flex;align-items:center;gap:6px;}
+        .console-bar .rec .d{width:6px;height:6px;background:var(--red-bright);border-radius:50%;animation:pulse 1s infinite;}
+        .cam-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+        .cam{
+            background:linear-gradient(160deg,#15151b,#0c0c10);
+            border:1px solid var(--line);aspect-ratio:4/3;position:relative;overflow:hidden;
+        }
+        .cam .label{position:absolute;top:6px;left:8px;font-size:9px;color:var(--silver-dim);letter-spacing:.05em;}
+        .cam .status{position:absolute;top:6px;right:8px;font-size:8px;color:var(--green);display:flex;align-items:center;gap:4px;}
+        .cam .status .d{width:5px;height:5px;border-radius:50%;background:var(--green);box-shadow:0 0 4px var(--green);animation:pulse 1.4s infinite;}
+        .cam .scan{
+            position:absolute;left:0;right:0;height:22px;
+            background:linear-gradient(180deg, rgba(0,255,160,0) , rgba(0,255,160,0.12), rgba(0,255,160,0));
+            animation:scan 3.4s linear infinite;
+        }
+        @keyframes scan{0%{top:-22px;}100%{top:100%;}}
+        .cam svg{position:absolute;bottom:8px;right:8px;width:34px;height:34px;opacity:.5;}
+        .console-clock{margin-top:14px;display:flex;justify-content:space-between;font-size:10px;color:var(--silver-dim);border-top:1px solid var(--line);padding-top:12px;}
+        .console-clock .t{color:var(--white);}
+
+
+        /* ===== CONTACT SECTION ===== */
+        .contact-section {
+            padding: 100px 0;
+            background: var(--gradient-dark);
+            position: relative;
+            z-index: 5;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .contact-info-title {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 10px;
+        }
+
+        .contact-info-text {
+            font-size: 15px;
+            color: var(--gray-light);
+            line-height: 1.8;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            padding: 20px;
+            background: var(--black-card);
+            border: 1px solid var(--gray-dark);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            border-color: var(--red-primary);
+            transform: translateX(5px);
+        }
+
+        .contact-item-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(196, 30, 42, 0.1);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .contact-item-icon i {
+            font-size: 20px;
+            color: var(--red-primary);
+        }
+
+        .contact-item-content h4 {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--white);
+            margin-bottom: 5px;
+            text-transform: none;
+            letter-spacing: 0;
+        }
+
+        .contact-item-content p {
+            font-size: 14px;
+            color: var(--gray-light);
+        }
+
+        .contact-form {
+            background: var(--black-card);
+            border: 1px solid var(--gray-dark);
+            border-radius: 12px;
+            padding: 40px;
+        }
+
+        .contact-form h3 {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 30px;
+            text-transform: none;
+            letter-spacing: 1px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--silver);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px 18px;
+            background: var(--black-deep);
+            border: 1px solid var(--gray-dark);
+            border-radius: 6px;
+            color: var(--white);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            outline: none;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--red-primary);
+            box-shadow: 0 0 10px rgba(196, 30, 42, 0.2);
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-submit {
+            width: 100%;
+            padding: 16px;
+            background: var(--gradient-red);
+            color: var(--white);
+            border: none;
+            border-radius: 6px;
+            font-family: 'Oswald', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(196, 30, 42, 0.4);
+        }
+
+        .form-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(196, 30, 42, 0.6);
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            position: relative;
+            z-index: 5;
+            background: var(--black-deep);
+            border-top: 1px solid var(--gray-dark);
+        }
+
+        .footer-main {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 60px 40px;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+        }
+
+        .footer-brand {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .footer-brand img {
+            width: 120px;
+            height: auto;
+        }
+
+        .footer-brand-text {
+            font-size: 14px;
+            color: var(--gray-light);
+            line-height: 1.8;
+            max-width: 300px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 12px;
+            margin-top: 10px;
+        }
+
+        .footer-social a {
+            width: 40px;
+            height: 40px;
+            background: var(--black-card);
+            border: 1px solid var(--gray-dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .footer-social a:hover {
+            background: var(--red-primary);
+            border-color: var(--red-primary);
+            transform: translateY(-3px);
+        }
+
+        .footer-social a i {
+            font-size: 16px;
+            color: var(--silver);
+            transition: color 0.3s ease;
+        }
+
+        .footer-social a:hover i {
+            color: var(--white);
+        }
+
+        .footer-col h4 {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--white);
+            margin-bottom: 20px;
+            text-transform: none;
+            letter-spacing: 1px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col ul li a {
+            font-size: 14px;
+            color: var(--gray-light);
+            transition: all 0.3s ease;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--red-primary);
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px 40px;
+            border-top: 1px solid var(--gray-dark);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-bottom-text {
+            font-size: 13px;
+            color: var(--gray-light);
+        }
+
+        .footer-bottom-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .footer-bottom-links a {
+            font-size: 13px;
+            color: var(--gray-light);
+            transition: color 0.3s ease;
+        }
+
+        .footer-bottom-links a:hover {
+            color: var(--red-primary);
+        }
+
+        /* ===== ANIMATIONS ===== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% {
+                box-shadow: 0 0 40px rgba(196, 30, 42, 0.4), 0 0 80px rgba(196, 30, 42, 0.1);
+            }
+            50% {
+                box-shadow: 0 0 60px rgba(196, 30, 42, 0.6), 0 0 120px rgba(196, 30, 42, 0.2);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            40% {
+                transform: translateX(-50%) translateY(-15px);
+            }
+            60% {
+                transform: translateX(-50%) translateY(-7px);
+            }
+        }
+
+        @keyframes pulse-play {
+            0%, 100% {
+                box-shadow: 0 0 20px rgba(196, 30, 42, 0.4);
+            }
+            50% {
+                box-shadow: 0 0 50px rgba(196, 30, 42, 0.7);
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .full-service-row {
+                grid-template-columns: 1fr;
+            }
+
+            .full-service-row:nth-child(even) .full-service-image {
+                order: 0;
+            }
+
+            .tech-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-main {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .why-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .stats-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .stat-item:nth-child(2)::after {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .top-header {
+                padding: 8px 0;
+            }
+
+            .top-header-container {
+                padding: 0 15px;
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .top-header-left {
+                gap: 8px;
+            }
+
+            .top-header-logo {
+                height: 30px;
+            }
+
+            .top-header-company {
+                font-size: 14px;
+            }
+
+            .top-header-tagline {
+                font-size: 9px;
+            }
+
+            .top-header-right {
+                gap: 15px;
+            }
+
+            .top-header-phones {
+                gap: 12px;
+            }
+
+            .top-header-phone {
+                font-size: 12px;
+            }
+
+            .top-header-phone i {
+                font-size: 13px;
+            }
+
+            .top-header-cta {
+                font-size: 11px;
+                padding: 6px 14px;
+            }
+
+            .navbar {
+                top: 100px;
+            }
+
+            .navbar.scrolled {
+                top: 0;
+            }
+
+            .nav-links {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background: rgba(10, 10, 10, 0.98);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 30px;
+                z-index: 999;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links a {
+                font-size: 18px;
+            }
+
+            .mobile-menu-btn {
+                display: flex;
+            }
+
+            .hero-title {
+                font-size: 38px;
+            }
+
+            .hero-subtitle {
+                font-size: 15px;
+            }
+
+            .hero-logo {
+                width: 150px;
+                height: 150px;
+            }
+
+            .section-title {
+                font-size: 32px;
+            }
+
+            .stats-container {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .why-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-main {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .full-service-list {
+                grid-template-columns: 1fr;
+            }
+
+            .full-service-text {
+                padding: 30px;
+            }
+
+            .cta-title {
+                font-size: 32px;
+            }
+
+            .stat-number {
+                font-size: 36px;
+            }
+        }
+
+        /* ===== SCROLL TO TOP ===== */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-red);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(196, 30, 42, 0.4);
+            border: none;
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 25px rgba(196, 30, 42, 0.6);
+        }
+
+        .scroll-top i {
+            font-size: 20px;
+            color: var(--white);
+        }
+    </style>
+</head>
+<body>
+    <!-- Particles Canvas -->
+    <canvas id="particles-canvas"></canvas>
+
+    <!-- Top Header Bar -->
+    <div class="top-header" id="topHeader">
+        <div class="top-header-container">
+            <div class="top-header-left">
+                <img src="images/logo-noir.png" alt="SMS" class="top-header-logo">
+                <div class="top-header-info">
+                    <span class="top-header-company">Sécurité Multi Services</span>
+                    <span class="top-header-tagline">Sécurité · Surveillance · Intervention</span>
+                </div>
+            </div>
+            <div class="top-header-right">
+                <div class="top-header-phones">
+                    <a href="tel:0503331331" class="top-header-phone">
+                        <i class="fas fa-phone-alt"></i>
+                        05 03 331 331
+                    </a>
+                    <a href="tel:0711909091" class="top-header-phone">
+                        <i class="fas fa-mobile-alt"></i>
+                        07 11 90 90 91
+                    </a>
+                    <a href="tel:0711909091" class="top-header-phone">
+                        <i class="fa-solid fa-location-crosshairs"></i>
+                        Cocody, Riviera M'Badon (Abidjan, Côte d'Ivoire)
+                    </a>
+                </div>
+                <!-- <a href="#contact" class="top-header-cta"><i class="fas fa-shield-alt"></i> Devis Gratuit</a> -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <img src="images/logo-noir.png" alt="SMS - Sécurité Multi Services">
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html">Accueil</a>
+                <a href="index.html#services">Nos Services</a>
+                <a href="qui-sommes-nous.html">A Propos</a>
+                <a href="contact.html">Contact</a>
+                <a href="contact.html" class="nav-cta"><i class="fas fa-shield-alt"></i> Devis Gratuit</a>
+            </div>
+            <div class="mobile-menu-btn" id="mobileMenuBtn" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+    <style>
+        /* ===== PAGE HERO (sous-page) ===== */
+        .page-hero {
+            position: relative;
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            padding-top: 100px;
+        }
+
+        .page-hero-bg {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: url('images/tech-hero-bg.jpg') center/cover no-repeat;
+            background-color: var(--black-card);
+            z-index: 1;
+        }
+
+        .page-hero-overlay {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: linear-gradient(180deg, rgba(10,10,10,0.75) 0%, rgba(10,10,10,0.55) 45%, rgba(10,10,10,0.92) 100%);
+            z-index: 2;
+        }
+
+        .page-hero-content {
+            position: relative;
+            z-index: 3;
+            text-align: center;
+            max-width: 900px;
+            padding: 60px 40px;
+        }
+
+        .breadcrumb {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            color: var(--gray-light);
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .breadcrumb a { color: var(--silver); transition: color 0.3s ease; }
+        .breadcrumb a:hover { color: var(--red-primary); }
+        .breadcrumb span:last-child { color: var(--red-primary); }
+
+        .page-hero-title {
+            font-size: 54px;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            color: var(--white);
+        }
+
+        .page-hero-title span { color: var(--red-primary); }
+
+        .page-hero-subtitle {
+            font-size: 17px;
+            font-weight: 400;
+            color: var(--silver);
+            max-width: 650px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        /* ===== INTRO / SAVOIR-FAIRE ===== */
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .intro-image {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--gray-dark);
+            min-height: 420px;
+            box-shadow: var(--shadow-card);
+        }
+
+        .intro-image img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0; left: 0;
+        }
+
+        .intro-text-title {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 20px;
+            line-height: 1.25;
+        }
+
+        .intro-text-title span { color: var(--red-primary); }
+
+        .intro-text-desc {
+            font-size: 15px;
+            color: var(--gray-light);
+            line-height: 1.9;
+            margin-bottom: 25px;
+        }
+
+        .intro-points {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .intro-point {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+        }
+
+        .intro-point i {
+            color: var(--red-primary);
+            font-size: 18px;
+            margin-top: 3px;
+            flex-shrink: 0;
+        }
+
+        .intro-point strong {
+            display: block;
+            color: var(--white);
+            font-size: 15px;
+            margin-bottom: 3px;
+        }
+
+        .intro-point p {
+            color: var(--gray-light);
+            font-size: 13px;
+            line-height: 1.7;
+        }
+
+        /* ===== CAPABILITY GRID (Intrusion / Biométrie) ===== */
+        .capability-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .capability-card {
+            background: var(--black-card);
+            border: 1px solid var(--gray-dark);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+
+        .capability-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--red-primary);
+            box-shadow: var(--shadow-red);
+        }
+
+        .capability-card-image {
+            width: 100%;
+            height: 190px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .capability-card-image img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .capability-card:hover .capability-card-image img {
+            transform: scale(1.08);
+        }
+
+        .capability-card-image::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0;
+            width: 100%; height: 60%;
+            background: linear-gradient(to top, var(--black-card), transparent);
+        }
+
+        .capability-card-icon {
+            position: absolute;
+            bottom: 12px; left: 16px;
+            width: 44px; height: 44px;
+            background: var(--gradient-red);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2;
+            box-shadow: 0 4px 15px rgba(196, 30, 42, 0.5);
+        }
+
+        .capability-card-icon i { color: var(--white); font-size: 18px; }
+
+        .capability-card-content { padding: 22px 24px 26px; }
+
+        .capability-card-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 10px;
+            text-transform: none;
+            letter-spacing: 0;
+        }
+
+        .capability-card-text {
+            font-size: 13px;
+            color: var(--gray-light);
+            line-height: 1.75;
+        }
+
+        /* ===== EQUIPMENT / GALLERY GRID ===== */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--gray-dark);
+            aspect-ratio: 4/3;
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .gallery-item:hover img { transform: scale(1.1); }
+
+        .gallery-item-overlay {
+            position: absolute;
+            bottom: 0; left: 0;
+            width: 100%;
+            padding: 18px 20px;
+            background: linear-gradient(to top, rgba(10,10,10,0.95), transparent);
+        }
+
+        .gallery-item-label {
+            font-size: 10px;
+            font-weight: 600;
+            color: var(--red-light);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+            display: block;
+        }
+
+        .gallery-item-title {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--white);
+            text-transform: none;
+            letter-spacing: 0;
+        }
+
+        /* ===== VIDEO GALLERY ===== */
+        .video-gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .video-card {
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid var(--gray-dark);
+            background: var(--black-card);
+            transition: all 0.3s ease;
+        }
+
+        .video-card:hover {
+            border-color: var(--red-primary);
+            box-shadow: var(--shadow-red);
+        }
+
+        .video-card-media {
+            position: relative;
+            width: 100%;
+            padding-top: 62%;
+            background-size: cover;
+            background-position: center;
+            cursor: pointer;
+            overflow: hidden;
+        }
+
+        .video-card-media video {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            object-fit: cover;
+        }
+
+        .video-card-media::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(10, 10, 10, 0.35);
+            transition: background 0.3s ease;
+        }
+
+        .video-card-media:hover::after { background: rgba(10, 10, 10, 0.15); }
+
+        .video-card.playing .video-card-media::after { display: none; }
+
+        .video-card-play {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 56px; height: 56px;
+            background: var(--gradient-red);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2;
+            box-shadow: 0 0 30px rgba(196, 30, 42, 0.6);
+            transition: transform 0.3s ease;
+        }
+
+        .video-card.playing .video-card-play { display: none; }
+
+        .video-card-media:hover .video-card-play { transform: translate(-50%, -50%) scale(1.1); }
+
+        .video-card-play i { color: var(--white); font-size: 20px; margin-left: 3px; }
+
+        .video-card-info { padding: 18px 20px; }
+
+        .video-card-title {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--white);
+            margin-bottom: 6px;
+            text-transform: none;
+            letter-spacing: 0;
+        }
+
+        .video-card-desc {
+            font-size: 12.5px;
+            color: var(--gray-light);
+            line-height: 1.6;
+        }
+
+        /* ===== CERTIFICATIONS ===== */
+        .cert-grid {
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .cert-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            background: var(--black-card);
+            border: 1px solid var(--gray-dark);
+            border-radius: 8px;
+            padding: 24px 30px;
+            min-width: 180px;
+            transition: all 0.3s ease;
+        }
+
+        .cert-item:hover { border-color: var(--red-primary); transform: translateY(-4px); }
+
+        .cert-item i { font-size: 26px; color: var(--red-primary); }
+
+        .cert-item span {
+            font-size: 12.5px;
+            font-weight: 600;
+            color: var(--silver);
+            text-align: center;
+            letter-spacing: 0.5px;
+        }
+
+        @media (max-width: 1000px) {
+            .intro-grid { grid-template-columns: 1fr; }
+            .capability-grid { grid-template-columns: repeat(2, 1fr); }
+            .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+            .video-gallery-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 650px) {
+            .page-hero-title { font-size: 36px; }
+            .capability-grid { grid-template-columns: 1fr; }
+            .gallery-grid { grid-template-columns: 1fr; }
+            .video-gallery-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="page-hero-bg"></div>
+        <div class="page-hero-overlay"></div>
+        <div class="page-hero-content fade-in">
+            <div class="breadcrumb">
+                <a href="index.html">Accueil</a>
+                <span>/</span>
+                <span>Technologies Avancées</span>
+            </div>
+            <span class="section-label">Innovation & Savoir-faire</span>
+            <h1 class="page-hero-title">Technologies <span>Avancées</span></h1>
+            <p class="page-hero-subtitle">Télésurveillance intelligente, détection d'intrusion et sécurité biométrique : découvrez le plateau technique et humain que SMS déploie pour votre protection.</p>
+        </div>
+    </section>
+
+    <!-- Stats Bar -->
+    <div class="stats-bar">
+        <div class="stats-container">
+            <div class="stat-item fade-in">
+                <div class="stat-number" data-target="1200">0</div>
+                <div class="stat-label">Caméras Supervisées</div>
+            </div>
+            <div class="stat-item fade-in">
+                <div class="stat-number" data-target="500">0</div>
+                <div class="stat-label">Sites Connectés</div>
+            </div>
+            <div class="stat-item fade-in">
+                <div class="stat-number" data-target="15">0</div>
+                <div class="stat-label">Secondes de Réaction Moy.</div>
+            </div>
+            <div class="stat-item fade-in">
+                <div class="stat-number" data-target="24">0</div>
+                <div class="stat-label">H/24 Supervision Active</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Intro / Savoir-faire -->
+    <section class="section">
+        <div class="section-container">
+            <div class="intro-grid">
+                <div class="intro-image fade-in">
+                    <img src="images/logiciel-surveillance.jpg" alt="Plateforme technologique SMS">
+                </div>
+                <div class="fade-in">
+                    <span class="section-label">Notre Savoir-faire</span>
+                    <h2 class="intro-text-title">Une Alliance entre <span>Technologie</span> et Expertise Humaine</h2>
+                    <p class="intro-text-desc">Chez Sécurité Multi Services, la performance de nos solutions repose sur trois piliers : du matériel de dernière génération, une plateforme logicielle robuste et des équipes qualifiées capables d'interpréter chaque signal en temps réel. Cette combinaison nous permet de couvrir l'ensemble de la chaîne de sécurité, de la détection à l'intervention.</p>
+                    <div class="intro-points">
+                        <div class="intro-point">
+                            <i class="fas fa-microchip"></i>
+                            <div>
+                                <strong>Matériel professionnel certifié</strong>
+                                <p>Caméras IP HD/4K, capteurs périmétriques, lecteurs biométriques et serveurs redondants issus des meilleurs fabricants du secteur.</p>
+                            </div>
+                        </div>
+                        <div class="intro-point">
+                            <i class="fas fa-cloud"></i>
+                            <div>
+                                <strong>Plateforme logicielle centralisée</strong>
+                                <p>Supervision multi-sites, analyse vidéo par intelligence artificielle et remontée d'alertes instantanée vers notre centre de contrôle.</p>
+                            </div>
+                        </div>
+                        <div class="intro-point">
+                            <i class="fas fa-user-shield"></i>
+                            <div>
+                                <strong>Opérateurs et ingénieurs formés</strong>
+                                <p>Une équipe technique dédiée qui configure, surveille et fait évoluer chaque installation selon vos besoins.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Télésurveillance & Vidéosurveillance IA -->
+    <section class="full-service" id="telesurveillance-tech">
+        <div class="full-service-row fade-in">
+            <div class="full-service-image">
+                <img src="images/telesurveillance-3.png" alt="Centre de télésurveillance SMS">
+            </div>
+            <div class="full-service-text">
+                <div class="full-service-number">01</div>
+                <span class="full-service-label">Télésurveillance & Vidéosurveillance IA</span>
+                <h3 class="full-service-title">Un Centre de Contrôle <br>Actif 24h/24</h3>
+                <p class="full-service-desc">Notre centre de supervision regroupe les flux vidéo de l'ensemble de nos sites clients sur une plateforme unique. Les caméras intelligentes analysent en continu les images pour détecter tout comportement suspect, pendant que nos opérateurs qualifiés valident chaque alerte avant de déclencher la procédure d'intervention adaptée.</p>
+                <ul class="full-service-list">
+                    <li><i class="fas fa-check-circle"></i> Caméras IP HD / 4K jour-nuit</li>
+                    <li><i class="fas fa-check-circle"></i> Analyse vidéo par IA</li>
+                    <li><i class="fas fa-check-circle"></i> Reconnaissance de plaques (LAPI)</li>
+                    <li><i class="fas fa-check-circle"></i> Détection de franchissement de ligne</li>
+                    <li><i class="fas fa-check-circle"></i> Archivage cloud sécurisé</li>
+                    <li><i class="fas fa-check-circle"></i> Supervision multi-sites centralisée</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Détection d'intrusion -->
+    <section class="section services-section" id="detection-intrusion">
+        <div class="section-container">
+            <div class="section-header fade-in">
+                <span class="section-label">02 · Protection Périmétrique</span>
+                <h2 class="section-title">Détection <span>d'Intrusion</span></h2>
+                <div class="section-divider"></div>
+                <p class="section-description">Une combinaison de capteurs et d'analyses avancées pour repérer toute tentative d'intrusion avant qu'elle n'atteigne vos locaux.</p>
+            </div>
+            <div class="capability-grid">
+                <div class="capability-card fade-in">
+                    <div class="capability-card-image">
+                        <img src="images/detection-radar.jpg" alt="Détection périmétrique radar">
+                        <div class="capability-card-icon"><i class="fas fa-satellite-dish"></i></div>
+                    </div>
+                    <div class="capability-card-content">
+                        <h4 class="capability-card-title">Détection Périmétrique</h4>
+                        <p class="capability-card-text">Barrières infrarouges, radars et câbles détecteurs positionnés sur les points sensibles pour identifier toute approche suspecte, de jour comme de nuit.</p>
+                    </div>
+                </div>
+                <div class="capability-card fade-in">
+                    <div class="capability-card-image">
+                        <img src="images/alarme-connectee.png" alt="Capteurs et alarmes connectées">
+                        <div class="capability-card-icon"><i class="fas fa-bell"></i></div>
+                    </div>
+                    <div class="capability-card-content">
+                        <h4 class="capability-card-title">Alarmes Connectées</h4>
+                        <p class="capability-card-text">Détecteurs de mouvement, d'ouverture et de bris de vitre reliés en temps réel à notre centrale de télésurveillance pour une réaction immédiate.</p>
+                    </div>
+                </div>
+                <div class="capability-card fade-in">
+                    <div class="capability-card-image">
+                        <img src="images/drone.avif" alt="Drone de surveillance">
+                        <div class="capability-card-icon"><i class="fas fa-helicopter"></i></div>
+                    </div>
+                    <div class="capability-card-content">
+                        <h4 class="capability-card-title">Levée de Doute par Drone</h4>
+                        <p class="capability-card-text">Drones déployables pour survoler un site en quelques minutes et confirmer visuellement une alerte avant l'envoi d'une équipe d'intervention.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sécurité biométrique -->
+    <section class="section" id="securite-biometrique">
+        <div class="section-container">
+            <div class="section-header fade-in">
+                <span class="section-label">03 · Contrôle d'Accès</span>
+                <h2 class="section-title">Sécurité <span>Biométrique</span></h2>
+                <div class="section-divider"></div>
+                <p class="section-description">Des solutions d'authentification fiables pour sécuriser l'accès à vos sites sensibles et fluidifier les passages autorisés.</p>
+            </div>
+            <div class="capability-grid">
+                <div class="capability-card fade-in">
+                    <div class="capability-card-image">
+                        <img src="images/reconnaissance-faciale.png" alt="Reconnaissance faciale">
+                        <div class="capability-card-icon"><i class="fas fa-street-view"></i></div>
+                    </div>
+                    <div class="capability-card-content">
+                        <h4 class="capability-card-title">Reconnaissance Faciale</h4>
+                        <p class="capability-card-text">Identification rapide et sans contact des personnes autorisées, avec alerte immédiate en cas de tentative d'accès non reconnue.</p>
+                    </div>
+                </div>
+                <div class="capability-card fade-in">
+                    <div class="capability-card-image">
+                        <img src="images/empreinte-digitale.jpg" alt="Lecteur d'empreinte digitale">
+                        <div class="capability-card-icon"><i class="fas fa-fingerprint"></i></div>
+                    </div>
+                    <div class="capability-card-content">
+                        <h4 class="capability-card-title">Empreinte Digitale</h4>
+                        <p class="capability-card-text">Lecteurs biométriques robustes pour un contrôle d'accès individuel fiable sur les zones à forte sensibilité.</p>
+                    </div>
+                </div>
+                <div class="capability-card fade-in">
+                    <div class="capability-card-image">
+                        <img src="images/badge.png" alt="Contrôle d'accès par badge">
+                        <div class="capability-card-icon"><i class="fas fa-id-card"></i></div>
+                    </div>
+                    <div class="capability-card-content">
+                        <h4 class="capability-card-title">Accès Multi-facteurs</h4>
+                        <p class="capability-card-text">Combinaison badge, code et biométrie pour les sites nécessitant un niveau de sécurité renforcé, avec traçabilité complète des passages.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Notre plateau technique (galerie matériel) -->
+    <section class="section services-section">
+        <div class="section-container">
+            <div class="section-header fade-in">
+                <span class="section-label">Notre Plateau Technique</span>
+                <h2 class="section-title">Le Matériel au Cœur de <span>Notre Performance</span></h2>
+                <div class="section-divider"></div>
+                <p class="section-description">Un aperçu des équipements que nous installons et supervisons au quotidien pour nos clients.</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item fade-in">
+                    <img src="images/camera-surveillance.jpg" alt="Caméra PTZ intelligente">
+                    <div class="gallery-item-overlay">
+                        <span class="gallery-item-label">Vidéosurveillance</span>
+                        <h4 class="gallery-item-title">Caméras PTZ Intelligentes</h4>
+                    </div>
+                </div>
+                <div class="gallery-item fade-in">
+                    <img src="images/baie-serveur.jpg" alt="Baie de serveurs NVR">
+                    <div class="gallery-item-overlay">
+                        <span class="gallery-item-label">Infrastructure</span>
+                        <h4 class="gallery-item-title">Serveurs & Enregistreurs NVR</h4>
+                    </div>
+                </div>
+                <div class="gallery-item fade-in">
+                    <img src="images/salle-de-controle.png" alt="Opérateurs en salle de contrôle">
+                    <div class="gallery-item-overlay">
+                        <span class="gallery-item-label">Supervision</span>
+                        <h4 class="gallery-item-title">Salle de Contrôle 24h/24</h4>
+                    </div>
+                </div>
+                <div class="gallery-item fade-in">
+                    <img src="images/capteur-connecte.jpg" alt="Capteurs de détection">
+                    <div class="gallery-item-overlay">
+                        <span class="gallery-item-label">Détection</span>
+                        <h4 class="gallery-item-title">Capteurs & Détecteurs Connectés</h4>
+                    </div>
+                </div>
+                <div class="gallery-item fade-in">
+                    <img src="images/terminaux-acces.png" alt="Terminal biométrique">
+                    <div class="gallery-item-overlay">
+                        <span class="gallery-item-label">Biométrie</span>
+                        <h4 class="gallery-item-title">Terminaux d'Accès Biométrique</h4>
+                    </div>
+                </div>
+                <div class="gallery-item fade-in">
+                    <img src="images/appli-mobile.png" alt="Application mobile de supervision">
+                    <div class="gallery-item-overlay">
+                        <span class="gallery-item-label">Mobilité</span>
+                        <h4 class="gallery-item-title">Application de Supervision Mobile</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vidéos de démonstration -->
+    <section class="video-section" id="videos-demo">
+        <div class="video-container">
+            <div class="section-header fade-in" style="margin-bottom: 40px;">
+                <span class="section-label">Découvrez SMS en Action</span>
+                <h2 class="section-title">Nos <span>Technologies</span> en Vidéo</h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="video-gallery-grid">
+                <div class="video-card fade-in">
+                    <div class="video-card-media" style="background-image:url('images/tech-control-room.jpg')" onclick="playCardVideo(this, 'videos/centre-supervision.mp4')">
+                        <div class="video-card-play"><i class="fas fa-play"></i></div>
+                    </div>
+                    <div class="video-card-info">
+                        <h4 class="video-card-title">Centre de Supervision</h4>
+                        <p class="video-card-desc">Immersion dans notre centre de télésurveillance et son mur d'écrans en temps réel.</p>
+                    </div>
+                </div>
+                <div class="video-card fade-in">
+                    <div class="video-card-media" style="background-image:url('images/tech-intrusion-sensors.jpg')" onclick="playCardVideo(this, 'videos/detection-intrusion-demo.mp4')">
+                        <div class="video-card-play"><i class="fas fa-play"></i></div>
+                    </div>
+                    <div class="video-card-info">
+                        <h4 class="video-card-title">Détection d'Intrusion</h4>
+                        <p class="video-card-desc">Démonstration d'une alerte périmétrique traitée en direct par nos opérateurs.</p>
+                    </div>
+                </div>
+                <div class="video-card fade-in">
+                    <div class="video-card-media" style="background-image:url('images/tech-biometric-face.jpg')" onclick="playCardVideo(this, 'videos/controle-acces-biometrique.mp4')">
+                        <div class="video-card-play"><i class="fas fa-play"></i></div>
+                    </div>
+                    <div class="video-card-info">
+                        <h4 class="video-card-title">Contrôle d'Accès Biométrique</h4>
+                        <p class="video-card-desc">Aperçu du fonctionnement de nos terminaux de reconnaissance faciale et d'empreinte.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expertise Humaine -->
+    <section class="why-section">
+        <div class="section-container">
+            <div class="section-header fade-in">
+                <span class="section-label">Notre Force</span>
+                <h2 class="section-title">Une <span>Expertise Humaine</span> derrière Chaque Technologie</h2>
+                <div class="section-divider"></div>
+                <p class="section-description">Le meilleur matériel ne vaut rien sans des équipes capables de l'exploiter. Voici les compétences qui font la différence chez SMS.</p>
+            </div>
+            <div class="why-grid">
+                <div class="why-card fade-in">
+                    <div class="why-icon"><i class="fas fa-headset"></i></div>
+                    <h4 class="why-title">Opérateurs Certifiés</h4>
+                    <p class="why-text">Formés à l'analyse d'images et à la gestion d'alarmes, disponibles en permanence dans notre centre de supervision.</p>
+                </div>
+                <div class="why-card fade-in">
+                    <div class="why-icon"><i class="fas fa-tools"></i></div>
+                    <h4 class="why-title">Techniciens Terrain</h4>
+                    <p class="why-text">Installation, maintenance préventive et dépannage rapide de l'ensemble des équipements sur site.</p>
+                </div>
+                <div class="why-card fade-in">
+                    <div class="why-icon"><i class="fas fa-laptop-code"></i></div>
+                    <h4 class="why-title">Ingénieurs Systèmes</h4>
+                    <p class="why-text">Conception et paramétrage des architectures de vidéosurveillance, réseau et contrôle d'accès selon vos besoins.</p>
+                </div>
+                <div class="why-card fade-in">
+                    <div class="why-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <h4 class="why-title">Formation Continue</h4>
+                    <p class="why-text">Mise à jour régulière des compétences pour suivre l'évolution rapide des technologies de sécurité.</p>
+                </div>
+                <div class="why-card fade-in">
+                    <div class="why-icon"><i class="fas fa-search"></i></div>
+                    <h4 class="why-title">Veille Technologique</h4>
+                    <p class="why-text">Évaluation continue des nouvelles solutions du marché pour proposer des équipements toujours plus performants.</p>
+                </div>
+                <div class="why-card fade-in">
+                    <div class="why-icon"><i class="fas fa-user-shield"></i></div>
+                    <h4 class="why-title">Coordination Intervention</h4>
+                    <p class="why-text">Liaison directe entre le centre de supervision et les équipes mobiles pour une réponse rapide et coordonnée.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications / Conformité -->
+    <section class="trust-section">
+        <div class="trust-container">
+            <p class="trust-label">Conformité & Bonnes Pratiques</p>
+            <div class="cert-grid">
+                <div class="cert-item">
+                    <i class="fas fa-user-lock"></i>
+                    <span>Conformité RGPD</span>
+                </div>
+                <div class="cert-item">
+                    <i class="fas fa-network-wired"></i>
+                    <span>Infrastructure Redondante</span>
+                </div>
+                <div class="cert-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Cybersécurité Renforcée</span>
+                </div>
+                <div class="cert-item">
+                    <i class="fas fa-clock"></i>
+                    <span>Supervision 24h/24 - 7j/7</span>
+                </div>
+                <div class="cert-item">
+                    <i class="fas fa-award"></i>
+                    <span>Personnel Certifié</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="cta-container">
+            <div class="cta-icon fade-in"><i class="fas fa-microchip"></i></div>
+            <h2 class="cta-title fade-in">Envie d'une <span>Démonstration</span> ?</h2>
+            <p class="cta-text fade-in">Nos équipes techniques peuvent vous présenter en conditions réelles notre centre de supervision et nos solutions de télésurveillance, de détection d'intrusion et de contrôle d'accès biométrique.</p>
+            <div class="cta-buttons fade-in">
+                <a href="index.html#contact" class="btn-primary"><i class="fas fa-calendar-check"></i> Demander une Démo</a>
+                <a href="tel:0503331331" class="btn-secondary"><i class="fas fa-phone-alt"></i> 05 03 331 331</a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // ===== VIDEO GALLERY PLAYBACK =====
+        function playCardVideo(mediaEl, src) {
+            const card = mediaEl.closest('.video-card');
+            if (card.classList.contains('playing')) return;
+            card.classList.add('playing');
+            const video = document.createElement('video');
+            video.src = src;
+            video.controls = true;
+            video.autoplay = true;
+            video.style.width = '100%';
+            video.style.height = '100%';
+            video.style.position = 'absolute';
+            video.style.top = '0';
+            video.style.left = '0';
+            video.style.objectFit = 'cover';
+            mediaEl.innerHTML = '';
+            mediaEl.appendChild(video);
+        }
+    </script>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-main">
+            <div class="footer-brand">
+                <img src="logo-noir.png" alt="SMS Logo">
+                <p class="footer-brand-text">Sécurité Multi Services (SMS) est votre partenaire de confiance pour la protection de vos biens et personnes. Nous combinons expertise humaine et technologies avancées pour une sécurité optimale.</p>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="#">Sécurité Privée</a></li>
+                    <li><a href="#">Télésurveillance</a></li>
+                    <li><a href="#">Intervention</a></li>
+                    <li><a href="#">Gardiennage</a></li>
+                    <li><a href="#">Rondes</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Entreprise</h4>
+                <ul>
+                    <li><a href="#">À Propos</a></li>
+                    <li><a href="#">Nos Équipes</a></li>
+                    <li><a href="#">Certifications</a></li>
+                    <li><a href="#">Carrières</a></li>
+                    <li><a href="#">Actualités</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Légal</h4>
+                <ul>
+                    <li><a href="#">Mentions Légales</a></li>
+                    <li><a href="#">Politique de Confidentialité</a></li>
+                    <li><a href="#">CGV</a></li>
+                    <li><a href="#">RGPD</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="footer-bottom-text">&copy; 2024 Sécurité Multi Services (SMS). Tous droits réservés.</p>
+            <div class="footer-bottom-links">
+                <a href="#">Politique de confidentialité</a>
+                <a href="#">Mentions légales</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top -->
+    <button class="scroll-top" id="scrollTop" onclick="scrollToTop()">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script>
+        // ===== NAVBAR SCROLL EFFECT =====
+        const navbar = document.getElementById('navbar');
+        const topHeader = document.getElementById('topHeader');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+                topHeader.classList.add('hidden');
+            } else {
+                navbar.classList.remove('scrolled');
+                topHeader.classList.remove('hidden');
+            }
+        });
+
+        // ===== MOBILE MENU =====
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        // Close menu on link click
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navLinks').classList.remove('active');
+            });
+        });
+
+        // ===== SCROLL ANIMATIONS =====
+        const fadeElements = document.querySelectorAll('.fade-in');
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        fadeElements.forEach(el => observer.observe(el));
+
+        // ===== COUNTER ANIMATION =====
+        const statNumbers = document.querySelectorAll('.stat-number');
+        let countersAnimated = false;
+
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !countersAnimated) {
+                    countersAnimated = true;
+                    statNumbers.forEach(counter => {
+                        const target = parseInt(counter.getAttribute('data-target'));
+                        const duration = 2000;
+                        const increment = target / (duration / 16);
+                        let current = 0;
+
+                        const updateCounter = () => {
+                            current += increment;
+                            if (current < target) {
+                                counter.textContent = Math.floor(current);
+                                requestAnimationFrame(updateCounter);
+                            } else {
+                                counter.textContent = target + '+';
+                            }
+                        };
+                        updateCounter();
+                    });
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('.stat-item').forEach(item => counterObserver.observe(item));
+
+        // ===== VIDEO PLAY =====
+        function playVideo() {
+            const placeholder = document.getElementById('videoPlaceholder');
+            const iframe = document.getElementById('videoFrame');
+            // Using a generic security technology video from YouTube
+            iframe.src = 'videos/1.mp4';
+            placeholder.style.display = 'none';
+            iframe.style.display = 'block';
+        }
+
+        // ===== FORM SUBMIT =====
+        function handleSubmit(e) {
+            e.preventDefault();
+            alert('Merci pour votre demande ! Notre équipe vous contactera dans les plus brefs délais.');
+        }
+
+        // ===== SCROLL TO TOP =====
+        const scrollTopBtn = document.getElementById('scrollTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                scrollTopBtn.classList.add('visible');
+            } else {
+                scrollTopBtn.classList.remove('visible');
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // ===== PARTICLES BACKGROUND =====
+        const canvas = document.getElementById('particles-canvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        class Particle {
+            constructor() {
+                this.reset();
+            }
+
+            reset() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 2 + 0.5;
+                this.speedX = (Math.random() - 0.5) * 0.3;
+                this.speedY = (Math.random() - 0.5) * 0.3;
+                this.opacity = Math.random() * 0.3 + 0.1;
+                this.isRed = Math.random() > 0.7;
+            }
+
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+
+                if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) {
+                    this.reset();
+                }
+            }
+
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fillStyle = this.isRed 
+                    ? `rgba(196, 30, 42, ${this.opacity})` 
+                    : `rgba(192, 192, 192, ${this.opacity * 0.5})`;
+                ctx.fill();
+            }
+        }
+
+        for (let i = 0; i < 80; i++) {
+            particles.push(new Particle());
+        }
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+
+            // Draw connections
+            for (let i = 0; i < particles.length; i++) {
+                for (let j = i + 1; j < particles.length; j++) {
+                    const dx = particles[i].x - particles[j].x;
+                    const dy = particles[i].y - particles[j].y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+
+                    if (dist < 120) {
+                        ctx.beginPath();
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.strokeStyle = `rgba(196, 30, 42, ${0.05 * (1 - dist / 120)})`;
+                        ctx.lineWidth = 0.5;
+                        ctx.stroke();
+                    }
+                }
+            }
+
+            requestAnimationFrame(animateParticles);
+        }
+
+        animateParticles();
+
+        // ===== SMOOTH SCROLL FOR ANCHOR LINKS =====
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offset = 80;
+                    const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                    window.scrollTo({ top, behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

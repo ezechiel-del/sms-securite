@@ -1,0 +1,2847 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Télésurveillance H24 - Expertise & Savoir-faire | SMS Sécurité Multi Services</title>
+    <meta name="description" content="Découvrez l'expertise SMS en télésurveillance H24 : centre de supervision certifié, vidéosurveillance IA, levée de doute, alarmes intrusion/incendie, technologies de pointe et intervention rapide.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* ===== RESET & BASE ===== */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --red-primary: #c41e2a;
+            --red-dark: #8b0000;
+            --red-light: #e63946;
+            --black-deep: #0a0a0a;
+            --black-card: #111111;
+            --black-lighter: #1a1a1a;
+            --gray-dark: #2a2a2a;
+            --gray-mid: #3a3a3a;
+            --gray-light: #888888;
+            --silver: #c0c0c0;
+            --white: #ffffff;
+            --gradient-red: linear-gradient(135deg, #c41e2a, #8b0000);
+            --gradient-dark: linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 100%);
+            --shadow-red: 0 0 30px rgba(196, 30, 42, 0.3);
+            --shadow-card: 0 10px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--black-deep);
+            color: var(--white);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* ===== ANIMATED BACKGROUND PARTICLES ===== */
+        #particles-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* ===== TOP HEADER BAR ===== */
+        .top-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1001;
+            background: #000000;
+            border-bottom: 2px solid var(--red-primary);
+            padding: 10px 0;
+            transition: transform 0.4s ease;
+        }
+
+        .top-header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .top-header-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .top-header-logo {
+            height: 40px;
+            width: auto;
+        }
+
+        .top-header-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .top-header-company {
+            font-family: 'Oswald', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--white);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .top-header-tagline {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--red-primary);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .top-header-right {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .top-header-phones {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .top-header-phone {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--white);
+            font-family: 'Oswald', sans-serif;
+            font-size: 15px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+        }
+
+        .top-header-phone:hover {
+            color: var(--red-primary);
+        }
+
+        .top-header-phone i {
+            color: var(--red-primary);
+            font-size: 16px;
+        }
+
+        .top-header-cta {
+            background: var(--gradient-red);
+            color: var(--white);
+            padding: 8px 20px;
+            font-family: 'Oswald', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(196, 30, 42, 0.4);
+        }
+
+        .top-header-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(196, 30, 42, 0.6);
+        }
+
+        /* ===== NAVIGATION ===== */
+        .navbar {
+            position: fixed;
+            top: 62px;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 15px 0;
+            transition: all 0.4s ease;
+            background: transparent;
+        }
+
+        .navbar.scrolled {
+            top: 0;
+            background: rgba(10, 10, 10, 0.97);
+            backdrop-filter: blur(20px);
+            padding: 10px 0;
+            box-shadow: 0 2px 30px rgba(196, 30, 42, 0.2);
+        }
+
+        .top-header.hidden {
+            transform: translateY(-100%);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 40px;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .nav-logo img {
+            height: 55px;
+            width: auto;
+            transition: all 0.3s ease;
+        }
+
+        .navbar.scrolled .nav-logo img {
+            height: 45px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 35px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-family: 'Oswald', sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--silver);
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 5px 0;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--red-primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--white);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            background: var(--gradient-red) !important;
+            color: var(--white) !important;
+            padding: 10px 25px !important;
+            border-radius: 4px;
+            font-weight: 600 !important;
+            transition: all 0.3s ease !important;
+            box-shadow: 0 4px 15px rgba(196, 30, 42, 0.4);
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(196, 30, 42, 0.6) !important;
+        }
+
+        .nav-cta::after {
+            display: none !important;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .mobile-menu-btn span {
+            width: 28px;
+            height: 2px;
+            background: var(--white);
+            transition: all 0.3s ease;
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('images/img-hero-bg.jpg') center/cover no-repeat;
+            z-index: 1;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, 
+                rgba(10, 10, 10, 0.7) 0%, 
+                rgba(10, 10, 10, 0.4) 40%, 
+                rgba(10, 10, 10, 0.8) 100%);
+            z-index: 2;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            text-align: center;
+            max-width: 900px;
+            padding: 0 40px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero-logo {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 30px;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 0 60px rgba(196, 30, 42, 0.5), 0 0 120px rgba(196, 30, 42, 0.2);
+            animation: pulse-glow 3s ease-in-out infinite;
+            border: 3px solid rgba(196, 30, 42, 0.6);
+        }
+
+        .hero-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-title {
+            font-size: 62px;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, var(--white) 0%, var(--silver) 50%, var(--red-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 20px;
+            font-weight: 300;
+            color: var(--silver);
+            margin-bottom: 15px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+        }
+
+        .hero-tagline {
+            font-size: 16px;
+            color: var(--gray-light);
+            margin-bottom: 40px;
+            font-weight: 400;
+        }
+
+        .hero-cta-group {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--gradient-red);
+            color: var(--white);
+            padding: 16px 35px;
+            font-family: 'Oswald', sans-serif;
+            font-size: 15px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(196, 30, 42, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(196, 30, 42, 0.6);
+        }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: transparent;
+            color: var(--white);
+            padding: 16px 35px;
+            font-family: 'Oswald', sans-serif;
+            font-size: 15px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--red-primary);
+            background: rgba(196, 30, 42, 0.1);
+            transform: translateY(-3px);
+        }
+
+        .hero-scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 3;
+            animation: bounce 2s infinite;
+        }
+
+        .hero-scroll-indicator i {
+            font-size: 24px;
+            color: var(--red-primary);
+        }
+
+        /* ===== STATS BAR ===== */
+        .stats-bar {
+            position: relative;
+            z-index: 5;
+            background: var(--black-card);
+            border-top: 3px solid var(--red-primary);
+            border-bottom: 1px solid var(--gray-dark);
+            padding: 40px 0;
+        }
+
+        .stats-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            padding: 0 40px;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+            position: relative;
+        }
+
+        .stat-item::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 20%;
+            height: 60%;
+            width: 1px;
+            background: var(--gray-dark);
+        }
+
+        .stat-item:last-child::after {
+            display: none;
+        }
+
+        .stat-number {
+            font-family: 'Oswald', sans-serif;
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--red-primary);
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--silver);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* ===== SECTION COMMON ===== */
+        .section {
+            position: relative;
+            z-index: 5;
+            padding: 100px 0;
+        }
+
+        .section-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        .section-label {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--red-primary);
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .section-title {
+            font-size: 44px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+
+        .section-title span {
+            color: var(--red-primary);
+        }
+
+        .section-divider {
+            width: 80px;
+            height: 3px;
+            background: var(--gradient-red);
+            margin: 0 auto;
+        }
+
+        .section-description {
+            max-width: 700px;
+            margin: 20px auto 0;
+            font-size: 16px;
+            color: var(--gray-light);
+            line-height: 1.8;
+        }
+
+        /* ===== SERVICES SECTION ===== */
+        .services-section {
+            background: var(--gradient-dark);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+
+        .service-card {
+            position: relative;
+            background: var(--black-card);
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--gray-dark);
+            transition: all 0.5s ease;
+            cursor: pointer;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--red-primary);
+            box-shadow: var(--shadow-red);
+        }
+
+        .service-card-image {
+            width: 100%;
+            height: 280px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .service-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .service-card:hover .service-card-image img {
+            transform: scale(1.08);
+        }
+
+        .service-card-image::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 50%;
+            background: linear-gradient(to top, var(--black-card), transparent);
+        }
+
+        .service-card-icon {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 55px;
+            height: 55px;
+            background: var(--gradient-red);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2;
+            box-shadow: 0 4px 15px rgba(196, 30, 42, 0.5);
+        }
+
+        .service-card-icon i {
+            font-size: 22px;
+            color: var(--white);
+        }
+
+        .service-card-content {
+            padding: 30px;
+        }
+
+        .service-card-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--white);
+        }
+
+        .service-card-text {
+            font-size: 14px;
+            color: var(--gray-light);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .service-card-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .service-feature-tag {
+            font-size: 11px;
+            font-weight: 600;
+            padding: 5px 12px;
+            background: rgba(196, 30, 42, 0.15);
+            color: var(--red-light);
+            border: 1px solid rgba(196, 30, 42, 0.3);
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* ===== FULL WIDTH SERVICE SECTION ===== */
+        .full-service {
+            padding: 100px 0;
+            position: relative;
+            z-index: 5;
+        }
+
+        .full-service-bg {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .full-service-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 500px;
+        }
+
+        .full-service-row:nth-child(even) .full-service-image {
+            order: -1;
+        }
+
+        .full-service-image {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .full-service-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+
+        .full-service-row:hover .full-service-image img {
+            transform: scale(1.05);
+        }
+
+        .full-service-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(10,10,10,0.8), rgba(196,30,42,0.1));
+        }
+
+        .full-service-text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 60px;
+            background: var(--black-card);
+        }
+
+        .full-service-number {
+            font-family: 'Oswald', sans-serif;
+            font-size: 80px;
+            font-weight: 900;
+            color: rgba(196, 30, 42, 0.15);
+            line-height: 1;
+            margin-bottom: 20px;
+        }
+
+        .full-service-label {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            color: var(--red-primary);
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .full-service-title {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .full-service-desc {
+            font-size: 15px;
+            color: var(--gray-light);
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .full-service-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .full-service-list li {
+            font-size: 13px;
+            color: var(--silver);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .full-service-list li i {
+            color: var(--red-primary);
+            font-size: 12px;
+        }
+
+        /* ===== VIDEO SECTION ===== */
+        .video-section {
+            padding: 80px 0;
+            background: var(--black-card);
+            position: relative;
+            z-index: 5;
+        }
+
+        .video-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+            border: 2px solid var(--gray-dark);
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .video-placeholder {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('img-surveillance.jpg') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .video-placeholder::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 10, 10, 0.5);
+        }
+
+        .video-placeholder:hover::after {
+            background: rgba(10, 10, 10, 0.3);
+        }
+
+        .play-button {
+            position: relative;
+            z-index: 2;
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-red);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 40px rgba(196, 30, 42, 0.6);
+            transition: all 0.3s ease;
+            animation: pulse-play 2s infinite;
+        }
+
+        .play-button i {
+            font-size: 30px;
+            color: var(--white);
+            margin-left: 5px;
+        }
+
+        .video-placeholder:hover .play-button {
+            transform: scale(1.1);
+        }
+
+        /* ===== WHY CHOOSE US ===== */
+        .why-section {
+            background: var(--gradient-dark);
+            padding: 100px 0;
+            position: relative;
+            z-index: 5;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .why-card {
+            text-align: center;
+            padding: 40px 30px;
+            background: var(--black-card);
+            border: 1px solid var(--gray-dark);
+            border-radius: 8px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .why-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--gradient-red);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .why-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .why-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(196, 30, 42, 0.3);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .why-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(196, 30, 42, 0.1);
+            border: 2px solid rgba(196, 30, 42, 0.3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            transition: all 0.3s ease;
+        }
+
+        .why-card:hover .why-icon {
+            background: var(--gradient-red);
+            border-color: var(--red-primary);
+        }
+
+        .why-icon i {
+            font-size: 28px;
+            color: var(--red-primary);
+            transition: all 0.3s ease;
+        }
+
+        .why-card:hover .why-icon i {
+            color: var(--white);
+        }
+
+        .why-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--white);
+        }
+
+        .why-text {
+            font-size: 14px;
+            color: var(--gray-light);
+            line-height: 1.7;
+        }
+
+        /* ===== TECHNOLOGY SECTION ===== */
+        .tech-section {
+            padding: 100px 0;
+            position: relative;
+            z-index: 5;
+            background: var(--black-deep);
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            align-items: stretch;
+        }
+
+        .tech-image-container {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--gray-dark);
+            min-height: 450px;
+        }
+
+        .tech-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .tech-image-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(196, 30, 42, 0.1), rgba(10, 10, 10, 0.7));
+            display: flex;
+            align-items: flex-end;
+            padding: 30px;
+        }
+
+        .tech-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tech-badge {
+            background: rgba(10, 10, 10, 0.8);
+            border: 1px solid var(--red-primary);
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--white);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            backdrop-filter: blur(10px);
+        }
+
+        .tech-info {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .tech-item {
+            background: var(--black-card);
+            border: 1px solid var(--gray-dark);
+            border-radius: 8px;
+            padding: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .tech-item:hover {
+            border-color: var(--red-primary);
+            transform: translateX(5px);
+        }
+
+        .tech-item-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 12px;
+        }
+
+        .tech-item-icon {
+            width: 45px;
+            height: 45px;
+            background: rgba(196, 30, 42, 0.1);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .tech-item-icon i {
+            font-size: 20px;
+            color: var(--red-primary);
+        }
+
+        .tech-item-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--white);
+            text-transform: none;
+            letter-spacing: 0;
+        }
+
+        .tech-item-desc {
+            font-size: 13px;
+            color: var(--gray-light);
+            line-height: 1.7;
+        }
+
+        /* ===== CLIENTS / TRUST ===== */
+        .trust-section {
+            padding: 60px 0;
+            background: var(--black-card);
+            border-top: 1px solid var(--gray-dark);
+            border-bottom: 1px solid var(--gray-dark);
+            position: relative;
+            z-index: 5;
+        }
+
+        .trust-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            text-align: center;
+        }
+
+        .trust-label {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            color: var(--gray-light);
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
+
+        .trust-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+            flex-wrap: wrap;
+            opacity: 0.4;
+            transition: opacity 0.3s ease;
+        }
+
+        .trust-logos:hover {
+            opacity: 0.7;
+        }
+
+        .trust-logo-item {
+            font-family: 'Oswald', sans-serif;
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--silver);
+            letter-spacing: 2px;
+        }
+
+        /* ===== CTA SECTION ===== */
+        .cta-section {
+            padding: 100px 0;
+            position: relative;
+            z-index: 5;
+            background: linear-gradient(135deg, var(--black-deep) 0%, #1a0000 100%);
+        }
+
+        .cta-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 40px;
+            text-align: center;
+        }
+
+        .cta-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-red);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            box-shadow: 0 0 40px rgba(196, 30, 42, 0.4);
+        }
+
+        .cta-icon i {
+            font-size: 35px;
+            color: var(--white);
+        }
+
+        .cta-title {
+            font-size: 42px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+
+        .cta-title span {
+            color: var(--red-primary);
+        }
+
+        .cta-text {
+            font-size: 16px;
+            color: var(--gray-light);
+            margin-bottom: 40px;
+            line-height: 1.8;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-phone {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background: var(--black-card);
+            border: 1px solid var(--gray-dark);
+            padding: 18px 30px;
+            border-radius: 8px;
+            margin-top: 40px;
+            justify-content: center;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-phone i {
+            font-size: 24px;
+            color: var(--red-primary);
+        }
+
+        .cta-phone-info {
+            text-align: left;
+        }
+
+        .cta-phone-label {
+            font-size: 11px;
+            color: var(--gray-light);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .cta-phone-number {
+            font-family: 'Oswald', sans-serif;
+            font-size: 22px;
+            font-weight: 600;
+            color: var(--white);
+        }
+
+        /* ---------- TECH SHOWCASE ---------- */
+        .tech{background:var(--panel);}
+        .tech-inner{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center;}
+        @media (max-width:900px){ .tech-inner{grid-template-columns:1fr;gap:48px;} }
+        .network-illust{
+            margin-bottom:64px;padding:34px 20px 22px;
+            background:var(--void);border:1px solid var(--line);position:relative;overflow:hidden;
+        }
+        .network-illust svg{width:100%;height:auto;display:block;}
+        .network-illust .netlabel{font-family:'JetBrains Mono',monospace;font-size:10px;fill:var(--silver-dim);letter-spacing:0.04em;}
+        .pulse-node{animation:pulse 1.8s infinite;}
+        .tech-feats{display:flex;flex-direction:column;gap:26px;margin-top:34px;}
+        .tech-feat{display:flex;gap:16px;}
+        .tech-feat .ico{width:20px;height:20px;flex:none;color:var(--green);margin-top:3px;}
+        .tech-feat h4{font-size:14.5px;color:var(--white);margin-bottom:4px;font-weight:600;}
+        .tech-feat p{font-size:13px;color:var(--silver-dim);line-height:1.6;}
+
+        .console{
+            background:var(--void);border:1px solid var(--line);
+            padding:20px;font-family:'JetBrains Mono',monospace;
+            position:relative;overflow:hidden;
+        }
+        .console-bar{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding-bottom:12px;margin-bottom:16px;font-size:10.5px;color:var(--silver-dim);}
+        .console-bar .rec{color:var(--red-bright);display:flex;align-items:center;gap:6px;}
+        .console-bar .rec .d{width:6px;height:6px;background:var(--red-bright);border-radius:50%;animation:pulse 1s infinite;}
+        .cam-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+        .cam{
+            background:linear-gradient(160deg,#15151b,#0c0c10);
+            border:1px solid var(--line);aspect-ratio:4/3;position:relative;overflow:hidden;
+        }
+        .cam .label{position:absolute;top:6px;left:8px;font-size:9px;color:var(--silver-dim);letter-spacing:.05em;}
+        .cam .status{position:absolute;top:6px;right:8px;font-size:8px;color:var(--green);display:flex;align-items:center;gap:4px;}
+        .cam .status .d{width:5px;height:5px;border-radius:50%;background:var(--green);box-shadow:0 0 4px var(--green);animation:pulse 1.4s infinite;}
+        .cam .scan{
+            position:absolute;left:0;right:0;height:22px;
+            background:linear-gradient(180deg, rgba(0,255,160,0) , rgba(0,255,160,0.12), rgba(0,255,160,0));
+            animation:scan 3.4s linear infinite;
+        }
+        @keyframes scan{0%{top:-22px;}100%{top:100%;}}
+        .cam svg{position:absolute;bottom:8px;right:8px;width:34px;height:34px;opacity:.5;}
+        .console-clock{margin-top:14px;display:flex;justify-content:space-between;font-size:10px;color:var(--silver-dim);border-top:1px solid var(--line);padding-top:12px;}
+        .console-clock .t{color:var(--white);}
+
+
+        /* ===== CONTACT SECTION ===== */
+        .contact-section {
+            padding: 100px 0;
+            background: var(--gradient-dark);
+            position: relative;
+            z-index: 5;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .contact-info-title {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 10px;
+        }
+
+        .contact-info-text {
+            font-size: 15px;
+            color: var(--gray-light);
+            line-height: 1.8;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            padding: 20px;
+            background: var(--black-card);
+            border: 1px solid var(--gray-dark);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            border-color: var(--red-primary);
+            transform: translateX(5px);
+        }
+
+        .contact-item-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(196, 30, 42, 0.1);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .contact-item-icon i {
+            font-size: 20px;
+            color: var(--red-primary);
+        }
+
+        .contact-item-content h4 {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--white);
+            margin-bottom: 5px;
+            text-transform: none;
+            letter-spacing: 0;
+        }
+
+        .contact-item-content p {
+            font-size: 14px;
+            color: var(--gray-light);
+        }
+
+        .contact-form {
+            background: var(--black-card);
+            border: 1px solid var(--gray-dark);
+            border-radius: 12px;
+            padding: 40px;
+        }
+
+        .contact-form h3 {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 30px;
+            text-transform: none;
+            letter-spacing: 1px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--silver);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px 18px;
+            background: var(--black-deep);
+            border: 1px solid var(--gray-dark);
+            border-radius: 6px;
+            color: var(--white);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            outline: none;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--red-primary);
+            box-shadow: 0 0 10px rgba(196, 30, 42, 0.2);
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-submit {
+            width: 100%;
+            padding: 16px;
+            background: var(--gradient-red);
+            color: var(--white);
+            border: none;
+            border-radius: 6px;
+            font-family: 'Oswald', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(196, 30, 42, 0.4);
+        }
+
+        .form-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(196, 30, 42, 0.6);
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            position: relative;
+            z-index: 5;
+            background: var(--black-deep);
+            border-top: 1px solid var(--gray-dark);
+        }
+
+        .footer-main {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 60px 40px;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+        }
+
+        .footer-brand {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .footer-brand img {
+            width: 120px;
+            height: auto;
+        }
+
+        .footer-brand-text {
+            font-size: 14px;
+            color: var(--gray-light);
+            line-height: 1.8;
+            max-width: 300px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 12px;
+            margin-top: 10px;
+        }
+
+        .footer-social a {
+            width: 40px;
+            height: 40px;
+            background: var(--black-card);
+            border: 1px solid var(--gray-dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .footer-social a:hover {
+            background: var(--red-primary);
+            border-color: var(--red-primary);
+            transform: translateY(-3px);
+        }
+
+        .footer-social a i {
+            font-size: 16px;
+            color: var(--silver);
+            transition: color 0.3s ease;
+        }
+
+        .footer-social a:hover i {
+            color: var(--white);
+        }
+
+        .footer-col h4 {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--white);
+            margin-bottom: 20px;
+            text-transform: none;
+            letter-spacing: 1px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col ul li a {
+            font-size: 14px;
+            color: var(--gray-light);
+            transition: all 0.3s ease;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--red-primary);
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px 40px;
+            border-top: 1px solid var(--gray-dark);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-bottom-text {
+            font-size: 13px;
+            color: var(--gray-light);
+        }
+
+        .footer-bottom-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .footer-bottom-links a {
+            font-size: 13px;
+            color: var(--gray-light);
+            transition: color 0.3s ease;
+        }
+
+        .footer-bottom-links a:hover {
+            color: var(--red-primary);
+        }
+
+        /* ===== ANIMATIONS ===== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% {
+                box-shadow: 0 0 40px rgba(196, 30, 42, 0.4), 0 0 80px rgba(196, 30, 42, 0.1);
+            }
+            50% {
+                box-shadow: 0 0 60px rgba(196, 30, 42, 0.6), 0 0 120px rgba(196, 30, 42, 0.2);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            40% {
+                transform: translateX(-50%) translateY(-15px);
+            }
+            60% {
+                transform: translateX(-50%) translateY(-7px);
+            }
+        }
+
+        @keyframes pulse-play {
+            0%, 100% {
+                box-shadow: 0 0 20px rgba(196, 30, 42, 0.4);
+            }
+            50% {
+                box-shadow: 0 0 50px rgba(196, 30, 42, 0.7);
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .full-service-row {
+                grid-template-columns: 1fr;
+            }
+
+            .full-service-row:nth-child(even) .full-service-image {
+                order: 0;
+            }
+
+            .tech-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-main {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .why-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .stats-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .stat-item:nth-child(2)::after {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .top-header {
+                padding: 8px 0;
+            }
+
+            .top-header-container {
+                padding: 0 15px;
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .top-header-left {
+                gap: 8px;
+            }
+
+            .top-header-logo {
+                height: 30px;
+            }
+
+            .top-header-company {
+                font-size: 14px;
+            }
+
+            .top-header-tagline {
+                font-size: 9px;
+            }
+
+            .top-header-right {
+                gap: 15px;
+            }
+
+            .top-header-phones {
+                gap: 12px;
+            }
+
+            .top-header-phone {
+                font-size: 12px;
+            }
+
+            .top-header-phone i {
+                font-size: 13px;
+            }
+
+            .top-header-cta {
+                font-size: 11px;
+                padding: 6px 14px;
+            }
+
+            .navbar {
+                top: 100px;
+            }
+
+            .navbar.scrolled {
+                top: 0;
+            }
+
+            .nav-links {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background: rgba(10, 10, 10, 0.98);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 30px;
+                z-index: 999;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links a {
+                font-size: 18px;
+            }
+
+            .mobile-menu-btn {
+                display: flex;
+            }
+
+            .hero-title {
+                font-size: 38px;
+            }
+
+            .hero-subtitle {
+                font-size: 15px;
+            }
+
+            .hero-logo {
+                width: 150px;
+                height: 150px;
+            }
+
+            .section-title {
+                font-size: 32px;
+            }
+
+            .stats-container {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .why-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-main {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .full-service-list {
+                grid-template-columns: 1fr;
+            }
+
+            .full-service-text {
+                padding: 30px;
+            }
+
+            .cta-title {
+                font-size: 32px;
+            }
+
+            .stat-number {
+                font-size: 36px;
+            }
+        }
+
+        /* ===== SCROLL TO TOP ===== */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-red);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(196, 30, 42, 0.4);
+            border: none;
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 25px rgba(196, 30, 42, 0.6);
+        }
+
+        .scroll-top i {
+            font-size: 20px;
+            color: var(--white);
+        }
+
+        /* ===== PAGE HERO (sous-page) ===== */
+        .page-hero {
+            position: relative;
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            margin-top: 0;
+        }
+
+        .page-hero-bg {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: url('images/img-surveillance.jpg') center/cover no-repeat;
+            z-index: 1;
+        }
+
+        .page-hero-overlay {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: linear-gradient(180deg, rgba(10,10,10,0.75) 0%, rgba(10,10,10,0.55) 50%, rgba(10,10,10,0.92) 100%);
+            z-index: 2;
+        }
+
+        .page-hero-content {
+            position: relative;
+            z-index: 3;
+            text-align: center;
+            max-width: 900px;
+            padding: 160px 40px 60px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .page-hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(196, 30, 42, 0.15);
+            border: 1px solid rgba(196, 30, 42, 0.5);
+            color: var(--red-light);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+        }
+
+        .page-hero-badge .d {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--red-light);
+            box-shadow: 0 0 10px var(--red-light);
+            animation: pulse-play 1.5s infinite;
+        }
+
+        .page-hero-title {
+            font-size: 56px;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--white) 0%, var(--silver) 50%, var(--red-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .page-hero-desc {
+            font-size: 17px;
+            color: var(--silver);
+            line-height: 1.8;
+            max-width: 720px;
+            margin: 0 auto 20px;
+        }
+
+        .breadcrumb {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            font-size: 13px;
+            letter-spacing: 1px;
+            color: var(--gray-light);
+            text-transform: uppercase;
+            margin-top: 10px;
+        }
+
+        .breadcrumb a { color: var(--gray-light); transition: color 0.3s ease; }
+        .breadcrumb a:hover { color: var(--red-primary); }
+        .breadcrumb span { color: var(--red-primary); }
+
+        /* ===== EXPERTISE / CAPABILITY CARDS ===== */
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .expertise-card {
+            background: var(--black-card);
+            border: 1px solid var(--gray-dark);
+            border-radius: 8px;
+            padding: 35px 30px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .expertise-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 4px; height: 100%;
+            background: var(--gradient-red);
+            transform: scaleY(0);
+            transform-origin: top;
+            transition: transform 0.4s ease;
+        }
+
+        .expertise-card:hover::before { transform: scaleY(1); }
+
+        .expertise-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(196, 30, 42, 0.4);
+            box-shadow: var(--shadow-card);
+        }
+
+        .expertise-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(196, 30, 42, 0.1);
+            border: 2px solid rgba(196, 30, 42, 0.3);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 22px;
+            transition: all 0.3s ease;
+        }
+
+        .expertise-card:hover .expertise-icon {
+            background: var(--gradient-red);
+            border-color: var(--red-primary);
+        }
+
+        .expertise-icon i { font-size: 24px; color: var(--red-primary); transition: color 0.3s ease; }
+        .expertise-card:hover .expertise-icon i { color: var(--white); }
+
+        .expertise-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--white);
+            margin-bottom: 14px;
+        }
+
+        .expertise-text {
+            font-size: 14px;
+            color: var(--gray-light);
+            line-height: 1.8;
+        }
+
+        /* ===== PROCESS TIMELINE ===== */
+        .process-section { background: var(--black-card); }
+
+        .process-timeline {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+            position: relative;
+        }
+
+        .process-step {
+            background: var(--black-deep);
+            border: 1px solid var(--gray-dark);
+            border-radius: 8px;
+            padding: 30px 25px;
+            text-align: center;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .process-step:hover {
+            border-color: var(--red-primary);
+            transform: translateY(-5px);
+        }
+
+        .process-step-number {
+            width: 44px;
+            height: 44px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            background: var(--gradient-red);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            font-size: 18px;
+            color: var(--white);
+            box-shadow: 0 4px 15px rgba(196, 30, 42, 0.4);
+        }
+
+        .process-step-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--white);
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .process-step-text {
+            font-size: 13px;
+            color: var(--gray-light);
+            line-height: 1.7;
+        }
+
+        .process-arrow {
+            position: absolute;
+            top: 42px;
+            right: -25px;
+            color: var(--red-primary);
+            font-size: 18px;
+            z-index: 2;
+        }
+
+        /* ===== GALLERY ===== */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-auto-rows: 200px;
+            gap: 18px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--gray-dark);
+            cursor: pointer;
+        }
+
+        .gallery-item.big {
+            grid-column: span 2;
+            grid-row: span 2;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .gallery-item:hover img { transform: scale(1.1); }
+
+        .gallery-item-overlay {
+            position: absolute;
+            bottom: 0; left: 0;
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(to top, rgba(10,10,10,0.9), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-item-overlay { opacity: 1; }
+
+        .gallery-item-overlay span {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--white);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* ===== LIVE BADGE ON IMAGES ===== */
+        .live-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(10, 10, 10, 0.75);
+            border: 1px solid rgba(196, 30, 42, 0.5);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--white);
+            letter-spacing: 1px;
+            z-index: 3;
+            backdrop-filter: blur(6px);
+        }
+
+        .live-badge .d {
+            width: 7px; height: 7px;
+            border-radius: 50%;
+            background: var(--red-light);
+            box-shadow: 0 0 8px var(--red-light);
+            animation: pulse-play 1.4s infinite;
+        }
+
+        /* ===== CERTIFICATIONS STRIP ===== */
+        .certif-strip {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .certif-pill {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--black-card);
+            border: 1px solid var(--gray-dark);
+            padding: 14px 26px;
+            border-radius: 40px;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--silver);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+
+        .certif-pill:hover {
+            border-color: var(--red-primary);
+            color: var(--white);
+        }
+
+        .certif-pill i { color: var(--red-primary); }
+
+        @media (max-width: 1024px) {
+            .expertise-grid { grid-template-columns: 1fr 1fr; }
+            .process-timeline { grid-template-columns: 1fr 1fr; }
+            .process-arrow { display: none; }
+            .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+            .gallery-item.big { grid-column: span 2; }
+        }
+
+        @media (max-width: 768px) {
+            .page-hero-title { font-size: 36px; }
+            .page-hero-content { padding: 140px 25px 50px; }
+            .expertise-grid { grid-template-columns: 1fr; }
+            .process-timeline { grid-template-columns: 1fr; }
+            .gallery-grid { grid-template-columns: 1fr 1fr; grid-auto-rows: 150px; }
+            .gallery-item.big { grid-column: span 2; grid-row: span 1; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Particles Canvas -->
+    <canvas id="particles-canvas"></canvas>
+
+    <!-- Top Header Bar -->
+    <div class="top-header" id="topHeader">
+        <div class="top-header-container">
+            <div class="top-header-left">
+                <img src="images/logo-noir.png" alt="SMS" class="top-header-logo">
+                <div class="top-header-info">
+                    <span class="top-header-company">Sécurité Multi Services</span>
+                    <span class="top-header-tagline">Sécurité · Surveillance · Intervention</span>
+                </div>
+            </div>
+            <div class="top-header-right">
+                <div class="top-header-phones">
+                    <a href="tel:0503331331" class="top-header-phone">
+                        <i class="fas fa-phone-alt"></i>
+                        05 03 331 331
+                    </a>
+                    <a href="tel:0711909091" class="top-header-phone">
+                        <i class="fas fa-mobile-alt"></i>
+                        07 11 90 90 91
+                    </a>
+                    <a href="tel:0711909091" class="top-header-phone">
+                        <i class="fa-solid fa-location-crosshairs"></i>
+                        Cocody, Riviera M'Badon (Abidjan, Côte d'Ivoire)
+                    </a>
+                </div>
+                <!-- <a href="#contact" class="top-header-cta"><i class="fas fa-shield-alt"></i> Devis Gratuit</a> -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="images/logo-noir.png" alt="SMS - Sécurité Multi Services">
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html">Accueil</a>
+                <a href="index.html#services">Nos Services</a>
+                <a href="qui-sommes-nous.html">A Propos</a>
+                <a href="contact.html">Contact</a>
+                <a href="contact.html" class="nav-cta"><i class="fas fa-shield-alt"></i> Devis Gratuit</a>
+            </div>
+            <div class="mobile-menu-btn" id="mobileMenuBtn" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="page-hero-bg"></div>
+        <div class="page-hero-overlay"></div>
+        <div class="page-hero-content">
+            <span class="page-hero-badge"><span class="d"></span> Centre opérationnel actif 24H/24 - 7J/7</span>
+            <h1 class="page-hero-title">Expertise en Télésurveillance H24</h1>
+            <p class="page-hero-desc">Un centre de supervision certifié, des opérateurs qualifiés et des technologies de pointe pour surveiller vos sites en temps réel, jour et nuit, 365 jours par an.</p>
+            <div class="breadcrumb">
+                <a href="index.html">Accueil</a> <i class="fas fa-chevron-right" style="font-size:9px;"></i> <span>Télésurveillance H24</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Bar -->
+    <div class="stats-bar">
+        <div class="stats-container">
+            <div class="stat-item fade-in">
+                <div class="stat-number" data-target="24">0</div>
+                <div class="stat-label">H/24 Supervision Continue</div>
+            </div>
+            <div class="stat-item fade-in">
+                <div class="stat-number" data-target="15">0</div>
+                <div class="stat-label">Secondes de Prise en Charge</div>
+            </div>
+            <div class="stat-item fade-in">
+                <div class="stat-number" data-target="98">0</div>
+                <div class="stat-label">% Taux de Disponibilité</div>
+            </div>
+            <div class="stat-item fade-in">
+                <div class="stat-number" data-target="500">0</div>
+                <div class="stat-label">Sites Sous Surveillance</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Expertise Section -->
+    <section class="section services-section" id="expertise">
+        <div class="section-container">
+            <div class="section-header fade-in">
+                <span class="section-label">Notre Savoir-Faire</span>
+                <h2 class="section-title">Une Expertise <span>Complète</span> en Télésurveillance</h2>
+                <div class="section-divider"></div>
+                <p class="section-description">Notre centre de télésurveillance combine opérateurs certifiés, protocoles rigoureux et technologies avancées pour assurer une protection continue de vos biens et de vos équipes.</p>
+            </div>
+            <div class="expertise-grid">
+                <div class="expertise-card fade-in">
+                    <div class="expertise-icon"><i class="fas fa-satellite-dish"></i></div>
+                    <h3 class="expertise-title">Centre de Supervision Certifié</h3>
+                    <p class="expertise-text">Une salle de contrôle opérationnelle H24, équipée de systèmes redondants et supervisée en permanence par des opérateurs formés aux normes de la profession.</p>
+                </div>
+                <div class="expertise-card fade-in">
+                    <div class="expertise-icon"><i class="fas fa-video"></i></div>
+                    <h3 class="expertise-title">Vidéosurveillance IP & IA</h3>
+                    <p class="expertise-text">Analyse vidéo intelligente couplée à la détection de mouvement et de comportements suspects, pour un traitement prioritaire des alertes réellement significatives.</p>
+                </div>
+                <div class="expertise-card fade-in">
+                    <div class="expertise-icon"><i class="fas fa-eye"></i></div>
+                    <h3 class="expertise-title">Levée de Doute Vidéo</h3>
+                    <p class="expertise-text">Vérification visuelle immédiate en cas d'alerte avant déclenchement d'une intervention, afin de limiter les fausses alarmes et de fiabiliser chaque décision.</p>
+                </div>
+                <div class="expertise-card fade-in">
+                    <div class="expertise-icon"><i class="fas fa-bell"></i></div>
+                    <h3 class="expertise-title">Télésurveillance Intrusion</h3>
+                    <p class="expertise-text">Traitement des alarmes anti-intrusion en temps réel avec procédures adaptées : appel de lever de doute, mise en sécurité et coordination des forces de l'ordre.</p>
+                </div>
+                <div class="expertise-card fade-in">
+                    <div class="expertise-icon"><i class="fas fa-fire-extinguisher"></i></div>
+                    <h3 class="expertise-title">Télésurveillance Incendie & Technique</h3>
+                    <p class="expertise-text">Surveillance des systèmes de détection incendie et des alarmes techniques (froid, inondation, coupure électrique) pour une réaction immédiate en cas d'anomalie.</p>
+                </div>
+                <div class="expertise-card fade-in">
+                    <div class="expertise-icon"><i class="fas fa-clipboard-list"></i></div>
+                    <h3 class="expertise-title">Reporting & Traçabilité</h3>
+                    <p class="expertise-text">Chaque événement est horodaté, enregistré et archivé. Un rapport d'activité détaillé est mis à votre disposition pour un suivi transparent de votre sécurité.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process / Full Service Rows -->
+    <section class="full-service" id="fonctionnement">
+        <div class="section-container" style="margin-bottom: 60px;">
+            <div class="section-header fade-in">
+                <span class="section-label">Notre Méthode</span>
+                <h2 class="section-title">Comment Fonctionne Notre <span>Télésurveillance</span></h2>
+                <div class="section-divider"></div>
+            </div>
+        </div>
+        <div class="full-service-row fade-in">
+            <div class="full-service-image">
+                <img src="images/img-surveillance.jpg" alt="Centre de supervision SMS">
+                <span class="live-badge"><span class="d"></span> LIVE</span>
+            </div>
+            <div class="full-service-text">
+                <div class="full-service-number">01</div>
+                <span class="full-service-label">Détection & Analyse</span>
+                <h3 class="full-service-title">Une Surveillance <br>Continue de Vos Flux</h3>
+                <p class="full-service-desc">Les caméras et détecteurs installés sur vos sites transmettent en continu leurs données à notre centre de supervision. Nos algorithmes d'analyse vidéo filtrent les événements pour ne remonter que les alertes pertinentes à nos opérateurs.</p>
+                <ul class="full-service-list">
+                    <li><i class="fas fa-check-circle"></i> Flux vidéo HD en continu</li>
+                    <li><i class="fas fa-check-circle"></i> Détection de mouvement IA</li>
+                    <li><i class="fas fa-check-circle"></i> Filtrage des fausses alertes</li>
+                    <li><i class="fas fa-check-circle"></i> Supervision multi-sites</li>
+                </ul>
+            </div>
+        </div>
+        <div class="full-service-row fade-in">
+            <div class="full-service-image">
+                <img src="images/img-technologie.jpg" alt="Opérateur de télésurveillance en action">
+            </div>
+            <div class="full-service-text">
+                <div class="full-service-number">02</div>
+                <span class="full-service-label">Levée de Doute</span>
+                <h3 class="full-service-title">Vérification Humaine <br>Immédiate</h3>
+                <p class="full-service-desc">Dès qu'une alerte est déclenchée, un opérateur certifié effectue une levée de doute vidéo ou audio pour confirmer la réalité de l'incident, avant d'engager la procédure adaptée selon des protocoles stricts.</p>
+                <ul class="full-service-list">
+                    <li><i class="fas fa-check-circle"></i> Opérateurs certifiés</li>
+                    <li><i class="fas fa-check-circle"></i> Audio bidirectionnel</li>
+                    <li><i class="fas fa-check-circle"></i> Protocoles d'alerte gradués</li>
+                    <li><i class="fas fa-check-circle"></i> Traçabilité horodatée</li>
+                </ul>
+            </div>
+        </div>
+        <div class="full-service-row fade-in">
+            <div class="full-service-image">
+                <img src="images/private-security.png" alt="Intervention rapide SMS">
+            </div>
+            <div class="full-service-text">
+                <div class="full-service-number">03</div>
+                <span class="full-service-label">Intervention & Suivi</span>
+                <h3 class="full-service-title">Réaction Coordonnée <br>sur le Terrain</h3>
+                <p class="full-service-desc">Selon la nature de l'alerte, nos équipes mobiles sont dépêchées sur site, en coordination avec les forces de l'ordre si nécessaire. Un rapport d'intervention complet vous est ensuite transmis.</p>
+                <ul class="full-service-list">
+                    <li><i class="fas fa-check-circle"></i> Équipes mobiles dédiées</li>
+                    <li><i class="fas fa-check-circle"></i> Coordination police/pompiers</li>
+                    <li><i class="fas fa-check-circle"></i> Rapport d'intervention détaillé</li>
+                    <li><i class="fas fa-check-circle"></i> Suivi client en temps réel</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Timeline Summary -->
+    <section class="section process-section">
+        <div class="section-container">
+            <div class="section-header fade-in">
+                <span class="section-label">En Résumé</span>
+                <h2 class="section-title">De l'Alerte à la <span>Résolution</span></h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="process-timeline">
+                <div class="process-step fade-in">
+                    <div class="process-step-number">1</div>
+                    <h4 class="process-step-title">Détection</h4>
+                    <p class="process-step-text">Un capteur ou une caméra identifie un événement anormal sur le site surveillé.</p>
+                    <i class="fas fa-arrow-right process-arrow"></i>
+                </div>
+                <div class="process-step fade-in">
+                    <div class="process-step-number">2</div>
+                    <h4 class="process-step-title">Analyse</h4>
+                    <p class="process-step-text">L'information est transmise et qualifiée par nos systèmes en centre de contrôle.</p>
+                    <i class="fas fa-arrow-right process-arrow"></i>
+                </div>
+                <div class="process-step fade-in">
+                    <div class="process-step-number">3</div>
+                    <h4 class="process-step-title">Levée de Doute</h4>
+                    <p class="process-step-text">Un opérateur confirme la réalité de l'alerte avant toute action.</p>
+                    <i class="fas fa-arrow-right process-arrow"></i>
+                </div>
+                <div class="process-step fade-in">
+                    <div class="process-step-number">4</div>
+                    <h4 class="process-step-title">Intervention</h4>
+                    <p class="process-step-text">La procédure adaptée est déclenchée : appel, alerte ou déploiement d'agents.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section class="video-section">
+        <div class="video-container">
+            <div class="section-header fade-in" style="margin-bottom: 40px;">
+                <span class="section-label">Découvrez SMS en Action</span>
+                <h2 class="section-title">Notre <span>Centre de Contrôle</span> en Temps Réel</h2>
+                <div class="section-divider"></div>
+                <p class="section-description">Plongez au cœur de notre centre de télésurveillance et découvrez comment nos équipes assurent votre protection 24h/24.</p>
+            </div>
+            <div class="video-wrapper fade-in">
+                <div class="video-placeholder" id="videoPlaceholder" onclick="playVideo()" style="background-image: url('images/img-surveillance.jpg');">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+                <iframe id="videoFrame" src="videos/1.mp4" allowfullscreen style="display: none;"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="section">
+        <div class="section-container">
+            <div class="section-header fade-in">
+                <span class="section-label">Notre Centre en Images</span>
+                <h2 class="section-title">L'Expertise SMS <span>en Coulisses</span></h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item big fade-in">
+                    <img src="images/img-surveillance.jpg" alt="Salle de supervision H24">
+                    <span class="live-badge"><span class="d"></span> LIVE</span>
+                    <div class="gallery-item-overlay"><span>Salle de Supervision H24</span></div>
+                </div>
+                <div class="gallery-item fade-in">
+                    <img src="images/img-technologie.jpg" alt="Poste opérateur télésurveillance">
+                    <div class="gallery-item-overlay"><span>Poste Opérateur</span></div>
+                </div>
+                <div class="gallery-item fade-in">
+                    <img src="images/private-security.png" alt="Equipe intervention SMS">
+                    <div class="gallery-item-overlay"><span>Équipe d'Intervention</span></div>
+                </div>
+                <div class="gallery-item fade-in">
+                    <img src="images/rapid-response.png" alt="Agent de sécurité SMS">
+                    <div class="gallery-item-overlay"><span>Agent de Sécurité</span></div>
+                </div>
+                <div class="gallery-item fade-in">
+                    <img src="images/img-hero-bg.jpg" alt="Site sécurisé par SMS">
+                    <div class="gallery-item-overlay"><span>Site Sécurisé</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Section -->
+    <section class="tech-section" id="technologie">
+        <div class="section-container">
+            <div class="section-header fade-in">
+                <span class="section-label">Innovation & Fiabilité</span>
+                <h2 class="section-title">Les Technologies de Notre <span>Centre de Contrôle</span></h2>
+                <div class="section-divider"></div>
+                <p class="section-description">Un centre de supervision fiable repose sur des infrastructures robustes : voici les technologies qui soutiennent notre télésurveillance H24.</p>
+            </div>
+            <div class="tech-grid">
+                <div class="tech-image-container fade-in">
+                    <img src="images/img-technologie.jpg" alt="Technologies de télésurveillance SMS">
+                    <div class="tech-image-overlay">
+                        <div class="tech-badges">
+                            <span class="tech-badge"><i class="fas fa-brain"></i> Analyse IA</span>
+                            <span class="tech-badge"><i class="fas fa-server"></i> Redondance Serveurs</span>
+                            <span class="tech-badge"><i class="fas fa-wifi"></i> Liaison IP & GSM</span>
+                            <span class="tech-badge"><i class="fas fa-shield-halved"></i> Cybersécurité</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="tech-info">
+                    <div class="tech-item fade-in">
+                        <div class="tech-item-header">
+                            <div class="tech-item-icon"><i class="fas fa-desktop"></i></div>
+                            <h4 class="tech-item-title">Logiciel de Supervision (VMS)</h4>
+                        </div>
+                        <p class="tech-item-desc">Une plateforme centralisée agrège l'ensemble des flux vidéo et signaux d'alarme pour un pilotage unifié par nos opérateurs.</p>
+                    </div>
+                    <div class="tech-item fade-in">
+                        <div class="tech-item-header">
+                            <div class="tech-item-icon"><i class="fas fa-network-wired"></i></div>
+                            <h4 class="tech-item-title">Liaisons Redondantes</h4>
+                        </div>
+                        <p class="tech-item-desc">Double transmission IP et GSM afin de garantir la continuité de la surveillance même en cas de coupure réseau.</p>
+                    </div>
+                    <div class="tech-item fade-in">
+                        <div class="tech-item-header">
+                            <div class="tech-item-icon"><i class="fas fa-battery-full"></i></div>
+                            <h4 class="tech-item-title">Alimentation Sécurisée</h4>
+                        </div>
+                        <p class="tech-item-desc">Onduleurs et groupe électrogène assurent le fonctionnement continu de notre centre, même en cas de coupure électrique.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications / Why Choose Us -->
+    <section class="why-section">
+        <div class="section-container">
+            <div class="section-header fade-in">
+                <span class="section-label">Pourquoi Nous Faire Confiance</span>
+                <h2 class="section-title">Les Garanties de Notre <span>Télésurveillance</span></h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="why-grid">
+                <div class="why-card fade-in">
+                    <div class="why-icon"><i class="fas fa-user-shield"></i></div>
+                    <h4 class="why-title">Opérateurs Certifiés</h4>
+                    <p class="why-text">Nos opérateurs de télésurveillance sont formés et certifiés selon les normes de la profession, avec une formation continue régulière.</p>
+                </div>
+                <div class="why-card fade-in">
+                    <div class="why-icon"><i class="fas fa-stopwatch"></i></div>
+                    <h4 class="why-title">Réactivité Maximale</h4>
+                    <p class="why-text">Chaque alerte est prise en charge en quelques secondes grâce à nos protocoles d'analyse et de traitement optimisés.</p>
+                </div>
+                <div class="why-card fade-in">
+                    <div class="why-icon"><i class="fas fa-database"></i></div>
+                    <h4 class="why-title">Infrastructure Redondante</h4>
+                    <p class="why-text">Systèmes et liaisons dupliqués pour garantir une disponibilité continue, sans interruption de service.</p>
+                </div>
+                <div class="why-card fade-in">
+                    <div class="why-icon"><i class="fas fa-lock"></i></div>
+                    <h4 class="why-title">Confidentialité des Données</h4>
+                    <p class="why-text">Vos images et données sont traitées et archivées dans le respect strict de la confidentialité et de la réglementation en vigueur.</p>
+                </div>
+                <div class="why-card fade-in">
+                    <div class="why-icon"><i class="fas fa-handshake"></i></div>
+                    <h4 class="why-title">Solutions Sur Mesure</h4>
+                    <p class="why-text">Chaque site est unique : nous adaptons nos protocoles de télésurveillance à la configuration et aux besoins spécifiques de votre activité.</p>
+                </div>
+                <div class="why-card fade-in">
+                    <div class="why-icon"><i class="fas fa-file-contract"></i></div>
+                    <h4 class="why-title">Reporting Transparent</h4>
+                    <p class="why-text">Accès à des rapports d'activité détaillés retraçant chaque événement traité par notre centre de supervision.</p>
+                </div>
+            </div>
+            <div class="certif-strip fade-in" style="margin-top: 50px;">
+                <span class="certif-pill"><i class="fas fa-certificate"></i> Centre Opérationnel H24/7J</span>
+                <span class="certif-pill"><i class="fas fa-user-check"></i> Personnel Formé & Certifié</span>
+                <span class="certif-pill"><i class="fas fa-shield-halved"></i> Conformité Réglementaire</span>
+                <span class="certif-pill"><i class="fas fa-network-wired"></i> Infrastructure Redondante</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="contact">
+        <div class="cta-container">
+            <div class="cta-icon fade-in"><i class="fas fa-headset"></i></div>
+            <h2 class="cta-title fade-in">Protégez Votre Site avec Notre <span>Télésurveillance H24</span></h2>
+            <p class="cta-text fade-in">Nos conseillers étudient gratuitement votre besoin et vous proposent une solution de télésurveillance adaptée à votre activité et à votre budget.</p>
+            <div class="cta-buttons fade-in">
+                <a href="index.html#contact" class="btn-primary"><i class="fas fa-shield-alt"></i> Demander un Devis Gratuit</a>
+                <a href="tel:0503331331" class="btn-secondary"><i class="fas fa-phone-alt"></i> Nous Appeler</a>
+            </div>
+            <div class="cta-phone fade-in">
+                <i class="fas fa-phone-alt"></i>
+                <div class="cta-phone-info">
+                    <div class="cta-phone-label">Disponible 24h/24 - 7j/7</div>
+                    <div class="cta-phone-number">05 03 331 331</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-main">
+            <div class="footer-brand">
+                <img src="images/logo-noir.png" alt="SMS Logo">
+                <p class="footer-brand-text">Sécurité Multi Services (SMS) est votre partenaire de confiance pour la protection de vos biens et personnes. Nous combinons expertise humaine et technologies avancées pour une sécurité optimale.</p>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="#">Sécurité Privée</a></li>
+                    <li><a href="#">Télésurveillance</a></li>
+                    <li><a href="#">Intervention</a></li>
+                    <li><a href="#">Gardiennage</a></li>
+                    <li><a href="#">Rondes</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Entreprise</h4>
+                <ul>
+                    <li><a href="#">À Propos</a></li>
+                    <li><a href="#">Nos Équipes</a></li>
+                    <li><a href="#">Certifications</a></li>
+                    <li><a href="#">Carrières</a></li>
+                    <li><a href="#">Actualités</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Légal</h4>
+                <ul>
+                    <li><a href="#">Mentions Légales</a></li>
+                    <li><a href="#">Politique de Confidentialité</a></li>
+                    <li><a href="#">CGV</a></li>
+                    <li><a href="#">RGPD</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="footer-bottom-text">&copy; 2024 Sécurité Multi Services (SMS). Tous droits réservés.</p>
+            <div class="footer-bottom-links">
+                <a href="#">Politique de confidentialité</a>
+                <a href="#">Mentions légales</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top -->
+    <button class="scroll-top" id="scrollTop" onclick="scrollToTop()">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script>
+        // ===== NAVBAR SCROLL EFFECT =====
+        const navbar = document.getElementById('navbar');
+        const topHeader = document.getElementById('topHeader');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+                topHeader.classList.add('hidden');
+            } else {
+                navbar.classList.remove('scrolled');
+                topHeader.classList.remove('hidden');
+            }
+        });
+
+        // ===== MOBILE MENU =====
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        // Close menu on link click
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navLinks').classList.remove('active');
+            });
+        });
+
+        // ===== SCROLL ANIMATIONS =====
+        const fadeElements = document.querySelectorAll('.fade-in');
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        fadeElements.forEach(el => observer.observe(el));
+
+        // ===== COUNTER ANIMATION =====
+        const statNumbers = document.querySelectorAll('.stat-number');
+        let countersAnimated = false;
+
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !countersAnimated) {
+                    countersAnimated = true;
+                    statNumbers.forEach(counter => {
+                        const target = parseInt(counter.getAttribute('data-target'));
+                        const duration = 2000;
+                        const increment = target / (duration / 16);
+                        let current = 0;
+
+                        const updateCounter = () => {
+                            current += increment;
+                            if (current < target) {
+                                counter.textContent = Math.floor(current);
+                                requestAnimationFrame(updateCounter);
+                            } else {
+                                counter.textContent = target + '+';
+                            }
+                        };
+                        updateCounter();
+                    });
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('.stat-item').forEach(item => counterObserver.observe(item));
+
+        // ===== VIDEO PLAY =====
+        function playVideo() {
+            const placeholder = document.getElementById('videoPlaceholder');
+            const iframe = document.getElementById('videoFrame');
+            // Using a generic security technology video from YouTube
+            iframe.src = 'videos/1.mp4';
+            placeholder.style.display = 'none';
+            iframe.style.display = 'block';
+        }
+
+        // ===== FORM SUBMIT =====
+        function handleSubmit(e) {
+            e.preventDefault();
+            alert('Merci pour votre demande ! Notre équipe vous contactera dans les plus brefs délais.');
+        }
+
+        // ===== SCROLL TO TOP =====
+        const scrollTopBtn = document.getElementById('scrollTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                scrollTopBtn.classList.add('visible');
+            } else {
+                scrollTopBtn.classList.remove('visible');
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // ===== PARTICLES BACKGROUND =====
+        const canvas = document.getElementById('particles-canvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        class Particle {
+            constructor() {
+                this.reset();
+            }
+
+            reset() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 2 + 0.5;
+                this.speedX = (Math.random() - 0.5) * 0.3;
+                this.speedY = (Math.random() - 0.5) * 0.3;
+                this.opacity = Math.random() * 0.3 + 0.1;
+                this.isRed = Math.random() > 0.7;
+            }
+
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+
+                if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) {
+                    this.reset();
+                }
+            }
+
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fillStyle = this.isRed 
+                    ? `rgba(196, 30, 42, ${this.opacity})` 
+                    : `rgba(192, 192, 192, ${this.opacity * 0.5})`;
+                ctx.fill();
+            }
+        }
+
+        for (let i = 0; i < 80; i++) {
+            particles.push(new Particle());
+        }
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+
+            // Draw connections
+            for (let i = 0; i < particles.length; i++) {
+                for (let j = i + 1; j < particles.length; j++) {
+                    const dx = particles[i].x - particles[j].x;
+                    const dy = particles[i].y - particles[j].y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+
+                    if (dist < 120) {
+                        ctx.beginPath();
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.strokeStyle = `rgba(196, 30, 42, ${0.05 * (1 - dist / 120)})`;
+                        ctx.lineWidth = 0.5;
+                        ctx.stroke();
+                    }
+                }
+            }
+
+            requestAnimationFrame(animateParticles);
+        }
+
+        animateParticles();
+
+        // ===== SMOOTH SCROLL FOR ANCHOR LINKS =====
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offset = 80;
+                    const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                    window.scrollTo({ top, behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
