@@ -60,61 +60,114 @@
 
   .wrap{max-width:1240px;margin:0 auto;padding:0 32px;}
 
-  /* ---------- TOP BANNER ---------- */
-  .topbar{
-    position:fixed;top:0;left:0;right:0;z-index:102;
-    height:92px;background:#0a0a0a;overflow:hidden;
-    border-bottom:2px solid var(--red);
-  }
-  .topbar-stripes{
-    position:absolute;top:0;right:0;height:100%;width:56%;
-    pointer-events:none;
-  }
-  .topbar-stripes span{
-    position:absolute;top:-20%;height:150%;width:14%;
-    background:var(--red);transform:skewX(-22deg);
-  }
-  .topbar-stripes span.thin{width:3.2%;background:rgba(196,18,48,0.55);}
-  .topbar-stripes .s1{right:26%;}
-  .topbar-stripes .s2{right:14%;width:5%;background:rgba(196,18,48,0.4);}
-  .topbar-stripes .s3{right:-2%;width:22%;background:linear-gradient(90deg,#7a0c1f,var(--red-bright));}
-  .topbar-inner{
-    position:relative;z-index:1;height:100%;max-width:1240px;margin:0 auto;padding:0 32px;
-    display:flex;align-items:center;justify-content:space-between;gap:24px;
-  }
-  .topbar-brand{display:flex;align-items:center;gap:16px;}
-  .topbar-brand img{height:80px;width:80px;object-fit:contain;filter:drop-shadow(0 3px 10px rgba(0,0,0,0.6));}
-  .topbar-brand .titles{line-height:1.15;}
-  .topbar-brand h1{
-    font-family:'Oswald',sans-serif;font-weight:700;font-size:26px;color:#fff;
-    letter-spacing:0.01em;
-  }
-  .topbar-brand .tag{
-    font-family:'Oswald',sans-serif;font-weight:600;font-size:14px;color:var(--red-bright);
-    letter-spacing:0.06em;margin-top:2px;
-  }
-  .topbar-phones{display:flex;align-items:center;gap:18px;flex-shrink:0;}
-  .topbar-phones a{display:flex;align-items:center;gap:10px;color:#fff;}
-  .topbar-phones .ph-ico{
-    width:34px;height:34px;border-radius:50%;background:var(--red);
-    display:flex;align-items:center;justify-content:center;flex-shrink:0;
-  }
-  .topbar-phones .ph-ico svg{width:17px;height:17px;fill:#fff;}
-  .topbar-phones .num{font-family:'Oswald',sans-serif;font-weight:600;font-size:17px;letter-spacing:0.02em;}
-  .topbar-sep{width:1px;height:26px;background:rgba(255,255,255,0.25);}
-  @media (max-width:900px){
-    .topbar{height:76px;}
-    .topbar-brand img{height:56px;width:56px;}
-    .topbar-brand h1{font-size:17px;}
-    .topbar-brand .tag{font-size:9.5px;}
-    .topbar-phones .num{display:none;}
-    .topbar-sep{display:none;}
-    .topbar-phones{gap:10px;}
-  }
-  @media (max-width:520px){
-    .topbar-brand .tag{display:none;}
-  }
+        /* ===== TOP HEADER BAR ===== */
+        .top-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1001;
+            background: #000000;
+            border-bottom: 2px solid var(--red-primary);
+            padding: 10px 0;
+            transition: transform 0.4s ease;
+        }
 
+        .top-header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .top-header-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .top-header-logo {
+            height: 40px;
+            width: auto;
+        }
+
+        .top-header-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .top-header-company {
+            font-family: 'Oswald', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--white);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .top-header-tagline {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--red-primary);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .top-header-right {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .top-header-phones {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .top-header-phone {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--white);
+            font-family: 'Oswald', sans-serif;
+            font-size: 15px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+        }
+
+        .top-header-phone:hover {
+            color: var(--red-primary);
+        }
+
+        .top-header-phone i {
+            color: var(--red-primary);
+            font-size: 16px;
+        }
+
+        .top-header-cta {
+            background: var(--gradient-red);
+            color: var(--white);
+            padding: 8px 20px;
+            font-family: 'Oswald', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(196, 30, 42, 0.4);
+        }
+
+        .top-header-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(196, 30, 42, 0.6);
+        }
   /* ---------- NAV ---------- */
   header{
     position:fixed;top:92px;left:0;right:0;z-index:100;
@@ -1616,7 +1669,7 @@
 </head>
 <body>
 
-<div class="topbar">
+<!-- <div class="topbar">
   <div class="topbar-stripes">
     <span class="s1"></span>
     <span class="s2"></span>
@@ -1642,8 +1695,36 @@
       </a>
     </div>
   </div>
-</div>
+</div> -->
 
+    <div class="top-header" id="topHeader">
+        <div class="top-header-container">
+            <div class="top-header-left">
+                <img src="images/logo-noir.png" alt="SMS" class="top-header-logo">
+                <div class="top-header-info">
+                    <span class="top-header-company">Sécurité Multi Services</span>
+                    <span class="top-header-tagline">Sécurité · Surveillance · Intervention</span>
+                </div>
+            </div>
+            <div class="top-header-right">
+                <div class="top-header-phones">
+                    <a href="tel:0503331331" class="top-header-phone">
+                        <i class="fas fa-phone-alt"></i>
+                        05 03 331 331
+                    </a>
+                    <a href="tel:0711909091" class="top-header-phone">
+                        <i class="fas fa-mobile-alt"></i>
+                        07 11 90 90 91
+                    </a>
+                    <a href="tel:0711909091" class="top-header-phone">
+                        <i class="fa-solid fa-location-crosshairs"></i>
+                        Cocody, Riviera M'Badon (Abidjan, Côte d'Ivoire)
+                    </a>
+                </div>
+                <!-- <a href="#contact" class="top-header-cta"><i class="fas fa-shield-alt"></i> Devis Gratuit</a> -->
+            </div>
+        </div>
+    </div>
 <header>
   <nav>
     <div class="brand">
@@ -1995,7 +2076,7 @@
         </div>
     </div>
 </section>
-
+<!-- 
 <section class="cta-banner" id="contact">
   <div class="wrap cta-inner">
     <div>
@@ -2007,24 +2088,24 @@
       <a href="mailto:contact@sms-securite.ci" class="btn btn-ghost" style="border-color:rgba(255,255,255,0.4);color:#fff;">Envoyer un email</a>
     </div>
   </div>
-</section>
+</section> -->
 
 <!-- Video Section -->
 <section class="video-section">
     <div class="video-container">
         <div class="section-header fade-in" style="margin-bottom: 40px;">
             <span class="section-label">Découvrez SMS en Action</span>
-            <h2 class="section-title">Notre <span>Centre de Contrôle</span> en Temps Réel</h2>
+            <h2 class="section-title">Un <span>Centre de Contrôle</span> très réactif</h2>
             <div class="section-divider"></div>
             <p class="section-description">Plongez au cœur de notre centre de télésurveillance et découvrez comment nos équipes assurent votre protection 24h/24.</p>
         </div>
         <div class="video-wrapper fade-in">
-            <div class="video-placeholder" id="videoPlaceholder" onclick="playVideo()" style="background-image: url('images/img-surveillance.jpg');">
+            <div class="video-placeholder" id="videoPlaceholder" onclick="playVideo()" style="background-image: url('images/telesurveillance-3.png');">
                 <div class="play-button">
                     <i class="fas fa-play"></i>
                 </div>
             </div>
-            <iframe id="videoFrame" src="videos/1.mp4" allowfullscreen style="display: none;"></iframe>
+            <iframe id="videoFrame" src="videos/Vidéo-2.mp4" allowfullscreen style="display: none;"></iframe>
         </div>
     </div>
 </section>
@@ -2039,24 +2120,24 @@
         </div>
         <div class="gallery-grid">
             <div class="gallery-item big fade-in">
-                <img src="images/telesurveillance-3.png" alt="Salle de supervision H24">
+                <img src="images/centre_2.png" alt="Salle de supervision H24">
                 <span class="live-badge"><span class="d"></span> LIVE</span>
                 <div class="gallery-item-overlay"><span>Salle de Supervision H24</span></div>
             </div>
             <div class="gallery-item fade-in">
-                <img src="images/img-technologie.jpg" alt="Poste opérateur télésurveillance">
+                <img src="images/centre_1.png" alt="Poste opérateur télésurveillance">
                 <div class="gallery-item-overlay"><span>Poste Opérateur</span></div>
             </div>
             <div class="gallery-item fade-in">
-                <img src="images/private-security.png" alt="Equipe intervention SMS">
+                <img src="images/centre_4.png" alt="Equipe intervention SMS">
                 <div class="gallery-item-overlay"><span>Équipe d'Intervention</span></div>
             </div>
             <div class="gallery-item fade-in">
-                <img src="images/rapid-response.png" alt="Agent de sécurité SMS">
+                <img src="images/centre_6.png" alt="Agent de sécurité SMS">
                 <div class="gallery-item-overlay"><span>Agent de Sécurité</span></div>
             </div>
             <div class="gallery-item fade-in">
-                <img src="images/img-hero-bg.jpg" alt="Site sécurisé par SMS">
+                <img src="images/centre_5.png" alt="Site sécurisé par SMS">
                 <div class="gallery-item-overlay"><span>Site Sécurisé</span></div>
             </div>
         </div>
@@ -2074,7 +2155,7 @@
         </div>
         <div class="tech-grid">
             <div class="tech-image-container fade-in">
-                <img src="images/logiciel-surveillance.jpg" alt="Technologies de télésurveillance SMS">
+                <img src="images/centre_controle.png" alt="Technologies de télésurveillance SMS">
                 <div class="tech-image-overlay">
                     <div class="tech-badges">
                         <span class="tech-badge"><i class="fas fa-brain"></i> Analyse IA</span>
@@ -2245,6 +2326,16 @@
   }
   tick(); setInterval(tick, 1000);
   document.getElementById('year').textContent = new Date().getFullYear();
+
+          // ===== VIDEO PLAY =====
+        function playVideo() {
+            const placeholder = document.getElementById('videoPlaceholder');
+            const iframe = document.getElementById('videoFrame');
+            // Using a generic security technology video from YouTube
+            iframe.src = 'videos/Vidéo-2.mp4';
+            placeholder.style.display = 'none';
+            iframe.style.display = 'block';
+        }
 
   // scroll reveal
   const io = new IntersectionObserver((entries)=>{

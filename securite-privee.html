@@ -2714,7 +2714,7 @@
                 <div class="section-divider"></div>
             </div>
             <div class="video-wrapper">
-                <div class="video-placeholder" id="videoPlaceholderSecu" onclick="playVideoSecu()" style="background-image: url('images/img-video-cover-securite.jpg');">
+                <div class="video-placeholder" id="videoPlaceholderSecu" style="background-image:url('images/logo-noir.png')" onclick="playVideoSecu()">
                     <div class="play-button"><i class="fas fa-play"></i></div>
                 </div>
                 <iframe id="videoFrameSecu" style="display: none;" allow="autoplay; encrypted-media" allowfullscreen></iframe>
@@ -3010,7 +3010,7 @@
         function playVideoSecu() {
             const placeholder = document.getElementById('videoPlaceholderSecu');
             const iframe = document.getElementById('videoFrameSecu');
-            iframe.src = 'videos/private-security.webm';
+            iframe.src = 'videos/3.mp4';
             placeholder.style.display = 'none';
             iframe.style.display = 'block';
         }
