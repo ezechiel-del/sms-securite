@@ -1903,10 +1903,10 @@
     <!-- Stats Bar -->
     <div class="stats-bar">
         <div class="stats-container">
-            <div class="stat-item fade-in">
+            <!-- <div class="stat-item fade-in">
                 <div class="stat-number" data-target="15">0</div>
                 <div class="stat-label">Années d'Expérience</div>
-            </div>
+            </div> -->
             <div class="stat-item fade-in">
                 <div class="stat-number" data-target="500">0</div>
                 <div class="stat-label">Clients Satisfaits</div>
@@ -2049,26 +2049,6 @@
         </div>
     </section>
 
-
-    <!-- Video Section -->
-    <section class="video-section">
-        <div class="video-container">
-            <div class="section-header fade-in" style="margin-bottom: 40px;">
-                <span class="section-label">Découvrez SMS en Action</span>
-                <h2 class="section-title">Notre <span>Centre de Contrôle</span> en Temps Réel</h2>
-                <div class="section-divider"></div>
-            </div>
-            <div class="video-wrapper fade-in">
-                <div class="video-placeholder" id="videoPlaceholder" onclick="playVideo()">
-                    <div class="play-button">
-                        <i class="fas fa-play"></i>
-                    </div>
-                </div>
-                <iframe id="videoFrame" src="videos/scene-presentation.mp4" allowfullscreen></iframe>
-            </div>
-        </div>
-    </section>
-
     <!-- Why Choose Us -->
     <section class="why-section">
         <div class="section-container">
@@ -2168,7 +2148,7 @@
     </section>
 
     <!-- Trust Section -->
-    <section class="trust-section">
+    <!-- <section class="trust-section">
         <div class="trust-container">
             <p class="trust-label">Ils nous font confiance</p>
             <div class="trust-logos">
@@ -2179,7 +2159,7 @@
                 <span class="trust-logo-item">RÉSIDENTIEL</span>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- CTA Section -->
     <section class="cta-section">
@@ -2420,15 +2400,7 @@
 
         document.querySelectorAll('.stat-item').forEach(item => counterObserver.observe(item));
 
-        // ===== VIDEO PLAY =====
-        function playVideo() {
-            const placeholder = document.getElementById('videoPlaceholder');
-            const iframe = document.getElementById('videoFrame');
-            // Using a generic security technology video from YouTube
-            iframe.src = 'videos/scene-presentation.mp4';
-            placeholder.style.display = 'none';
-            iframe.style.display = 'block';
-        }
+
 
         // ===== FORM SUBMIT =====
         function handleSubmit(e) {
