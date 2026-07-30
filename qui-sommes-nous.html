@@ -1280,24 +1280,7 @@
         </div>
     </div>
 
-    <!-- Video Section -->
-<section class="video-section">
-    <div class="video-container">
-        <div class="section-header fade-in" style="margin-bottom: 40px;">
-            <span class="section-label">Découvrez SMS en vidéo</span>
-            <h2 class="section-title">Notre <span>Professionnalisme </span> à votre service</h2>
-            <div class="section-divider"></div>
-        </div>
-        <div class="video-wrapper fade-in">
-            <div class="video-placeholder" id="videoPlaceholder" onclick="playVideo()">
-                <div class="play-button">
-                    <i class="fas fa-play"></i>
-                </div>
-            </div>
-            <iframe id="videoFrame" src="videos/montage-2.mp4" allowfullscreen></iframe>
-        </div>
-    </div>
-</section>
+
     <!-- Notre Histoire -->
     <section class="full-service" id="histoire">
         <div class="full-service-row fade-in">
@@ -1388,8 +1371,56 @@
             </div>
         </div>
     </section>
+
+    <section id="process">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="kicker">NOTRE MÉTHODE</span>
+      <h2>De l'alerte au rapport, une chaîne sans rupture.</h2>
+      <p>Chaque incident suit un protocole strict, pensé pour réduire le temps entre la détection et la mise en sécurité.</p>
+    </div>
+    <div class="proc-grid reveal">
+      <div class="proc-track"><div class="fill"></div></div>
+      <div class="proc-step" data-n="01">
+        <h4>Alerte</h4>
+        <p>Détection par caméra, capteur ou appel direct, transmise instantanément au centre de supervision.</p>
+      </div>
+      <div class="proc-step" data-n="02">
+        <h4>Analyse</h4>
+        <p>Levée de doute par un opérateur qui évalue la situation et déclenche le niveau de réponse adapté.</p>
+      </div>
+      <div class="proc-step" data-n="03">
+        <h4>Intervention</h4>
+        <p>Une unité mobile est dépêchée sur site, en lien si besoin avec les forces de l'ordre.</p>
+      </div>
+      <div class="proc-step" data-n="04">
+        <h4>Rapport</h4>
+        <p>Compte-rendu détaillé transmis au client avec recommandations pour renforcer le dispositif.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+        <!-- Video Section -->
+<section class="video-section">
+    <div class="video-container">
+        <div class="section-header fade-in" style="margin-bottom: 40px;">
+            <span class="section-label">Découvrez SMS en vidéo</span>
+            <h2 class="section-title">Notre <span>Professionnalisme </span> à votre service</h2>
+            <div class="section-divider"></div>
+        </div>
+        <div class="video-wrapper fade-in">
+            <div class="video-placeholder" id="videoPlaceholder" onclick="playVideo()">
+                <div class="play-button">
+                    <i class="fas fa-play"></i>
+                </div>
+            </div>
+            <iframe id="videoFrame" src="videos/montage-2.mp4" allowfullscreen></iframe>
+        </div>
+    </div>
+</section>
     
-<section class="services" id="services">
+<!-- <section class="services" id="services">
   <div class="wrap">
     <div class="section-head reveal">
       <span class="kicker">NOTRE FORCE HUMAINE</span>
@@ -1403,24 +1434,6 @@
       <div class="svc-card">
         <div class="svc-illust">
           <span class="svc-num mono">01</span>
-          <!-- <svg viewBox="0 0 300 172" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <linearGradient id="beam1" x1="0" y1="0" x2="1" y2="0.4">
-                <stop offset="0" stop-color="#ff2245" stop-opacity="0.5"/>
-                <stop offset="1" stop-color="#ff2245" stop-opacity="0"/>
-              </linearGradient>
-            </defs>
-            <path d="M232 12 L268 24 V58 C268 86 250 102 232 111 C214 102 196 86 196 58 V24 Z" fill="none" stroke="rgba(196,18,48,0.28)" stroke-width="1.4"/>
-            <polygon points="120,88 300,26 300,124" fill="url(#beam1)"/>
-            <path d="M8 150 Q70 140 130 150 T260 150" stroke="rgba(199,203,209,0.2)" stroke-width="1" stroke-dasharray="3 6" fill="none"/>
-            <line x1="0" y1="152" x2="300" y2="152" stroke="rgba(255,255,255,0.07)"/>
-            <path d="M74 150 L79 100 Q94 87 109 100 L115 150 Z" fill="#c7cbd1"/>
-            <rect x="79" y="130" width="10" height="21" rx="2" fill="#9a9da3"/>
-            <rect x="97" y="130" width="10" height="21" rx="2" fill="#9a9da3"/>
-            <circle cx="94" cy="72" r="12" fill="#c7cbd1"/>
-            <path d="M82 64 Q94 51 106 64 L106 68 L82 68 Z" fill="#8b8e94"/>
-            <circle cx="118" cy="88" r="3.2" fill="#ff2245"/>
-          </svg> -->
           <img src="images/rapid-response.png" alt="" style="height: 100%; width: 100%; object-fit: cover;;">
         </div>
         <div class="svc-body">
@@ -1431,25 +1444,6 @@
       <div class="svc-card">
         <div class="svc-illust">
           <span class="svc-num mono">02</span>
-          <!-- <svg viewBox="0 0 300 172" xmlns="http://www.w3.org/2000/svg">
-            <text x="150" y="132" font-family="Oswald, sans-serif" font-size="128" font-weight="700" fill="rgba(196,18,48,0.10)" text-anchor="middle">24</text>
-            <rect x="70" y="36" width="140" height="86" rx="4" fill="#131318" stroke="rgba(255,255,255,0.14)"/>
-            <rect x="78" y="44" width="124" height="70" fill="#0a0a0d"/>
-            <path d="M84 100 L104 76 L124 92 L146 60 L168 84 L196 66" stroke="#00ffa0" stroke-width="1.5" fill="none" opacity="0.85"/>
-            <rect x="84" y="50" width="30" height="9" fill="none" stroke="#ff2245" stroke-width="1"/>
-            <rect x="132" y="122" width="16" height="14" fill="#1b1b21"/>
-            <rect x="112" y="136" width="56" height="6" rx="2" fill="#1b1b21"/>
-            <g transform="translate(226,30)">
-              <ellipse cx="0" cy="0" rx="17" ry="10" fill="#1b1b21" stroke="rgba(255,255,255,0.16)"/>
-              <circle cx="0" cy="0" r="5.4" fill="#08080a" stroke="#ff2245" stroke-width="1"/>
-              <circle cx="10" cy="-6" r="2.4" fill="#ff2245"/>
-            </g>
-            <g transform="translate(44,132)">
-              <circle r="18" fill="none" stroke="rgba(196,18,48,0.32)"/>
-              <circle r="10" fill="none" stroke="rgba(196,18,48,0.32)"/>
-              <line x1="0" y1="0" x2="15" y2="-8" stroke="#ff2245" stroke-width="1.3"/>
-            </g>
-          </svg> -->
           <img src="images/img-surveillance.jpg" alt="" style="height: 100%; width: 100%; object-fit: cover;;">
         </div>
         <div class="svc-body">
@@ -1460,28 +1454,6 @@
       <div class="svc-card">
         <div class="svc-illust">
           <span class="svc-num mono">03</span>
-          <!-- <svg viewBox="0 0 300 172" xmlns="http://www.w3.org/2000/svg">
-            <g stroke="rgba(255,255,255,0.15)" stroke-width="2" stroke-linecap="round">
-              <line x1="8" y1="62" x2="48" y2="62"/>
-              <line x1="2" y1="82" x2="53" y2="82"/>
-              <line x1="12" y1="102" x2="46" y2="102"/>
-            </g>
-            <line x1="0" y1="146" x2="300" y2="146" stroke="rgba(255,255,255,0.07)"/>
-            <path d="M92 134 L102 104 Q112 94 142 94 L172 94 Q192 94 202 109 L217 134 Z" fill="#c7cbd1"/>
-            <path d="M122 94 L130 74 Q142 66 157 66 L167 66 Q180 66 186 78 L190 94 Z" fill="#8b8e94"/>
-            <circle cx="120" cy="136" r="12" fill="#131318" stroke="#8b8e94" stroke-width="2"/>
-            <circle cx="190" cy="136" r="12" fill="#131318" stroke="#8b8e94" stroke-width="2"/>
-            <rect x="150" y="56" width="16" height="8" rx="2" fill="#ff2245"/>
-            <g stroke="#ff2245" stroke-width="1.4" opacity="0.75">
-              <line x1="158" y1="54" x2="142" y2="34"/>
-              <line x1="158" y1="54" x2="158" y2="30"/>
-              <line x1="158" y1="54" x2="174" y2="34"/>
-            </g>
-            <g transform="translate(246,38)">
-              <path d="M0 0 C10 0 16 8 16 16 C16 26 0 44 0 44 C0 44 -16 26 -16 16 C-16 8 -10 0 0 0Z" fill="none" stroke="rgba(196,18,48,0.4)" stroke-width="1.5"/>
-              <circle cx="0" cy="16" r="5" fill="rgba(196,18,48,0.4)"/>
-            </g>
-          </svg> -->
           <img src="images/private-security.png" alt="" style="height: 100%; width: 100%; object-fit: cover;;">
         </div>
         <div class="svc-body">
@@ -1492,29 +1464,6 @@
       <div class="svc-card">
         <div class="svc-illust">
           <span class="svc-num mono">04</span>
-          <!-- <svg viewBox="0 0 300 172" xmlns="http://www.w3.org/2000/svg">
-            <g stroke="rgba(199,203,209,0.18)" stroke-width="1" fill="none">
-              <path d="M20 34 H90 V72 H140"/>
-              <path d="M20 134 H70 V104 H120"/>
-              <path d="M280 34 H210 V62 H180"/>
-              <path d="M280 144 H220 V112 H190"/>
-            </g>
-            <g fill="rgba(199,203,209,0.4)">
-              <circle cx="20" cy="34" r="3"/><circle cx="20" cy="134" r="3"/>
-              <circle cx="280" cy="34" r="3"/><circle cx="280" cy="144" r="3"/>
-            </g>
-            <g transform="translate(150,88)" fill="none" stroke="#ff2245" stroke-width="1.6" stroke-linecap="round">
-              <path d="M-30 10 a30 30 0 1 1 60 0"/>
-              <path d="M-22 14 a22 22 0 1 1 44 0"/>
-              <path d="M-14 16 a14 14 0 1 1 28 0"/>
-              <path d="M0 -10 v-6"/>
-            </g>
-            <g transform="translate(150,88)">
-              <rect x="-10" y="4" width="20" height="16" rx="2" fill="#131318" stroke="#c7cbd1" stroke-width="1.2"/>
-              <path d="M-6 4 v-6 a6 6 0 0 1 12 0 v6" fill="none" stroke="#c7cbd1" stroke-width="1.2"/>
-              <circle cx="0" cy="12" r="1.8" fill="#00ffa0"/>
-            </g>
-          </svg> -->
           <img src="images/security-technology.jpg" alt="" style="height: 100%; width: 100%; object-fit: cover;;">
         </div>
         <div class="svc-body">
@@ -1567,38 +1516,10 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
 
-<section id="process">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="kicker">NOTRE MÉTHODE</span>
-      <h2>De l'alerte au rapport, une chaîne sans rupture.</h2>
-      <p>Chaque incident suit un protocole strict, pensé pour réduire le temps entre la détection et la mise en sécurité.</p>
-    </div>
-    <div class="proc-grid reveal">
-      <div class="proc-track"><div class="fill"></div></div>
-      <div class="proc-step" data-n="01">
-        <h4>Alerte</h4>
-        <p>Détection par caméra, capteur ou appel direct, transmise instantanément au centre de supervision.</p>
-      </div>
-      <div class="proc-step" data-n="02">
-        <h4>Analyse</h4>
-        <p>Levée de doute par un opérateur qui évalue la situation et déclenche le niveau de réponse adapté.</p>
-      </div>
-      <div class="proc-step" data-n="03">
-        <h4>Intervention</h4>
-        <p>Une unité mobile est dépêchée sur site, en lien si besoin avec les forces de l'ordre.</p>
-      </div>
-      <div class="proc-step" data-n="04">
-        <h4>Rapport</h4>
-        <p>Compte-rendu détaillé transmis au client avec recommandations pour renforcer le dispositif.</p>
-      </div>
-    </div>
-  </div>
-</section>
 
-<section id="why">
+<!-- <section id="why">
   <div class="wrap">
     <div class="section-head reveal">
       <span class="kicker">POURQUOI SMS</span>
@@ -1637,7 +1558,7 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
 
 
 <!-- CTA Section -->
