@@ -1,0 +1,2903 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nos Services - SMS Sécurité Multi Services | Sécurité Privée, Télésurveillance, Intervention & Technologies</title>
+    <meta name="description" content="Découvrez l'ensemble des services de Sécurité Multi Services (SMS) : sécurité privée, télésurveillance H24, intervention rapide et technologies de sécurité avancées, pour particuliers, entreprises et collectivités.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* ===== RESET & BASE ===== */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --red-primary: #c41e2a;
+            --red-dark: #8b0000;
+            --red-light: #e63946;
+            --black-deep: #0a0a0a;
+            --black-card: #111111;
+            --black-lighter: #1a1a1a;
+            --gray-dark: #2a2a2a;
+            --gray-mid: #3a3a3a;
+            --gray-light: #888888;
+            --silver: #c0c0c0;
+            --white: #ffffff;
+            --gradient-red: linear-gradient(135deg, #c41e2a, #8b0000);
+            --gradient-dark: linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 100%);
+            --shadow-red: 0 0 30px rgba(196, 30, 42, 0.3);
+            --shadow-card: 0 10px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--black-deep);
+            color: var(--white);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* ===== ANIMATED BACKGROUND PARTICLES ===== */
+        #particles-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* ===== TOP HEADER BAR ===== */
+        .top-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1001;
+            background: #000000;
+            border-bottom: 2px solid var(--red-primary);
+            padding: 10px 0;
+            transition: transform 0.4s ease;
+        }
+
+        .top-header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .top-header-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .top-header-logo {
+            height: 40px;
+            width: auto;
+        }
+
+        .top-header-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .top-header-company {
+            font-family: 'Oswald', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--white);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .top-header-tagline {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--red-primary);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .top-header-right {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .top-header-phones {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .top-header-phone {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--white);
+            font-family: 'Oswald', sans-serif;
+            font-size: 15px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+        }
+
+        .top-header-phone:hover {
+            color: var(--red-primary);
+        }
+
+        .top-header-phone i {
+            color: var(--red-primary);
+            font-size: 16px;
+        }
+
+        .top-header-cta {
+            background: var(--gradient-red);
+            color: var(--white);
+            padding: 8px 20px;
+            font-family: 'Oswald', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(196, 30, 42, 0.4);
+        }
+
+        .top-header-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(196, 30, 42, 0.6);
+        }
+
+        /* ===== NAVIGATION ===== */
+        .navbar {
+            position: fixed;
+            top: 62px;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 15px 0;
+            transition: all 0.4s ease;
+            background: transparent;
+        }
+
+        .navbar.scrolled {
+            top: 0;
+            background: rgba(10, 10, 10, 0.97);
+            backdrop-filter: blur(20px);
+            padding: 10px 0;
+            box-shadow: 0 2px 30px rgba(196, 30, 42, 0.2);
+        }
+
+        .top-header.hidden {
+            transform: translateY(-100%);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 40px;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .nav-logo img {
+            height: 55px;
+            width: auto;
+            transition: all 0.3s ease;
+        }
+
+        .navbar.scrolled .nav-logo img {
+            height: 45px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 35px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-family: 'Oswald', sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--silver);
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 5px 0;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--red-primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--white);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            background: var(--gradient-red) !important;
+            color: var(--white) !important;
+            padding: 10px 25px !important;
+            border-radius: 4px;
+            font-weight: 600 !important;
+            transition: all 0.3s ease !important;
+            box-shadow: 0 4px 15px rgba(196, 30, 42, 0.4);
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(196, 30, 42, 0.6) !important;
+        }
+
+        .nav-cta::after {
+            display: none !important;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .mobile-menu-btn span {
+            width: 28px;
+            height: 2px;
+            background: var(--white);
+            transition: all 0.3s ease;
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('images/motos.jpg') center/cover no-repeat;
+            z-index: 1;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, 
+                rgba(10, 10, 10, 0.7) 0%, 
+                rgba(10, 10, 10, 0.4) 40%, 
+                rgba(10, 10, 10, 0.8) 100%);
+            z-index: 2;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            text-align: center;
+            max-width: 900px;
+            padding: 0 40px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero-logo {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 30px;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 0 60px rgba(196, 30, 42, 0.5), 0 0 120px rgba(196, 30, 42, 0.2);
+            animation: pulse-glow 3s ease-in-out infinite;
+            border: 3px solid rgba(196, 30, 42, 0.6);
+        }
+
+        .hero-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-title {
+            font-size: 62px;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, var(--white) 0%, var(--silver) 50%, var(--red-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 20px;
+            font-weight: 300;
+            color: var(--silver);
+            margin-bottom: 15px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+        }
+
+        .hero-tagline {
+            font-size: 16px;
+            color: var(--gray-light);
+            margin-bottom: 40px;
+            font-weight: 400;
+        }
+
+        .hero-cta-group {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--gradient-red);
+            color: var(--white);
+            padding: 16px 35px;
+            font-family: 'Oswald', sans-serif;
+            font-size: 15px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(196, 30, 42, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(196, 30, 42, 0.6);
+        }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: transparent;
+            color: var(--white);
+            padding: 16px 35px;
+            font-family: 'Oswald', sans-serif;
+            font-size: 15px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--red-primary);
+            background: rgba(196, 30, 42, 0.1);
+            transform: translateY(-3px);
+        }
+
+        .hero-scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 3;
+            animation: bounce 2s infinite;
+        }
+
+        .hero-scroll-indicator i {
+            font-size: 24px;
+            color: var(--red-primary);
+        }
+
+        /* ===== STATS BAR ===== */
+        .stats-bar {
+            position: relative;
+            z-index: 5;
+            background: var(--black-card);
+            border-top: 3px solid var(--red-primary);
+            border-bottom: 1px solid var(--gray-dark);
+            padding: 40px 0;
+        }
+
+        .stats-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            padding: 0 40px;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+            position: relative;
+        }
+
+        .stat-item::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 20%;
+            height: 60%;
+            width: 1px;
+            background: var(--gray-dark);
+        }
+
+        .stat-item:last-child::after {
+            display: none;
+        }
+
+        .stat-number {
+            font-family: 'Oswald', sans-serif;
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--red-primary);
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--silver);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* ===== SECTION COMMON ===== */
+        .section {
+            position: relative;
+            z-index: 5;
+            padding: 100px 0;
+        }
+
+        .section-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        .section-label {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--red-primary);
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .section-title {
+            font-size: 44px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+
+        .section-title span {
+            color: var(--red-primary);
+        }
+
+        .section-divider {
+            width: 80px;
+            height: 3px;
+            background: var(--gradient-red);
+            margin: 0 auto;
+        }
+
+        .section-description {
+            max-width: 700px;
+            margin: 20px auto 0;
+            font-size: 16px;
+            color: var(--gray-light);
+            line-height: 1.8;
+        }
+
+        /* ===== SERVICES SECTION ===== */
+        .services-section {
+            background: var(--gradient-dark);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+
+        .service-card {
+            position: relative;
+            background: var(--black-card);
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--gray-dark);
+            transition: all 0.5s ease;
+            cursor: pointer;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--red-primary);
+            box-shadow: var(--shadow-red);
+        }
+
+        .service-card-image {
+            width: 100%;
+            height: 280px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .service-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .service-card:hover .service-card-image img {
+            transform: scale(1.08);
+        }
+
+        .service-card-image::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 50%;
+            background: linear-gradient(to top, var(--black-card), transparent);
+        }
+
+        .service-card-icon {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 55px;
+            height: 55px;
+            background: var(--gradient-red);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2;
+            box-shadow: 0 4px 15px rgba(196, 30, 42, 0.5);
+        }
+
+        .service-card-icon i {
+            font-size: 22px;
+            color: var(--white);
+        }
+
+        .service-card-content {
+            padding: 30px;
+        }
+
+        .service-card-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--white);
+        }
+
+        .service-card-text {
+            font-size: 14px;
+            color: var(--gray-light);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .service-card-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .service-feature-tag {
+            font-size: 11px;
+            font-weight: 600;
+            padding: 5px 12px;
+            background: rgba(196, 30, 42, 0.15);
+            color: var(--red-light);
+            border: 1px solid rgba(196, 30, 42, 0.3);
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* ===== FULL WIDTH SERVICE SECTION ===== */
+        .full-service {
+            padding: 100px 0;
+            position: relative;
+            z-index: 5;
+        }
+
+        .full-service-bg {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .full-service-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 500px;
+        }
+
+        .full-service-row:nth-child(even) .full-service-image {
+            order: -1;
+        }
+
+        .full-service-image {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .full-service-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+
+        .full-service-row:hover .full-service-image img {
+            transform: scale(1.05);
+        }
+
+        .full-service-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(10,10,10,0.8), rgba(196,30,42,0.1));
+        }
+
+        .full-service-text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 60px;
+            background: var(--black-card);
+        }
+
+        .full-service-number {
+            font-family: 'Oswald', sans-serif;
+            font-size: 80px;
+            font-weight: 900;
+            color: rgba(196, 30, 42, 0.15);
+            line-height: 1;
+            margin-bottom: 20px;
+        }
+
+        .full-service-label {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            color: var(--red-primary);
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .full-service-title {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .full-service-desc {
+            font-size: 15px;
+            color: var(--gray-light);
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .full-service-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .full-service-list li {
+            font-size: 13px;
+            color: var(--silver);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .full-service-list li i {
+            color: var(--red-primary);
+            font-size: 12px;
+        }
+
+        /* ===== VIDEO SECTION ===== */
+        .video-section {
+            padding: 80px 0;
+            background: var(--black-card);
+            position: relative;
+            z-index: 5;
+        }
+
+        .video-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+            border: 2px solid var(--gray-dark);
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .video-placeholder {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('img-surveillance.jpg') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .video-placeholder::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 10, 10, 0.5);
+        }
+
+        .video-placeholder:hover::after {
+            background: rgba(10, 10, 10, 0.3);
+        }
+
+        .play-button {
+            position: relative;
+            z-index: 2;
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-red);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 40px rgba(196, 30, 42, 0.6);
+            transition: all 0.3s ease;
+            animation: pulse-play 2s infinite;
+        }
+
+        .play-button i {
+            font-size: 30px;
+            color: var(--white);
+            margin-left: 5px;
+        }
+
+        .video-placeholder:hover .play-button {
+            transform: scale(1.1);
+        }
+
+        /* ===== WHY CHOOSE US ===== */
+        .why-section {
+            background: var(--gradient-dark);
+            padding: 100px 0;
+            position: relative;
+            z-index: 5;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .why-card {
+            text-align: center;
+            padding: 40px 30px;
+            background: var(--black-card);
+            border: 1px solid var(--gray-dark);
+            border-radius: 8px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .why-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--gradient-red);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .why-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .why-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(196, 30, 42, 0.3);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .why-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(196, 30, 42, 0.1);
+            border: 2px solid rgba(196, 30, 42, 0.3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            transition: all 0.3s ease;
+        }
+
+        .why-card:hover .why-icon {
+            background: var(--gradient-red);
+            border-color: var(--red-primary);
+        }
+
+        .why-icon i {
+            font-size: 28px;
+            color: var(--red-primary);
+            transition: all 0.3s ease;
+        }
+
+        .why-card:hover .why-icon i {
+            color: var(--white);
+        }
+
+        .why-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--white);
+        }
+
+        .why-text {
+            font-size: 14px;
+            color: var(--gray-light);
+            line-height: 1.7;
+        }
+
+        /* ===== TECHNOLOGY SECTION ===== */
+        .tech-section {
+            padding: 100px 0;
+            position: relative;
+            z-index: 5;
+            background: var(--black-deep);
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            align-items: stretch;
+        }
+
+        .tech-image-container {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--gray-dark);
+            min-height: 450px;
+        }
+
+        .tech-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .tech-image-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(196, 30, 42, 0.1), rgba(10, 10, 10, 0.7));
+            display: flex;
+            align-items: flex-end;
+            padding: 30px;
+        }
+
+        .tech-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tech-badge {
+            background: rgba(10, 10, 10, 0.8);
+            border: 1px solid var(--red-primary);
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--white);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            backdrop-filter: blur(10px);
+        }
+
+        .tech-info {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .tech-item {
+            background: var(--black-card);
+            border: 1px solid var(--gray-dark);
+            border-radius: 8px;
+            padding: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .tech-item:hover {
+            border-color: var(--red-primary);
+            transform: translateX(5px);
+        }
+
+        .tech-item-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 12px;
+        }
+
+        .tech-item-icon {
+            width: 45px;
+            height: 45px;
+            background: rgba(196, 30, 42, 0.1);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .tech-item-icon i {
+            font-size: 20px;
+            color: var(--red-primary);
+        }
+
+        .tech-item-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--white);
+            text-transform: none;
+            letter-spacing: 0;
+        }
+
+        .tech-item-desc {
+            font-size: 13px;
+            color: var(--gray-light);
+            line-height: 1.7;
+        }
+
+        /* ===== CLIENTS / TRUST ===== */
+        .trust-section {
+            padding: 60px 0;
+            background: var(--black-card);
+            border-top: 1px solid var(--gray-dark);
+            border-bottom: 1px solid var(--gray-dark);
+            position: relative;
+            z-index: 5;
+        }
+
+        .trust-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            text-align: center;
+        }
+
+        .trust-label {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            color: var(--gray-light);
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
+
+        .trust-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+            flex-wrap: wrap;
+            opacity: 0.4;
+            transition: opacity 0.3s ease;
+        }
+
+        .trust-logos:hover {
+            opacity: 0.7;
+        }
+
+        .trust-logo-item {
+            font-family: 'Oswald', sans-serif;
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--silver);
+            letter-spacing: 2px;
+        }
+
+        /* ===== CTA SECTION ===== */
+        .cta-section {
+            padding: 100px 0;
+            position: relative;
+            z-index: 5;
+            background: linear-gradient(135deg, var(--black-deep) 0%, #1a0000 100%);
+        }
+
+        .cta-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 40px;
+            text-align: center;
+        }
+
+        .cta-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-red);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            box-shadow: 0 0 40px rgba(196, 30, 42, 0.4);
+        }
+
+        .cta-icon i {
+            font-size: 35px;
+            color: var(--white);
+        }
+
+        .cta-title {
+            font-size: 42px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+
+        .cta-title span {
+            color: var(--red-primary);
+        }
+
+        .cta-text {
+            font-size: 16px;
+            color: var(--gray-light);
+            margin-bottom: 40px;
+            line-height: 1.8;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-phone {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background: var(--black-card);
+            border: 1px solid var(--gray-dark);
+            padding: 18px 30px;
+            border-radius: 8px;
+            margin-top: 40px;
+            justify-content: center;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-phone i {
+            font-size: 24px;
+            color: var(--red-primary);
+        }
+
+        .cta-phone-info {
+            text-align: left;
+        }
+
+        .cta-phone-label {
+            font-size: 11px;
+            color: var(--gray-light);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .cta-phone-number {
+            font-family: 'Oswald', sans-serif;
+            font-size: 22px;
+            font-weight: 600;
+            color: var(--white);
+        }
+
+        /* ---------- TECH SHOWCASE ---------- */
+        .tech{background:var(--panel);}
+        .tech-inner{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center;}
+        @media (max-width:900px){ .tech-inner{grid-template-columns:1fr;gap:48px;} }
+        .network-illust{
+            margin-bottom:64px;padding:34px 20px 22px;
+            background:var(--void);border:1px solid var(--line);position:relative;overflow:hidden;
+        }
+        .network-illust svg{width:100%;height:auto;display:block;}
+        .network-illust .netlabel{font-family:'JetBrains Mono',monospace;font-size:10px;fill:var(--silver-dim);letter-spacing:0.04em;}
+        .pulse-node{animation:pulse 1.8s infinite;}
+        .tech-feats{display:flex;flex-direction:column;gap:26px;margin-top:34px;}
+        .tech-feat{display:flex;gap:16px;}
+        .tech-feat .ico{width:20px;height:20px;flex:none;color:var(--green);margin-top:3px;}
+        .tech-feat h4{font-size:14.5px;color:var(--white);margin-bottom:4px;font-weight:600;}
+        .tech-feat p{font-size:13px;color:var(--silver-dim);line-height:1.6;}
+
+        .console{
+            background:var(--void);border:1px solid var(--line);
+            padding:20px;font-family:'JetBrains Mono',monospace;
+            position:relative;overflow:hidden;
+        }
+        .console-bar{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding-bottom:12px;margin-bottom:16px;font-size:10.5px;color:var(--silver-dim);}
+        .console-bar .rec{color:var(--red-bright);display:flex;align-items:center;gap:6px;}
+        .console-bar .rec .d{width:6px;height:6px;background:var(--red-bright);border-radius:50%;animation:pulse 1s infinite;}
+        .cam-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+        .cam{
+            background:linear-gradient(160deg,#15151b,#0c0c10);
+            border:1px solid var(--line);aspect-ratio:4/3;position:relative;overflow:hidden;
+        }
+        .cam .label{position:absolute;top:6px;left:8px;font-size:9px;color:var(--silver-dim);letter-spacing:.05em;}
+        .cam .status{position:absolute;top:6px;right:8px;font-size:8px;color:var(--green);display:flex;align-items:center;gap:4px;}
+        .cam .status .d{width:5px;height:5px;border-radius:50%;background:var(--green);box-shadow:0 0 4px var(--green);animation:pulse 1.4s infinite;}
+        .cam .scan{
+            position:absolute;left:0;right:0;height:22px;
+            background:linear-gradient(180deg, rgba(0,255,160,0) , rgba(0,255,160,0.12), rgba(0,255,160,0));
+            animation:scan 3.4s linear infinite;
+        }
+        @keyframes scan{0%{top:-22px;}100%{top:100%;}}
+        .cam svg{position:absolute;bottom:8px;right:8px;width:34px;height:34px;opacity:.5;}
+        .console-clock{margin-top:14px;display:flex;justify-content:space-between;font-size:10px;color:var(--silver-dim);border-top:1px solid var(--line);padding-top:12px;}
+        .console-clock .t{color:var(--white);}
+
+
+        /* ===== CONTACT SECTION ===== */
+        .contact-section {
+            padding: 100px 0;
+            background: var(--gradient-dark);
+            position: relative;
+            z-index: 5;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .contact-info-title {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 10px;
+        }
+
+        .contact-info-text {
+            font-size: 15px;
+            color: var(--gray-light);
+            line-height: 1.8;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            padding: 20px;
+            background: var(--black-card);
+            border: 1px solid var(--gray-dark);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            border-color: var(--red-primary);
+            transform: translateX(5px);
+        }
+
+        .contact-item-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(196, 30, 42, 0.1);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .contact-item-icon i {
+            font-size: 20px;
+            color: var(--red-primary);
+        }
+
+        .contact-item-content h4 {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--white);
+            margin-bottom: 5px;
+            text-transform: none;
+            letter-spacing: 0;
+        }
+
+        .contact-item-content p {
+            font-size: 14px;
+            color: var(--gray-light);
+        }
+
+        .contact-form {
+            background: var(--black-card);
+            border: 1px solid var(--gray-dark);
+            border-radius: 12px;
+            padding: 40px;
+        }
+
+        .contact-form h3 {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 30px;
+            text-transform: none;
+            letter-spacing: 1px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--silver);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px 18px;
+            background: var(--black-deep);
+            border: 1px solid var(--gray-dark);
+            border-radius: 6px;
+            color: var(--white);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            outline: none;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--red-primary);
+            box-shadow: 0 0 10px rgba(196, 30, 42, 0.2);
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-submit {
+            width: 100%;
+            padding: 16px;
+            background: var(--gradient-red);
+            color: var(--white);
+            border: none;
+            border-radius: 6px;
+            font-family: 'Oswald', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(196, 30, 42, 0.4);
+        }
+
+        .form-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(196, 30, 42, 0.6);
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            position: relative;
+            z-index: 5;
+            background: var(--black-deep);
+            border-top: 1px solid var(--gray-dark);
+        }
+
+        .footer-main {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 60px 40px;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+        }
+
+        .footer-brand {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .footer-brand img {
+            width: 120px;
+            height: auto;
+        }
+
+        .footer-brand-text {
+            font-size: 14px;
+            color: var(--gray-light);
+            line-height: 1.8;
+            max-width: 300px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 12px;
+            margin-top: 10px;
+        }
+
+        .footer-social a {
+            width: 40px;
+            height: 40px;
+            background: var(--black-card);
+            border: 1px solid var(--gray-dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .footer-social a:hover {
+            background: var(--red-primary);
+            border-color: var(--red-primary);
+            transform: translateY(-3px);
+        }
+
+        .footer-social a i {
+            font-size: 16px;
+            color: var(--silver);
+            transition: color 0.3s ease;
+        }
+
+        .footer-social a:hover i {
+            color: var(--white);
+        }
+
+        .footer-col h4 {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--white);
+            margin-bottom: 20px;
+            text-transform: none;
+            letter-spacing: 1px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col ul li a {
+            font-size: 14px;
+            color: var(--gray-light);
+            transition: all 0.3s ease;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--red-primary);
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px 40px;
+            border-top: 1px solid var(--gray-dark);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-bottom-text {
+            font-size: 13px;
+            color: var(--gray-light);
+        }
+
+        .footer-bottom-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .footer-bottom-links a {
+            font-size: 13px;
+            color: var(--gray-light);
+            transition: color 0.3s ease;
+        }
+
+        .footer-bottom-links a:hover {
+            color: var(--red-primary);
+        }
+
+        /* ===== ANIMATIONS ===== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% {
+                box-shadow: 0 0 40px rgba(196, 30, 42, 0.4), 0 0 80px rgba(196, 30, 42, 0.1);
+            }
+            50% {
+                box-shadow: 0 0 60px rgba(196, 30, 42, 0.6), 0 0 120px rgba(196, 30, 42, 0.2);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            40% {
+                transform: translateX(-50%) translateY(-15px);
+            }
+            60% {
+                transform: translateX(-50%) translateY(-7px);
+            }
+        }
+
+        @keyframes pulse-play {
+            0%, 100% {
+                box-shadow: 0 0 20px rgba(196, 30, 42, 0.4);
+            }
+            50% {
+                box-shadow: 0 0 50px rgba(196, 30, 42, 0.7);
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .full-service-row {
+                grid-template-columns: 1fr;
+            }
+
+            .full-service-row:nth-child(even) .full-service-image {
+                order: 0;
+            }
+
+            .tech-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-main {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .why-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .stats-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .stat-item:nth-child(2)::after {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .top-header {
+                padding: 8px 0;
+            }
+
+            .top-header-container {
+                padding: 0 15px;
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .top-header-left {
+                gap: 8px;
+            }
+
+            .top-header-logo {
+                height: 30px;
+            }
+
+            .top-header-company {
+                font-size: 14px;
+            }
+
+            .top-header-tagline {
+                font-size: 9px;
+            }
+
+            .top-header-right {
+                gap: 15px;
+            }
+
+            .top-header-phones {
+                gap: 12px;
+            }
+
+            .top-header-phone {
+                font-size: 12px;
+            }
+
+            .top-header-phone i {
+                font-size: 13px;
+            }
+
+            .top-header-cta {
+                font-size: 11px;
+                padding: 6px 14px;
+            }
+
+            .navbar {
+                top: 100px;
+            }
+
+            .navbar.scrolled {
+                top: 0;
+            }
+
+            .nav-links {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background: rgba(10, 10, 10, 0.98);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 30px;
+                z-index: 999;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links a {
+                font-size: 18px;
+            }
+
+            .mobile-menu-btn {
+                display: flex;
+            }
+
+            .hero-title {
+                font-size: 38px;
+            }
+
+            .hero-subtitle {
+                font-size: 15px;
+            }
+
+            .hero-logo {
+                width: 150px;
+                height: 150px;
+            }
+
+            .section-title {
+                font-size: 32px;
+            }
+
+            .stats-container {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .why-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-main {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .full-service-list {
+                grid-template-columns: 1fr;
+            }
+
+            .full-service-text {
+                padding: 30px;
+            }
+
+            .cta-title {
+                font-size: 32px;
+            }
+
+            .stat-number {
+                font-size: 36px;
+            }
+        }
+
+        /* ===== SCROLL TO TOP ===== */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-red);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(196, 30, 42, 0.4);
+            border: none;
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 25px rgba(196, 30, 42, 0.6);
+        }
+
+        .scroll-top i {
+            font-size: 20px;
+            color: var(--white);
+        }
+
+        /* ===================================================== */
+        /* ===== SUPPLEMENTARY STYLES — PAGE "NOS SERVICES" ===== */
+        /* ===================================================== */
+
+        :root {
+            --status-green: #2ecc71;
+        }
+
+        /* ----- PAGE HERO (sub-page banner) ----- */
+        .page-hero {
+            position: relative;
+            min-height: 55vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            padding-top: 100px;
+        }
+
+        .page-hero-bg {
+            position: absolute;
+            inset: 0;
+            background: url('images/private-security.png') center/cover no-repeat;
+            z-index: 1;
+        }
+
+        .page-hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(10,10,10,0.75) 0%, rgba(10,10,10,0.55) 50%, rgba(10,10,10,0.92) 100%);
+            z-index: 2;
+        }
+
+        .page-hero-content {
+            position: relative;
+            z-index: 3;
+            text-align: center;
+            max-width: 800px;
+            padding: 0 40px;
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-family: 'Oswald', sans-serif;
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--silver);
+            margin-bottom: 20px;
+        }
+
+        .breadcrumb a { color: var(--silver); transition: color 0.3s ease; }
+        .breadcrumb a:hover { color: var(--red-primary); }
+        .breadcrumb i { font-size: 10px; color: var(--red-primary); }
+        .breadcrumb span { color: var(--red-light); }
+
+        .page-hero-title {
+            font-size: 52px;
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: 18px;
+            line-height: 1.15;
+        }
+
+        .page-hero-title span { color: var(--red-primary); }
+
+        .page-hero-text {
+            font-size: 16px;
+            color: var(--silver);
+            line-height: 1.8;
+            font-weight: 300;
+        }
+
+        /* ----- QUICK NAV PILLS ----- */
+        .quick-nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 14px;
+            margin-top: 45px;
+        }
+
+        .quick-nav-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 24px;
+            background: var(--black-card);
+            border: 1px solid var(--gray-dark);
+            border-radius: 30px;
+            font-family: 'Oswald', sans-serif;
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--silver);
+            transition: all 0.3s ease;
+        }
+
+        .quick-nav-pill i { color: var(--red-primary); font-size: 13px; }
+
+        .quick-nav-pill:hover {
+            border-color: var(--red-primary);
+            background: rgba(196, 30, 42, 0.1);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        /* scroll offset so fixed header doesn't cover anchored sections */
+        .full-service[id], .live-section[id] {
+            scroll-margin-top: 130px;
+        }
+
+        /* ----- LIVE MONITORING ILLUSTRATION (replaces raw video) ----- */
+        .live-section {
+            padding: 90px 0;
+            background: var(--black-card);
+            position: relative;
+            z-index: 5;
+        }
+
+        .live-grid {
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .live-text .section-label { text-align: left; }
+        .live-text .full-service-title { margin-bottom: 18px; }
+
+        .live-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 25px;
+        }
+
+        .console {
+            background: var(--black-deep);
+            border: 1px solid var(--gray-dark);
+            border-radius: 12px;
+            padding: 24px;
+            font-family: 'Oswald', sans-serif;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+        }
+
+        .console-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--gray-dark);
+            padding-bottom: 14px;
+            margin-bottom: 18px;
+            font-size: 11px;
+            letter-spacing: 1px;
+            color: var(--gray-light);
+            text-transform: uppercase;
+        }
+
+        .console-bar .rec {
+            color: var(--red-light);
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            font-weight: 600;
+        }
+
+        .console-bar .rec .d {
+            width: 7px;
+            height: 7px;
+            background: var(--red-light);
+            border-radius: 50%;
+            animation: pulse-play 1.4s infinite;
+        }
+
+        .cam-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .cam {
+            background: linear-gradient(160deg, #1a1a1a, #0a0a0a);
+            border: 1px solid var(--gray-dark);
+            border-radius: 6px;
+            aspect-ratio: 4/3;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cam .cam-label {
+            position: absolute;
+            top: 8px;
+            left: 10px;
+            font-size: 10px;
+            letter-spacing: 1px;
+            color: var(--gray-light);
+            z-index: 2;
+        }
+
+        .cam .cam-status {
+            position: absolute;
+            top: 8px;
+            right: 10px;
+            font-size: 9px;
+            color: var(--status-green);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            z-index: 2;
+            letter-spacing: 1px;
+        }
+
+        .cam .cam-status .d {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--status-green);
+            box-shadow: 0 0 6px var(--status-green);
+            animation: pulse-play 1.8s infinite;
+        }
+
+        .cam .cam-scan {
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: 26px;
+            background: linear-gradient(180deg, rgba(196,30,42,0), rgba(196,30,42,0.18), rgba(196,30,42,0));
+            animation: cam-scan 3.6s linear infinite;
+        }
+
+        .cam .cam-icon {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            color: rgba(255,255,255,0.08);
+        }
+
+        @keyframes cam-scan {
+            0% { top: -26px; }
+            100% { top: 100%; }
+        }
+
+        .console-clock {
+            margin-top: 16px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 11px;
+            color: var(--gray-light);
+            border-top: 1px solid var(--gray-dark);
+            padding-top: 14px;
+            letter-spacing: 1px;
+        }
+
+        .console-clock .t { color: var(--white); font-weight: 600; }
+
+        /* ----- PROCESS / STEPS ----- */
+        .process-section {
+            padding: 100px 0;
+            background: var(--gradient-dark);
+            position: relative;
+            z-index: 5;
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            counter-reset: process;
+        }
+
+        .process-step {
+            position: relative;
+            background: var(--black-card);
+            border: 1px solid var(--gray-dark);
+            border-radius: 8px;
+            padding: 35px 25px;
+            transition: all 0.4s ease;
+        }
+
+        .process-step:hover {
+            border-color: rgba(196, 30, 42, 0.4);
+            transform: translateY(-5px);
+        }
+
+        .process-number {
+            font-family: 'Oswald', sans-serif;
+            font-size: 42px;
+            font-weight: 800;
+            color: rgba(196, 30, 42, 0.25);
+            line-height: 1;
+            margin-bottom: 18px;
+        }
+
+        .process-step-title {
+            font-size: 17px;
+            font-weight: 600;
+            color: var(--white);
+            margin-bottom: 12px;
+            text-transform: none;
+            letter-spacing: 0;
+        }
+
+        .process-step-text {
+            font-size: 13px;
+            color: var(--gray-light);
+            line-height: 1.7;
+        }
+
+        .process-arrow {
+            display: none;
+        }
+
+        /* ----- SECTOR BADGES STRIP ----- */
+        .sectors-section {
+            padding: 70px 0;
+            background: var(--black-card);
+            border-top: 1px solid var(--gray-dark);
+            border-bottom: 1px solid var(--gray-dark);
+            position: relative;
+            z-index: 5;
+            text-align: center;
+        }
+
+        .sectors-label {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            color: var(--gray-light);
+            text-transform: uppercase;
+            margin-bottom: 25px;
+        }
+
+        .sector-badges {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .sector-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 10px 20px;
+            background: rgba(196, 30, 42, 0.08);
+            color: var(--silver);
+            border: 1px solid var(--gray-dark);
+            border-radius: 30px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+
+        .sector-badge i { color: var(--red-primary); }
+
+        .sector-badge:hover {
+            border-color: var(--red-primary);
+            color: var(--white);
+        }
+
+        /* ----- MINI FEATURE ROW inside full-service (link row) ----- */
+        .full-service-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 35px;
+            flex-wrap: wrap;
+        }
+
+        .full-service-links .btn-primary,
+        .full-service-links .btn-secondary {
+            padding: 13px 28px;
+            font-size: 13px;
+        }
+
+        /* ----- RESPONSIVE for new sections ----- */
+        @media (max-width: 1024px) {
+            .live-grid { grid-template-columns: 1fr; }
+            .process-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            .page-hero-title { font-size: 34px; }
+            .page-hero-text { font-size: 14px; }
+            .process-grid { grid-template-columns: 1fr; }
+            .cam-grid { grid-template-columns: 1fr 1fr; }
+            .quick-nav { gap: 10px; }
+            .quick-nav-pill { padding: 10px 18px; font-size: 11px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Particles Canvas -->
+    <canvas id="particles-canvas"></canvas>
+
+    <!-- Top Header Bar -->
+    <div class="top-header" id="topHeader">
+        <div class="top-header-container">
+            <div class="top-header-left">
+                <img src="images/logo-noir.png" alt="SMS" class="top-header-logo">
+                <div class="top-header-info">
+                    <span class="top-header-company">Sécurité Multi Services</span>
+                    <span class="top-header-tagline">Sécurité · Surveillance · Intervention</span>
+                </div>
+            </div>
+            <div class="top-header-right">
+                <div class="top-header-phones">
+                    <a href="tel:0503331331" class="top-header-phone">
+                        <i class="fas fa-phone-alt"></i>
+                        05 03 331 331
+                    </a>
+                    <a href="tel:0711909091" class="top-header-phone">
+                        <i class="fas fa-mobile-alt"></i>
+                        07 11 90 90 91
+                    </a>
+                    <a href="tel:0711909091" class="top-header-phone">
+                        <i class="fa-solid fa-location-crosshairs"></i>
+                        Cocody, Riviera M'Badon (Abidjan, Côte d'Ivoire)
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="images/logo-noir.png" alt="SMS - Sécurité Multi Services">
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html">Accueil</a>
+                <a href="nos-services.html">Nos Services</a>
+                <a href="qui-sommes-nous.html">A Propos</a>
+                <a href="contact.html">Contact</a>
+                <a href="contact.html" class="nav-cta"><i class="fas fa-shield-alt"></i> Devis Gratuit</a>
+            </div>
+            <div class="mobile-menu-btn" id="mobileMenuBtn" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="page-hero-bg"></div>
+        <div class="page-hero-overlay"></div>
+        <div class="page-hero-content fade-in">
+            <div class="breadcrumb">
+                <a href="index.html">Accueil</a>
+                <i class="fas fa-chevron-right"></i>
+                <span>Nos Services</span>
+            </div>
+            <h1 class="page-hero-title">Une Sécurité <span>Complète & Sur Mesure</span></h1>
+            <p class="page-hero-text">De la présence humaine sur le terrain à la surveillance technologique 24h/24, SMS combine quatre expertises complémentaires pour protéger vos biens, vos équipes et vos activités.</p>
+        </div>
+    </section>
+
+    <!-- Mini Stats -->
+    <div class="stats-bar">
+        <div class="stats-container">
+            <div class="stat-item fade-in">
+                <div class="stat-number" data-target="4">0</div>
+                <div class="stat-label">Pôles d'Expertise</div>
+            </div>
+            <div class="stat-item fade-in">
+                <div class="stat-number" data-target="24">0</div>
+                <div class="stat-label">H/24 Disponibilité</div>
+            </div>
+            <div class="stat-item fade-in">
+                <div class="stat-number" data-target="15">0</div>
+                <div class="stat-label">Min. Temps d'Intervention Moyen</div>
+            </div>
+            <div class="stat-item fade-in">
+                <div class="stat-number" data-target="500">0</div>
+                <div class="stat-label">Clients Protégés</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Intro + Quick Nav -->
+    <section class="section" style="padding-bottom: 40px;">
+        <div class="section-container">
+            <div class="section-header fade-in">
+                <span class="section-label">Nos Expertises</span>
+                <h2 class="section-title">Quatre Métiers, <span>Une Seule Mission</span></h2>
+                <div class="section-divider"></div>
+                <p class="section-description">Chaque site présente des risques différents. C'est pourquoi nous construisons chaque dispositif de sécurité en combinant, selon vos besoins, présence humaine, supervision à distance, capacité d'intervention et technologies intelligentes.</p>
+            </div>
+            <div class="quick-nav fade-in">
+                <a href="securite-privee.html" class="quick-nav-pill"><i class="fas fa-user-shield"></i> Sécurité Privée</a>
+                <a href="expertise-telesurveillance.html" class="quick-nav-pill"><i class="fas fa-video"></i> Télésurveillance H24</a>
+                <a href="rapid-response.html" class="quick-nav-pill"><i class="fas fa-bolt"></i> Intervention Rapide</a>
+                <a href="technologies-avancees.html" class="quick-nav-pill"><i class="fas fa-microchip"></i> Technologies Avancées</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Overview Grid -->
+    <section class="section services-section" style="padding-top: 40px;">
+        <div class="section-container">
+            <div class="services-grid">
+                <a href="securite-privee.html">
+                <div class="service-card fade-in">
+                    <div class="service-card-image">
+                        <img src="images/securiye-privee.png" alt="Sécurité Privée">
+                        <div class="service-card-icon"><i class="fas fa-user-shield"></i></div>
+                    </div>
+                    <div class="service-card-content">
+                        <h3 class="service-card-title">Sécurité Privée</h3>
+                        <p class="service-card-text">Agents qualifiés pour le gardiennage, les rondes et l'accueil sécurisé de vos sites, locaux commerciaux et événements.</p>
+                        <div class="service-card-features">
+                            <span class="service-feature-tag">Gardiennage</span>
+                            <span class="service-feature-tag">Rondes</span>
+                            <span class="service-feature-tag">Événementiel</span>
+                        </div>
+                    </div>
+                </div>
+                </a>
+                <a href="expertise-telesurveillance.html">
+                <div class="service-card fade-in">
+                    <div class="service-card-image">
+                        <img src="images/telesurveillance-3.png" alt="Télésurveillance H24">
+                        <div class="service-card-icon"><i class="fas fa-video"></i></div>
+                    </div>
+                    <div class="service-card-content">
+                        <h3 class="service-card-title">Télésurveillance H24</h3>
+                        <p class="service-card-text">Un centre de supervision actif 24h/24 et 7j/7, qui analyse vos flux vidéo et déclenche l'alerte en cas d'anomalie.</p>
+                        <div class="service-card-features">
+                            <span class="service-feature-tag">Monitoring 24/7</span>
+                            <span class="service-feature-tag">Alertes Instantanées</span>
+                        </div>
+                    </div>
+                </div>
+                </a>
+                <a href="rapid-response.html">
+                <div class="service-card fade-in">
+                    <div class="service-card-image">
+                        <img src="images/motos.jpg" alt="Intervention Rapide">
+                        <div class="service-card-icon"><i class="fas fa-bolt"></i></div>
+                    </div>
+                    <div class="service-card-content">
+                        <h3 class="service-card-title">Intervention Rapide</h3>
+                        <p class="service-card-text">Des équipes mobiles déployées en permanence, prêtes à sécuriser la situation avant l'arrivée des forces de l'ordre.</p>
+                        <div class="service-card-features">
+                            <span class="service-feature-tag">Réponse Immédiate</span>
+                            <span class="service-feature-tag">Levée de doute</span>
+                        </div>
+                    </div>
+                </div>
+                </a>
+                <a href="technologies-avancees.html">
+                <div class="service-card fade-in">
+                    <div class="service-card-image">
+                        <img src="images/outils-surveillance.png" alt="Technologies de Sécurité">
+                        <div class="service-card-icon"><i class="fas fa-microchip"></i></div>
+                    </div>
+                    <div class="service-card-content">
+                        <h3 class="service-card-title">Technologies Avancées</h3>
+                        <p class="service-card-text">Vidéosurveillance intelligente, contrôle d'accès biométrique, drones et cybersécurité pour une protection augmentée.</p>
+                        <div class="service-card-features">
+                            <span class="service-feature-tag">IA</span>
+                            <span class="service-feature-tag">Biométrie</span>
+                        </div>
+                    </div>
+                </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Service Sections -->
+    <section class="full-service">
+        <div class="full-service-row fade-in" id="securite-privee">
+            <div class="full-service-image">
+                <img src="images/01.png" alt="Sécurité Privée">
+            </div>
+            <div class="full-service-text">
+                <div class="full-service-number">01</div>
+                <span class="full-service-label">Sécurité Privée</span>
+                <h3 class="full-service-title">Une Présence Humaine <br>Formée & Rassurante</h3>
+                <p class="full-service-desc">Nos agents de sécurité sont sélectionnés, formés et encadrés pour assurer la protection de vos biens, de vos collaborateurs et de vos visiteurs. Discrets mais vigilants, ils s'intègrent à votre environnement tout en garantissant un haut niveau de sécurité, jour et nuit.</p>
+                <ul class="full-service-list">
+                    <li><i class="fas fa-check-circle"></i> Gardiennage de sites</li>
+                    <li><i class="fas fa-check-circle"></i> Rondes de surveillance</li>
+                    <li><i class="fas fa-check-circle"></i> Accueil & contrôle d'accès</li>
+                    <li><i class="fas fa-check-circle"></i> Sécurité événementielle</li>
+                    <li><i class="fas fa-check-circle"></i> Protection rapprochée</li>
+                    <li><i class="fas fa-check-circle"></i> Agents formés & assermentés</li>
+                </ul>
+                <div class="full-service-links">
+                    <a href="contact.html" class="btn-primary"><i class="fas fa-shield-alt"></i> Demander un devis</a>
+                    <a href="securite-privee.html" class="btn-secondary"><i class="fas fa-arrow-right"></i> Page dédiée</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="full-service-row fade-in" id="telesurveillance">
+            <div class="full-service-image">
+                <img src="images/control-sms.png" alt="Télésurveillance H24">
+            </div>
+            <div class="full-service-text">
+                <div class="full-service-number">02</div>
+                <span class="full-service-label">Télésurveillance H24</span>
+                <h3 class="full-service-title">Votre Site Sous <br>Surveillance Permanente</h3>
+                <p class="full-service-desc">Notre centre de télésurveillance est équipé des technologies les plus avancées pour assurer une protection continue de vos locaux. Nos opérateurs qualifiés analysent en temps réel les flux vidéo et déclenchent les procédures d'intervention en cas d'anomalie.</p>
+                <ul class="full-service-list">
+                    <li><i class="fas fa-check-circle"></i> Vidéosurveillance IP HD</li>
+                    <li><i class="fas fa-check-circle"></i> Détection de mouvement IA</li>
+                    <li><i class="fas fa-check-circle"></i> Alertes temps réel</li>
+                    <li><i class="fas fa-check-circle"></i> Archives vidéo sécurisées</li>
+                    <li><i class="fas fa-check-circle"></i> Monitoring multi-sites</li>
+                    <li><i class="fas fa-check-circle"></i> Rapport d'activité</li>
+                </ul>
+                <div class="full-service-links">
+                    <a href="contact.html" class="btn-primary"><i class="fas fa-shield-alt"></i> Demander un devis</a>
+                    <a href="expertise-telesurveillance.html" class="btn-secondary"><i class="fas fa-arrow-right"></i> Page dédiée</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="full-service-row fade-in" id="intervention-rapide">
+            <div class="full-service-image">
+                <img src="images/rapid-response.png" alt="Intervention Rapide">
+            </div>
+            <div class="full-service-text">
+                <div class="full-service-number">03</div>
+                <span class="full-service-label">Intervention Rapide</span>
+                <h3 class="full-service-title">Réponse d'Urgence <br>en Temps Réel</h3>
+                <p class="full-service-desc">Nos équipes d'intervention mobiles sont déployées en permanence pour garantir un temps de réponse optimal sur l'ensemble de notre zone de couverture. Équipées et entraînées selon les standards les plus exigeants, elles interviennent sur toute alerte pour sécuriser la situation avant l'arrivée des forces de l'ordre.</p>
+                <ul class="full-service-list">
+                    <li><i class="fas fa-check-circle"></i> Temps de réponse &lt; 15 min</li>
+                    <li><i class="fas fa-check-circle"></i> Agents formés CQP</li>
+                    <li><i class="fas fa-check-circle"></i> Coordination avec la police</li>
+                    <li><i class="fas fa-check-circle"></i> Sécurisation de site</li>
+                    <li><i class="fas fa-check-circle"></i> Levée de doute</li>
+                    <li><i class="fas fa-check-circle"></i> Constat et rapport détaillé</li>
+                </ul>
+                <div class="full-service-links">
+                    <a href="contact.html" class="btn-primary"><i class="fas fa-shield-alt"></i> Demander un devis</a>
+                    <a href="rapid-response.html" class="btn-secondary"><i class="fas fa-arrow-right"></i> Page dédiée</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="full-service-row fade-in" id="technologies">
+            <div class="full-service-image">
+                <img src="images/outils-surveillance.png" alt="Technologies de Sécurité">
+            </div>
+            <div class="full-service-text">
+                <div class="full-service-number">04</div>
+                <span class="full-service-label">Technologies Avancées</span>
+                <h3 class="full-service-title">L'Innovation au Service <br>de Votre Protection</h3>
+                <p class="full-service-desc">Nous déployons des solutions technologiques de dernière génération pour renforcer et automatiser la protection de vos sites : vidéosurveillance intelligente, contrôle d'accès biométrique, drones de surveillance et cybersécurité de vos infrastructures numériques.</p>
+                <ul class="full-service-list">
+                    <li><i class="fas fa-check-circle"></i> Vidéosurveillance par IA</li>
+                    <li><i class="fas fa-check-circle"></i> Contrôle d'accès biométrique</li>
+                    <li><i class="fas fa-check-circle"></i> Drones de surveillance</li>
+                    <li><i class="fas fa-check-circle"></i> Cybersécurité</li>
+                    <li><i class="fas fa-check-circle"></i> Analyse comportementale</li>
+                    <li><i class="fas fa-check-circle"></i> Application de suivi terrain</li>
+                </ul>
+                <div class="full-service-links">
+                    <a href="contact.html" class="btn-primary"><i class="fas fa-shield-alt"></i> Demander un devis</a>
+                    <a href="technologies-avancees.html" class="btn-secondary"><i class="fas fa-arrow-right"></i> Page dédiée</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Live Monitoring Illustration -->
+    <!-- <section class="live-section" id="supervision">
+        <div class="section-container">
+            <div class="live-grid">
+                <div class="live-text fade-in">
+                    <span class="section-label">Centre de Supervision</span>
+                    <h3 class="full-service-title">Notre Salle de <br>Contrôle en Activité</h3>
+                    <p class="full-service-desc">Nos opérateurs se relaient jour et nuit dans notre centre de télésurveillance pour garantir une vigilance sans interruption sur l'ensemble des sites qui nous sont confiés. Chaque caméra est analysée en temps réel, chaque alerte est traitée selon un protocole strict.</p>
+                    <div class="live-badges">
+                        <span class="tech-badge"><i class="fas fa-circle" style="color:var(--status-green); font-size:8px;"></i> Supervision active</span>
+                        <span class="tech-badge"><i class="fas fa-clock"></i> 24h/24 · 7j/7</span>
+                        <span class="tech-badge"><i class="fas fa-brain"></i> Analyse IA</span>
+                    </div>
+                </div>
+                <div class="console fade-in">
+                    <div class="console-bar">
+                        <span>PC SÉCURITÉ · SMS-CTRL-01</span>
+                        <span class="rec"><span class="d"></span> EN DIRECT</span>
+                    </div>
+                    <div class="cam-grid">
+                        <div class="cam">
+                            <span class="cam-label">CAM 01 · ENTRÉE</span>
+                            <span class="cam-status"><span class="d"></span>OK</span>
+                            <div class="cam-scan"></div>
+                            <div class="cam-icon"><i class="fas fa-video"></i></div>
+                        </div>
+                        <div class="cam">
+                            <span class="cam-label">CAM 02 · PARKING</span>
+                            <span class="cam-status"><span class="d"></span>OK</span>
+                            <div class="cam-scan" style="animation-delay: -1.2s;"></div>
+                            <div class="cam-icon"><i class="fas fa-video"></i></div>
+                        </div>
+                        <div class="cam">
+                            <span class="cam-label">CAM 03 · PÉRIMÈTRE</span>
+                            <span class="cam-status"><span class="d"></span>OK</span>
+                            <div class="cam-scan" style="animation-delay: -2.4s;"></div>
+                            <div class="cam-icon"><i class="fas fa-video"></i></div>
+                        </div>
+                        <div class="cam">
+                            <span class="cam-label">CAM 04 · ENTREPÔT</span>
+                            <span class="cam-status"><span class="d"></span>OK</span>
+                            <div class="cam-scan" style="animation-delay: -0.6s;"></div>
+                            <div class="cam-icon"><i class="fas fa-video"></i></div>
+                        </div>
+                    </div>
+                    <div class="console-clock">
+                        <span>Sites connectés : <span class="t">128</span></span>
+                        <span>Alertes traitées / 24h : <span class="t">37</span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Process Section -->
+    <section class="process-section">
+        <div class="section-container">
+            <div class="section-header fade-in">
+                <span class="section-label">Notre Méthode</span>
+                <h2 class="section-title">Comment Nous Déployons <span>Votre Sécurité</span></h2>
+                <div class="section-divider"></div>
+                <p class="section-description">Un accompagnement clair et structuré, de la première visite de votre site à son suivi au quotidien.</p>
+            </div>
+            <div class="process-grid">
+                <div class="process-step fade-in">
+                    <div class="process-number">01</div>
+                    <h4 class="process-step-title">Audit & Diagnostic</h4>
+                    <p class="process-step-text">Visite de vos locaux, analyse des risques et identification des points sensibles à sécuriser.</p>
+                </div>
+                <div class="process-step fade-in">
+                    <div class="process-number">02</div>
+                    <h4 class="process-step-title">Proposition Sur-Mesure</h4>
+                    <p class="process-step-text">Un plan de sécurité combinant agents, télésurveillance et technologies, adapté à votre budget.</p>
+                </div>
+                <div class="process-step fade-in">
+                    <div class="process-number">03</div>
+                    <h4 class="process-step-title">Déploiement</h4>
+                    <p class="process-step-text">Installation des équipements, mise en service et formation des équipes concernées.</p>
+                </div>
+                <div class="process-step fade-in">
+                    <div class="process-number">04</div>
+                    <h4 class="process-step-title">Suivi Continu</h4>
+                    <p class="process-step-text">Rapports réguliers, ajustements du dispositif et amélioration continue de votre protection.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us (condensed) -->
+    <section class="why-section">
+        <div class="section-container">
+            <div class="section-header fade-in">
+                <span class="section-label">Nos Engagements</span>
+                <h2 class="section-title">Ce Qui Nous <span>Distingue</span></h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="why-grid">
+                <div class="why-card fade-in">
+                    <div class="why-icon"><i class="fas fa-rocket"></i></div>
+                    <h4 class="why-title">Réactivité Prouvée</h4>
+                    <p class="why-text">Un réseau d'équipes mobiles et un centre de supervision actifs 24h/24 pour un temps de réponse maîtrisé.</p>
+                </div>
+                <div class="why-card fade-in">
+                    <div class="why-icon"><i class="fas fa-award"></i></div>
+                    <h4 class="why-title">Personnel Certifié</h4>
+                    <p class="why-text">Des agents formés, encadrés et régulièrement évalués selon les normes de la profession.</p>
+                </div>
+                <div class="why-card fade-in">
+                    <div class="why-icon"><i class="fas fa-lock"></i></div>
+                    <h4 class="why-title">Confidentialité Totale</h4>
+                    <p class="why-text">Discrétion absolue sur chacune de nos missions, dans le respect de vos informations sensibles.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sectors Strip -->
+    <section class="sectors-section">
+        <div class="section-container">
+            <p class="sectors-label">Nos Secteurs d'Intervention</p>
+            <div class="sector-badges">
+                <span class="sector-badge"><i class="fas fa-home"></i> Résidentiel</span>
+                <span class="sector-badge"><i class="fas fa-store"></i> Commerce & Retail</span>
+                <span class="sector-badge"><i class="fas fa-industry"></i> Industrie & Logistique</span>
+                <span class="sector-badge"><i class="fas fa-building"></i> Bureaux & Tertiaire</span>
+                <span class="sector-badge"><i class="fas fa-glass-cheers"></i> Événementiel</span>
+                <span class="sector-badge"><i class="fas fa-city"></i> Collectivités & Copropriétés</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-container fade-in">
+            <div class="cta-icon">
+                <i class="fas fa-phone-alt"></i>
+            </div>
+            <h2 class="cta-title">Un Projet de <span>Sécurité</span> ?</h2>
+            <p class="cta-text">Parlons de vos besoins. Notre équipe réalise un audit gratuit de vos installations et vous propose la combinaison de services la mieux adaptée à votre site.</p>
+            <div class="cta-buttons">
+                <a href="contact.html" class="btn-primary"><i class="fas fa-envelope"></i> Nous Contacter</a>
+                <a href="tel:0503331331" class="btn-secondary"><i class="fas fa-phone"></i> Appeler Maintenant</a>
+            </div>
+            <div class="cta-phone">
+                <i class="fas fa-headset"></i>
+                <div class="cta-phone-info">
+                    <div class="cta-phone-label">Ligne Directe 24h/24</div>
+                    <div class="cta-phone-number">05 03 331 331</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-main">
+            <div class="footer-brand">
+                <img src="images/logo-noir.png" alt="SMS Logo">
+                <p class="footer-brand-text">Sécurité Multi Services (SMS) est votre partenaire de confiance pour la protection de vos biens et personnes. Nous combinons expertise humaine et technologies avancées pour une sécurité optimale.</p>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="securite-privee.html">Sécurité Privée</a></li>
+                    <li><a href="expertise-telesurveillance.html">Télésurveillance</a></li>
+                    <li><a href="rapid-response.html">Intervention</a></li>
+                    <li><a href="technologies-avancees.html">Technologies avancées</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Entreprise</h4>
+                <ul>
+                    <li><a href="qui-sommes-nous.html">À Propos</a></li>
+                    <li><a href="#">Nos Équipes</a></li>
+                    <li><a href="#">Certifications</a></li>
+                    <li><a href="#">Carrières</a></li>
+                    <li><a href="#">Actualités</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Légal</h4>
+                <ul>
+                    <li><a href="#">Mentions Légales</a></li>
+                    <li><a href="#">Politique de Confidentialité</a></li>
+                    <li><a href="#">CGV</a></li>
+                    <li><a href="#">RGPD</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="footer-bottom-text">&copy; 2024 Sécurité Multi Services (SMS). Tous droits réservés.</p>
+            <div class="footer-bottom-links">
+                <a href="#">Politique de confidentialité</a>
+                <a href="#">Mentions légales</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top -->
+    <button class="scroll-top" id="scrollTop" onclick="scrollToTop()">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script>
+        // ===== NAVBAR SCROLL EFFECT =====
+        const navbar = document.getElementById('navbar');
+        const topHeader = document.getElementById('topHeader');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+                topHeader.classList.add('hidden');
+            } else {
+                navbar.classList.remove('scrolled');
+                topHeader.classList.remove('hidden');
+            }
+        });
+
+        // ===== MOBILE MENU =====
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navLinks').classList.remove('active');
+            });
+        });
+
+        // ===== SCROLL ANIMATIONS =====
+        const fadeElements = document.querySelectorAll('.fade-in');
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        fadeElements.forEach(el => observer.observe(el));
+
+        // ===== COUNTER ANIMATION =====
+        const statNumbers = document.querySelectorAll('.stat-number');
+        let countersAnimated = false;
+
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !countersAnimated) {
+                    countersAnimated = true;
+                    statNumbers.forEach(counter => {
+                        const target = parseInt(counter.getAttribute('data-target'));
+                        const duration = 1500;
+                        const increment = target / (duration / 16);
+                        let current = 0;
+
+                        const updateCounter = () => {
+                            current += increment;
+                            if (current < target) {
+                                counter.textContent = Math.floor(current);
+                                requestAnimationFrame(updateCounter);
+                            } else {
+                                counter.textContent = target + '+';
+                            }
+                        };
+                        updateCounter();
+                    });
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('.stat-item').forEach(item => counterObserver.observe(item));
+
+        // ===== SCROLL TO TOP =====
+        const scrollTopBtn = document.getElementById('scrollTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                scrollTopBtn.classList.add('visible');
+            } else {
+                scrollTopBtn.classList.remove('visible');
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // ===== PARTICLES BACKGROUND =====
+        const canvas = document.getElementById('particles-canvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        class Particle {
+            constructor() {
+                this.reset();
+            }
+
+            reset() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 2 + 0.5;
+                this.speedX = (Math.random() - 0.5) * 0.3;
+                this.speedY = (Math.random() - 0.5) * 0.3;
+                this.opacity = Math.random() * 0.3 + 0.1;
+                this.isRed = Math.random() > 0.7;
+            }
+
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+
+                if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) {
+                    this.reset();
+                }
+            }
+
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fillStyle = this.isRed
+                    ? `rgba(196, 30, 42, ${this.opacity})`
+                    : `rgba(192, 192, 192, ${this.opacity * 0.5})`;
+                ctx.fill();
+            }
+        }
+
+        for (let i = 0; i < 80; i++) {
+            particles.push(new Particle());
+        }
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+
+            for (let i = 0; i < particles.length; i++) {
+                for (let j = i + 1; j < particles.length; j++) {
+                    const dx = particles[i].x - particles[j].x;
+                    const dy = particles[i].y - particles[j].y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+
+                    if (dist < 120) {
+                        ctx.beginPath();
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.strokeStyle = `rgba(196, 30, 42, ${0.05 * (1 - dist / 120)})`;
+                        ctx.lineWidth = 0.5;
+                        ctx.stroke();
+                    }
+                }
+            }
+
+            requestAnimationFrame(animateParticles);
+        }
+
+        animateParticles();
+
+        // ===== SMOOTH SCROLL FOR ANCHOR LINKS =====
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offset = 110;
+                    const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                    window.scrollTo({ top, behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
