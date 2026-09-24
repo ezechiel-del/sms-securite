@@ -195,6 +195,114 @@
   @media (max-width:800px){ .proc-grid{grid-template-columns:1fr 1fr;row-gap:48px;} .proc-track{display:none;} }
   @media (max-width:480px){ .proc-grid{grid-template-columns:1fr;} }
 
+          /* ===== FULL WIDTH SERVICE SECTION ===== */
+        .full-service {
+            padding: 100px 0;
+            position: relative;
+            z-index: 5;
+        }
+
+        .full-service-bg {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .full-service-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 500px;
+        }
+
+        .full-service-row:nth-child(even) .full-service-image {
+            order: -1;
+        }
+
+        .full-service-image {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .full-service-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+
+        .full-service-row:hover .full-service-image img {
+            transform: scale(1.05);
+        }
+
+        .full-service-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(10,10,10,0.8), rgba(196,30,42,0.1));
+        }
+
+        .full-service-text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 60px;
+            background: var(--black-card);
+        }
+
+        .full-service-number {
+            font-family: 'Oswald', sans-serif;
+            font-size: 80px;
+            font-weight: 900;
+            color: rgba(196, 30, 42, 0.15);
+            line-height: 1;
+            margin-bottom: 20px;
+        }
+
+        .full-service-label {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            color: var(--red-primary);
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .full-service-title {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .full-service-desc {
+            font-size: 15px;
+            color: var(--gray-light);
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .full-service-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .full-service-list li {
+            font-size: 13px;
+            color: var(--silver);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .full-service-list li i {
+            color: var(--red-primary);
+            font-size: 12px;
+        }
+
   /* ---------- TECH SHOWCASE ---------- */
   .tech{background:var(--panel);}
   .tech-inner{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center;}
@@ -1845,7 +1953,7 @@
             </a>
             <div class="nav-links" id="navLinks">
                 <a href="index.html">Accueil</a>
-                <a href="index.html#services">Nos Services</a>
+                <a href="nos-services.html">Nos Services</a>
                 <a href="qui-sommes-nous.html">A Propos</a>
                 <a href="contact.html">Contact</a>
                 <a href="contact.html" class="nav-cta"><i class="fas fa-shield-alt"></i> Devis Gratuit</a>
@@ -1895,6 +2003,29 @@
   </div>
 </section>
 
+    <!-- Télésurveillance & Vidéosurveillance IA -->
+    <section class="full-service" id="telesurveillance-tech">
+        <div class="full-service-row fade-in">
+            <div class="full-service-image">
+                <img src="images/telesurveillance01.jpg" alt="Centre de télésurveillance SMS">
+            </div>
+            <div class="full-service-text">
+                <!-- <div class="full-service-number">01</div> -->
+                <span class="full-service-label">Télésurveillance & Vidéosurveillance IA</span>
+                <h3 class="full-service-title">Un Centre de Contrôle <br>Actif 24h/24</h3>
+                <p class="full-service-desc">Notre centre de supervision regroupe les flux vidéo de l'ensemble de nos sites clients sur une plateforme unique. Les caméras intelligentes analysent en continu les images pour détecter tout comportement suspect, pendant que nos opérateurs qualifiés valident chaque alerte avant de déclencher la procédure d'intervention adaptée.</p>
+                <ul class="full-service-list">
+                    <li><i class="fas fa-check-circle"></i> Caméras IP HD / 4K jour-nuit</li>
+                    <li><i class="fas fa-check-circle"></i> Analyse vidéo par IA</li>
+                    <li><i class="fas fa-check-circle"></i> Reconnaissance de plaques (LAPI)</li>
+                    <li><i class="fas fa-check-circle"></i> Détection de franchissement de ligne</li>
+                    <li><i class="fas fa-check-circle"></i> Archivage cloud sécurisé</li>
+                    <li><i class="fas fa-check-circle"></i> Supervision multi-sites centralisée</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
 <!-- Expertise Section -->
 <section class="section services-section" id="expertise">
     <div class="section-container">
@@ -1939,53 +2070,9 @@
     </div>
 </section>
 
-<section class="tech" id="tech">
+<!-- <section class="tech" id="tech">
   <div class="wrap">
-    <!-- <span class="kicker">TECHNOLOGIE</span>
-    <div class="network-illust reveal">
-      <svg viewBox="0 0 1100 150" xmlns="http://www.w3.org/2000/svg">
-        <line x1="80" y1="52" x2="1020" y2="52" stroke="rgba(196,18,48,0.32)" stroke-width="1.4" stroke-dasharray="5 7"/>
-        <circle r="4.5" fill="#00ffa0">
-          <animateMotion dur="4.5s" repeatCount="indefinite" path="M80,52 L1020,52"/>
-        </circle>
 
-        <g transform="translate(80,52)">
-          <circle r="28" fill="#131318" stroke="rgba(196,18,48,0.5)" stroke-width="1.4" class="pulse-node"/>
-          <g transform="translate(-11,-9)" stroke="#c7cbd1" stroke-width="1.5" fill="none">
-            <rect x="0" y="2" width="22" height="14" rx="2"/>
-            <path d="M22 6 L30 2 V16 L22 12Z" fill="#c7cbd1" stroke="none"/>
-            <circle cx="8" cy="9" r="3.4"/>
-          </g>
-          <text x="0" y="46" text-anchor="middle" class="netlabel">CAMÉRA IP</text>
-        </g>
-
-        <g transform="translate(320,52)">
-          <circle r="28" fill="#131318" stroke="rgba(196,18,48,0.5)" stroke-width="1.4" class="pulse-node" style="animation-delay:.3s"/>
-          <path transform="translate(-16,-8)" d="M4 14 a7 7 0 0 1 0-14 c1.4-3.6 5-6 9-6 5 0 9.2 3.7 9.8 8.5 A6.5 6.5 0 0 1 28 14 Z" fill="#c7cbd1"/>
-          <text x="0" y="46" text-anchor="middle" class="netlabel">CLOUD SÉCURISÉ</text>
-        </g>
-
-        <g transform="translate(560,52)">
-          <circle r="30" fill="#131318" stroke="var(--red-bright)" stroke-width="1.6" class="pulse-node" style="animation-delay:.6s"/>
-          <path transform="translate(-13,-15)" d="M13 0 16 2 V13 C16 20 13 24.5 13 24.5 C13 24.5 10 20 10 13 V2 Z" fill="none" stroke="#ff2245" stroke-width="1.5"/>
-          <text x="0" y="48" text-anchor="middle" class="netlabel" fill="#ff9aab">CENTRE SMS</text>
-        </g>
-
-        <g transform="translate(800,52)">
-          <circle r="28" fill="#131318" stroke="rgba(196,18,48,0.5)" stroke-width="1.4" class="pulse-node" style="animation-delay:.9s"/>
-          <rect x="-8" y="-14" width="16" height="26" rx="3" fill="none" stroke="#c7cbd1" stroke-width="1.5"/>
-          <line x1="-4" y1="7" x2="4" y2="7" stroke="#c7cbd1" stroke-width="1.5"/>
-          <text x="0" y="46" text-anchor="middle" class="netlabel">APPLICATION</text>
-        </g>
-
-        <g transform="translate(1020,52)">
-          <circle r="28" fill="#131318" stroke="rgba(196,18,48,0.5)" stroke-width="1.4" class="pulse-node" style="animation-delay:1.2s"/>
-          <circle cx="0" cy="-8" r="6" fill="#c7cbd1"/>
-          <path d="M-11 14 C-11 4 11 4 11 14 Z" fill="#c7cbd1"/>
-          <text x="0" y="46" text-anchor="middle" class="netlabel">AGENT TERRAIN</text>
-        </g>
-      </svg>
-    </div> -->
     <div class="tech-inner">
       <div class="reveal">
         <span class="kicker">APPLICATIONS TECHNOLOGIQUES</span>
@@ -2018,19 +2105,15 @@
         </div>
         <div class="cam-grid">
           <div class="cam"><span class="label mono">CAM 01 · ENTRÉE</span><span class="status mono"><span class="d"></span>LIVE</span><div class="scan"></div>
-            <!-- <svg viewBox="0 0 24 24" fill="none" stroke="var(--silver-dim)" stroke-width="1.3"><path d="M4 18c1.5-4 4.5-6 8-6s6.5 2 8 6"/><circle cx="12" cy="8" r="3.4"/></svg> -->
              <img src="images/camera.jpg" alt="images camera 1">
           </div>
           <div class="cam"><span class="label mono">CAM 02 · PARKING</span><span class="status mono"><span class="d"></span>LIVE</span><div class="scan" style="animation-delay:1s"></div>
-            <!-- <svg viewBox="0 0 24 24" fill="none" stroke="var(--silver-dim)" stroke-width="1.3"><rect x="4" y="8" width="16" height="8" rx="1.4"/><circle cx="8" cy="17" r="1.6"/><circle cx="16" cy="17" r="1.6"/></svg> -->
              <img src="images/camera-2.jpg" alt="images camera 2">
           </div>
           <div class="cam"><span class="label mono">CAM 03 · PÉRIMÈTRE</span><span class="status mono"><span class="d"></span>LIVE</span><div class="scan" style="animation-delay:2s"></div>
-            <!-- <svg viewBox="0 0 24 24" fill="none" stroke="var(--silver-dim)" stroke-width="1.3"><rect x="3" y="3" width="18" height="18" rx="1.5"/><path d="M3 9h18M9 21V9"/></svg> -->
              <img src="images/camera-3.jpg" alt="images camera 3">
           </div>
           <div class="cam"><span class="label mono">CAM 04 · TOITURE</span><span class="status mono"><span class="d"></span>LIVE</span><div class="scan" style="animation-delay:1.6s"></div>
-            <!-- <svg viewBox="0 0 24 24" fill="none" stroke="var(--silver-dim)" stroke-width="1.3"><path d="M3 20 12 4l9 16H3Z"/></svg> -->
              <img src="images/camera-4.jpg" alt="images camera 4">
           </div>
         </div>
@@ -2041,7 +2124,8 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
+
 
 <!-- Process / Full Service Rows -->
 <section class="full-service" id="fonctionnement">
@@ -2150,6 +2234,7 @@
             </ul>
         </div>
     </div>
+    
 </section>
 
 <!-- Process Timeline Summary -->
@@ -2231,7 +2316,7 @@
         </div>
         <div class="gallery-grid">
             <div class="gallery-item big fade-in">
-                <img src="images/centre_2.png" alt="Salle de supervision H24">
+                <img src="images/03.jpg" alt="Salle de supervision H24">
                 <span class="live-badge"><span class="d"></span> LIVE</span>
                 <div class="gallery-item-overlay"><span>Salle de Supervision H24</span></div>
             </div>
@@ -2244,7 +2329,7 @@
                 <div class="gallery-item-overlay"><span>Équipe d'Intervention</span></div>
             </div>
             <div class="gallery-item fade-in">
-                <img src="images/centre_6.png" alt="Agent de sécurité SMS">
+                <img src="images/02.jpg" alt="Agent de sécurité SMS">
                 <div class="gallery-item-overlay"><span>Agent de Sécurité</span></div>
             </div>
             <div class="gallery-item fade-in">
